@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#coursework" class="back-button">Back to Projects</a>
+
+            <h2 class="top-padding"></h2>
+            <!-- <p id="color"><b>Page is subject to change as I am currently taking this course.</b></p> -->
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <div style="text-align: center;">
+                        <h1>Research</h1>
+                        <hr>
+                        <h2>HoF-PoT: Enhancing LLM performance on ARC-AGI tasks.</h2>
+                    </div>
+                  <ul>
+                      <li><strong>Project:</strong> Hint-on-Failure Program-of-Thought (HoF-PoT), a new prompting method for large language models (LLMs).</li>
+                      <li><strong>Goal:</strong> Improve LLM fluid intelligence on the ARC-AGI benchmarks by providing targeted hints when the model fails mid-reasoning.</li>
+                      <li><strong>Datasets:</strong> Evaluating performance on ARC-AGI-1 (baseline) and ARC-AGI-2 (frontier challenge).</li>
+                      <li><strong>Method:</strong> Step-by-step reasoning with “on-failure” hints that guide the model back on track.</li>
+                      <li><strong>Baselines:</strong> Compared against direct answers, chain-of-thought, self-consistency, and program-of-thought prompting.</li>
+                      <li><strong>Evaluation:</strong> Measured by accuracy lift, by-category performance, efficiency, and robustness of results.</li>
+                      <li><strong>Team:</strong> USC research collaboration by David Kalin, Chiddy Golden, Ethan Chiang, Magen Mozeh, Neel Gude, and Ameya Deshmukh.</li>
+                    </ul>
+                    <br>
+                <div class="next-to-each">
+                  <iframe src="Research.pdf" width="100%" height="1000px" style="border:none;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+
