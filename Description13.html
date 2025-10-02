@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#coursework" class="back-button">Back to Projects</a>
+
+            <h2 id="color" class="top-padding">ITP 380: Video Game Programming</h2>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <div class="image-container">
+                     <!-- <p class="image-label2">s</p> -->
+                    <p class="image-label2">Portals</p>
+                    <img src="Images/portal_cover.png" alt="Momentum Game Preview" width="400" height="200">
+                    <p id="padding2" class="image-label2">GLaDOs Narration</p>
+                    <img src="Images/Subtitles.png" alt="View + Narration" width="500" height="370">
+                    <img id="padding2" src="Images/Narration.png" alt="Narration" width="500" height="75">
+                </div>
+
+
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Portal Recreation</h1>
+                    <ul>
+                        <li><strong>State Machines:</strong> AI-driven interactions for doors and player mechanics in C++.</li>
+                        <li><strong>3D Physics:</strong> First-person movement with forces, AABB collision detection.</li>
+                        <li><strong>Portals & 3D Math:</strong> Portal rendering with SDL, segment casts, and quaternions.</li>
+                        <li><strong>Collision Detection:</strong> AABB-based system for player, environment, and objects.</li>
+                        <li><strong>Audio System:</strong> 3D positional audio with SDL_mixer, distance-based volume. GLaDOs Narratation with subtitles implemented.</li>
+                        <li><strong>Component System:</strong> Modular entities with Mesh, Collision, and Audio components.</li>
+                        <li><strong>Camera:</strong> First-person view with pitch/yaw rotation and clamped angles.</li>
+                        <li><strong>Actor Hierarchy:</strong> Nested transformations for position, rotation, and scale.</li>
+                        <li><strong>Game Engine:</strong> Scene management, object pooling, and event-driven updates.</li>
+                        <li><strong>Rendering:</strong> SDL & OpenGL for real-time textures, shaders, and effects.</li>
+                    </ul>
+                    <br><br>
+                    <br><br>
+                </div>
+            </div>
+
+
+            <div class="project-content">
+
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Mario Kart Recreation</h1>
+                <ul>
+                  <li><strong>Enemy Movement (EnemyMove)</strong>
+                    <ul>
+                      <li>Follows a predefined path from a CSV file.</li>
+                      <li>Uses a threshold to determine when to move to the next path point.</li>
+                      <li>Aligns forward vector with target direction using dot and cross products.</li>
+                      <li>Accelerates only when facing the target direction within a certain angle.</li>
+                      <li>Turns left or right based on the cross product of forward and target vectors.</li>
+                    </ul>
+                  </li>
+                  
+                  <li><strong>Collision Component</strong>
+                    <ul>
+                      <li>Defines a bounding box for an actor.</li>
+                      <li>Supports intersection checking between two collision components.</li>
+                      <li>Determines minimum overlap for resolving collisions.</li>
+                    </ul>
+                  </li>
+
+                  <li><strong>Camera System (CameraComponent)</strong>
+                    <ul>
+                      <li>Implements a spring camera that smoothly follows the player.</li>
+                      <li>Uses a spring constant and dampening factor for smooth motion.</li>
+                      <li>Calculates an ideal camera position behind the player.</li>
+                      <li>Applies a view matrix transformation for rendering.</li>
+                      <li>Includes a method to instantly snap to the ideal position.</li>
+                    </ul>
+                  </li>
+
+                  <li><strong>CSV Helper</strong>
+                    <ul>
+                      <li>Provides a helper function for splitting CSV lines.</li>
+                      <li>Used to parse path points for enemy movement.</li>
+                    </ul>
+                  </li>
+
+                  <li><strong>Memory Allocation (Mac-Specific)</strong>
+                    <ul>
+                      <li>Overrides new and delete operators on Mac.</li>
+                      <li>Ensures uninitialized memory is set to 0xcd for debugging.</li>
+                    </ul>
+                  </li>
+
+                  <li><strong>User Interface</strong>
+                    <ul>
+                        <li>Displays the player's current lap and position.</li>
+                        <li>Shows speedometer and acceleration bars.</li>
+                        <li>Includes item display for power-ups.</li>
+                        <li>Provides countdown timer and race progress indicator.</li>
+                    </ul>
+                </li>
+                </ul>
+                <br><br>
+                <br><br>
+                <br><br>
+                </div>
+                <div class="image-container">
+                    <p class="image-label2">Dual Racing with NPC</p>
+                    <img src="Images/mariokart_cover.png" alt="Mario Kart" width="400" height="300">
+                    <p id="padding2" class="image-label2">Get Ready</p>
+                    <img src="Images/GetReady.png" alt="Mario Kart Get Ready" width="400" height="300">
+                    <p id="padding2" class="image-label2">Lap Counting UI</p>
+                    <img src="Images/LapCount.png" alt="Mario Kart Lap Count" width="400" height="300">
+                </div>
+            </div>
+
+            <div class="project-content">
+                <!-- Video Section -->
+                <!-- <div class="video-container">
+                    <iframe width="560" height="315" 
+                        src="" 
+                        title="LED Hand Reactivity" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div> -->
+                <!-- Project Description -->
+                <div class="image-container">
+                    <p class="image-label2">Lasers</p>
+                    <img src="Images/Lasers.png" alt="Star Fox Lasers" width="500" height="300">
+                    <p id="padding2" class="image-label2">Peppy Reminds User to do the Barrel Roll</p>
+                    <img src="Images/Peppy.png" alt="Mario Kart Get Ready" width="500" height="300">
+                    <p id="padding2" class="image-label2">Generative Tunnels</p>
+                    <img src="Images/Tunnel.png" alt="Mario Kart Lap Count" width="500" height="300">
+                </div>
+
+                <div class="description">
+                    <h1>Star Fox Tunnel</h1>
+                    <ul>
+                    <li><strong>3D Star Fox-Inspired Gameplay</strong>
+                        <ul>
+                            <li>Dynamic space tunnel with infinite scrolling.</li>
+                            <li>Sleek follow camera for cinematic movement.</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Procedural Level Generation</strong>
+                        <ul>
+                            <li>Endless, randomly generated tunnel sections.</li>
+                            <li>Obstacle patterns evolve for increasing challenge.</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Explosive Combat</strong>
+                        <ul>
+                            <li>Bullet impacts trigger chain explosions.</li>
+                            <li>Destructible environments add strategy.</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Adaptive Difficulty</strong>
+                        <ul>
+                            <li>Speed scales up over time for intensity.</li>
+                            <li>Smart enemy placement keeps gameplay engaging.</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Classic Barrel Roll</strong>
+                        <ul>
+                            <li>Signature spin move with shields recharge.</li>
+                            <li>Peppy reminds you when you forget!</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Immersive Sound & HUD</strong>
+                        <ul>
+                            <li>Reactive soundtrack and sound effects.</li>
+                            <li>Minimalist HUD with shield indicators.</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Retro Arcade Feel</strong>
+                        <ul>
+                            <li>Fast-paced gameplay with seamless action.</li>
+                            <li>Clean, stylized visuals with vibrant textures.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+      
+
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Zelda Recreation</h1>
+                    <ul>
+                        <li><strong>Classic Zelda-Inspired Action</strong>
+                            <ul>
+                                <li>Top-down combat with directional sword swings.</li>
+                                <li>Breakable objects and hidden paths.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Smart Enemy AI</strong>
+                            <ul>
+                                <li>A* pathfinding for patrolling soldiers.</li>
+                                <li>Stun, pursuit, and adaptive movement.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Interactive World</strong>
+                            <ul>
+                                <li>Pixel-perfect collisions with walls and enemies.</li>
+                                <li>Camera following Link</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Immersive Effects</strong>
+                            <ul>
+                                <li>Authentic music, attack, and destruction sounds.</li>
+                                <li>Animated hit reactions and chain explosions.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Future Potential</strong>
+                            <ul>
+                                <li>Expandable with rupees, health, and secrets.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+
+                    <div class="image-container">
+                    <p class="image-label2">A* Pathfinding for Enemies and Zelda Animations</p>
+                    <img src="Images/Zelda.png" alt="Star Fox Lasers" width="500" height="450">
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <div class="image-container">
+                    <p class="image-label2">Goombas Collide with Pipes</p>
+                    <img src="Images/MarioPlatformer.png" alt="Mario Platformer" width="500" height="350">
+                     <p id="padding2" class="image-label2">Mario Jump</p>
+                    <img src="Images/MarioJump.png" alt="Mario Jump" width="270" height="330">
+                </div>
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Mario Platformer</h1>
+                    <ul>
+                        <li><strong>Classic Mario Platforming</strong>
+                            <ul>
+                                <li>Run, jump, and stomp enemies.</li>
+                                <li>Responsive controls and smooth physics.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Side-Scrolling Level</strong>
+                            <ul>
+                                <li>Dynamic camera that only moves forward.</li>
+                                <li>Seamless platform navigation.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Enemy AI</strong>
+                            <ul>
+                                <li>Goombas patrol and react to obstacles.</li>
+                                <li>Gravity and collision-aware movement.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Interactive World</strong>
+                            <ul>
+                                <li>Breakable and interactable blocks.</li>
+                                <li>Jump physics with realistic momentum.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Polished Animations</strong>
+                            <ul>
+                                <li>Idle, run, jump, and stomp animations.</li>
+                                <li>Smooth sprite transitions.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Immersive Audio</strong>
+                            <ul>
+                                <li>Classic Mario music and sound effects.</li>
+                                <li>Jump, stomp, and win sounds.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Win & Lose Conditions</strong>
+                            <ul>
+                                <li>Flagpole for level completion.</li>
+                                <li>Pitfalls and enemy collisions trigger death.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Extra Potential</strong>
+                            <ul>
+                                <li>Question blocks with coins and power-ups.</li>
+                                <li>More enemy types like Koopas.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+
+                        <!-- Project Content -->
+            <div class="project-content">
+      
+                <div class="image-container">
+                    <p class="image-label2">Frogger</p>
+                    <img src="Images/Frogger.png" alt="Frogger" width="400" height="450">
+                </div>
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Frogger Recreation</h1>
+                   <ul>
+                        <li><strong>Level Parsing & Setup:</strong> The game loads level data from text files, ensuring that the initial positions of the Frog, Vehicles, and Logs are set correctly.</li>
+
+                        <li><strong>Frog Movement:</strong> The Frog moves using the WASD keys, with movement triggered on the leading edge of key presses. It is restricted from hopping off-screen.</li>
+
+                        <li><strong>Vehicle & Log Movement:</strong> Vehicles and Logs move using the <code>WrappingMove</code> function, with each row alternating its movement direction.</li>
+
+                        <li><strong>Collision & Death:</strong> The Frog dies upon colliding with a Vehicle, creating a <code>DeadFrog</code> object upon death.</li>
+
+                        <li><strong>Intelligent Vehicles:</strong> Vehicles slow down when the Frog is directly in front of them. Detection is implemented using the dot product and arccos calculations.</li>
+
+                        <li><strong>Log Riding:</strong> The Frog moves along with logs using the <code>GetMinOverlap</code> function, following the log's speed and direction.</li>
+
+                        <li><strong>Goal & Win Condition:</strong> The Frog pauses upon reaching the goal but dies if it attempts to jump into walls or misses logs while crossing.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-content">
+      
+                <div class="image-container">
+                    <p class="image-label2">Pathfinding to Choose next Node</p>
+                    <img src="Images/Pacman.png" alt="Pacman" width="250" height="250">
+                    <p id="padding2" class="image-label2">Ghost AI State Machine</p>
+                    <img src="Images/GhostState.png" alt="Ghost State Machine Diagram" width="350" height="250">
+                </div>
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Pacman Recreation</h1>
+                   <ul>
+                        <li><strong>Movement & AI:</strong> Uses pathfinding between path nodes. Ghosts move in Scatter, Chase, Frightened, and Dead states with unique behaviors.</li>
+
+                        <li><strong>Unique Ghost Behavior:</strong> Each ghost follows a different AI strategy in Chase mode, targeting Pac-Man with distinct logic.</li>
+
+                        <li><strong>Animations:</strong> Changes based on movement direction and state, including scared and dead variations.</li>
+
+                        <li><strong>Audio System:</strong> Uses <code>SDL_mixer</code> to manage sounds with prioritization when channels are full.</li>
+
+                        <li><strong>Final Touches:</strong> Implements intro timing, resets ghosts on Pac-Man’s death, and ensures all behaviors align with classic Pac-Man rules.</li>
+                    </ul>
+                    <br><br>
+                    <br><br>
+                </div>
+            </div>
+
+
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Asteroids Recreation</h1>
+                   <ul>
+                        <li><strong>Actors & Components:</strong> Implements an entity-component system with actors managing position, rotation, and state.</li>
+
+                        <li><strong>Game Object Management:</strong> Uses a vector to track actors, adding and removing them.</li>
+
+                        <li><strong>Sprite System:</strong> Implements texture caching and rendering using SDL, optimizing repeated texture use.</li>
+
+                        <li><strong>Movement:</strong> Adds a movement component that updates position and rotation based on velocity and input.</li>
+
+                        <li><strong>Ship Controls:</strong> Implements WASD movement and changes the ship’s sprite when accelerating.</li>
+
+                        <li><strong>Asteroids:</strong> Spawns moving asteroids with random positions and implements screen-wrapping.</li>
+
+                        <li><strong>Laser Shooting:</strong> Fires lasers with a cooldown, sets their lifetime, and adds collision detection with asteroids.</li>
+
+                        <li><strong>Collision System:</strong> Destroys asteroids and lasers on impact using distance-based collision detection.</li>
+
+                        <li><strong>Game Loop & Cleanup:</strong> Ensures proper update cycles and memory management for all actors and textures.</li>
+                    </ul>
+
+                    <br><br>
+                    <br><br>
+                </div>
+
+                 <div class="image-container">
+                    <p class="image-label2">Screen-Wrapping Asteroids and Shooting Space Ship</p>
+                    <img src="Images/Asteroids.png" alt="Asteroids" width="550" height="550">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+

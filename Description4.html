@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#unity" class="back-button">Back to Projects</a>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Video Section -->
+                <!-- <div class="video-container">
+                    <iframe width="560" height="315" 
+                        src="" 
+                        title="LED Hand Reactivity" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div> -->
+                <img src="Images/Momentum.png" alt="Momentum Game Preview" width="400" height="370">
+
+
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Momentum</h1>
+                    <h2>Lead Programmer | Unity | C#</h2>
+                    <p>
+                       A game set to be showcased to the USC games expo, Momentum is an action-pakced superhero game where you play as a teenage hero with alien-enhanced agility. Equipped with a homeade suit, the player navigates cityscapes, and battles mutants to save civilians. The game features fast-paced traversal, interactive combat, and a compelling narrative. Production is set to finish in Spring 2025 with the collaboration of a small team of pragrammers, artists, UI, narrative, and game desiners.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="project-content">
+
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Civilian Events</h1>
+                    <p>
+                      Players save civilians from a collapsing building using real-time physics and event-based triggers.
+                    </p>
+                    <ul>
+                        <li>After building collapses player has to pick up debris off of player.</li>
+                        <li>I implementated a the state machine to manage civilian behavior, transitioning between Patrolling, Hurt, Saved, and Walking to the Door based on enviornmental and player interactions.</li>
+                        <li>Players can stop buildings from falling by pressing 'G' on their keyboard in this beta completion.</li>
+                        <li>The physics used is triggered based on colliders as when the player goes onto the building the "latch" as they stop it from falling the exact point of grab is gotten by .collision.</li>
+                        <li>Camera shakes for real-time interactions when holding building so that player experience is vibrant.</li>
+                        <li>States become triggered as enemies in their state machine swarm buildings and attack when player distance is far.</li>
+                    </ul>
+                    <div class="image-container">
+                        <img src="Images/StateMachineCivilian.png" alt="Civilian State Machine Image" width="300" height="200">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/HtCig0jHulE" 
+                        title="Civilian Event" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/GADGrvYpFS4" 
+                        title="Civilian Event" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <!-- Video Section -->
+                <!-- <div class="video-container">
+                    <iframe width="560" height="315" 
+                        src="" 
+                        title="LED Hand Reactivity" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div> -->
+                <!-- Project Description -->
+                <div class="video-container">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/BS-wa53XvPQ" 
+                        title="Start Screen" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <iframe width="560" height="315"
+                        src=" https://www.youtube.com/embed/MAL_2lr199Q" 
+                        title="General UI" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/8-qLbTdV4dQ" 
+                        title="Pause and Game Over" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="description">
+                    <h1>UI</h1>
+                    <p>
+                       Responsive anchored UI for enhanced gameplay and screen ratio responsiveness. I implemented them with collaboration from our UI team. 
+                    </p>
+                    <ul>
+                        <li>Health bar with chip away effect. Subscribes to update the UI instantly when the player takes damage, ensuring overlays and health bars reflect real-time changes.</li>
+                        <li>Blood overlay beating effect to indicate that health is low from subscribed changes.</li>
+                        <li>Speedometer with corresponding speed lines that toggle between frames quicker based on flying speed. Arrow shows current player speed.</li>
+                        <li>Enemy and civilian health bars with canvas group to billboard and fade out based on camera direction and how far camera is.</li>
+                        <li>Blood splatter effect that randomly splashes on screen when enemies are attacked</li>
+                        <li>Interactive Main Menu using cinema machine and virtual cameras and interactive buttons.</li>
+                        <li>Pause screen in beta.</li>
+                        <li>End screen with animations for enhancement.</li>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Video Section -->
+                <div class="video-container">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/Pp2Bj4yiq_g" 
+                        title="Enemies + Civilians" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/fVgPDRR2xZc" 
+                        title="Enemies + Player" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/Fe_eeslTpdU" 
+                        title="Enemies + Player" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <img src="Images/EnemyShrimpStateMachine.png" alt="Shrimp State Machine Image" width="450" height="350">
+                    <!-- <img src="Images/FlyingEnemy.png" alt="Flying Enemy" width="200" height="300"> -->
+                </div>
+
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Enemy State Machine</h1>
+                    <p>I have programmed two enemies types for this project. One flying and one land enemy.</p>
+
+                     <h2>Land Enemy - Mutant Shrimp</h2>
+                    <ul> 
+                        <li><strong>Patrol State:</strong> The enemy roams the environment searching for civilians or throwable objects.</li>
+                        <li><strong>Chase Player State:</strong> If the player is detected within sight range, the enemy aggressively pursues them.</li>
+                        <li><strong>Pursuing Throwable State:</strong> The enemy locates and moves toward the nearest throwable object, such as a car.</li>
+                        <li><strong>Throwing Car State:</strong> If a throwable object is acquired, the enemy stops, aims, and throws it at the player.</li>
+                        <li><strong>Attacking Civilians State:</strong> If no player is nearby, the enemy attacks civilians or buildings to cause destruction.</li>
+                        <li><strong>Jump Up State:</strong> The enemy prepares and executes a vertical jump, often to perform a follow-up attack.</li>
+                        <li><strong>Jump Attack State:</strong> After jumping, the enemy slams down towards the player, dealing area damage.</li>
+                        <li><strong>Jump Attack Cooldown State:</strong> The enemy recovers briefly after landing from a jump attack.</li>
+                        <li><strong>Dash Player State:</strong> The enemy performs a high-speed charge toward the player if within dash range.</li>
+                        <li><strong>Wait For Player State:</strong> The enemy pauses and waits for the player to be vulnerable before attacking.</li>
+                        <li><strong>State Transitions:</strong> The enemy switches between states based on player proximity, throwable availability, and civilian presence.</li>
+                        <li><strong>AI Behavior:</strong> Uses raycasts and sphere checks for obstacle detection, precise targeting, and environment awareness.</li>
+                    </ul>
+                    <h2>Flying Enemy - Prototype</h2>
+                    <ul>
+                        <li><strong>Chase Player State:</strong> The enemy continuously follows the player, maintaining a set distance while avoiding obstacles using NavMesh and raycasting.</li>
+                        <li><strong>Dash Attack State:</strong> If the player enters a specific attack range, the enemy dashes toward the player in bursts, attempting to strike them.</li>
+                        <li><strong>State Transition Logic:</strong> The enemy switches to <em>Dash Attack</em> when the player is within range and back to <em>Chase Player</em> if the player moves too far.</li>
+                        <li><strong>Obstacle Avoidance:</strong> Uses sphere casts and raycasts to prevent movement through objects and adjust positioning accordingly.</li>
+                        <li><strong>Rotation Handling:</strong> The enemy always faces the player while chasing, ensuring its movement is directed properly.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+

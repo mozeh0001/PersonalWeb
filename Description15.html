@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#coursework" class="back-button">Back to Projects</a>
+
+            <h2 id="color" class="top-padding">ITP 382: Mobile Game Development</h2>
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h2>Heads Up!</h2>
+                    <ul>
+                        <li><strong>Game Scene Setup:</strong> The game consists of three scenes ("Start," "Game," and "End") with a selection menu leading to quiz gameplay and a results screen.</li>
+
+                        <li><strong>XML-Based Question Loading:</strong> Questions are stored in an XML file and dynamically loaded into the game via the Resources folder.</li>
+
+                        <li><strong>Tilt-Based Input:</strong> The game reads device accelerometer data to determine tilt direction (up for correct, down for incorrect).</li>
+
+                        <li><strong>Keyboard Support:</strong> Added arrow key input for PC testing, allowing players to simulate tilting with up/down arrow keys.</li>
+
+                        <li><strong>Game Flow:</strong> Players must center their phone before answering, then select an answer and wait before advancing to the next question.</li>
+
+                        <li><strong>Visual & Audio Feedback:</strong> Correct and incorrect answers trigger color changes, sound effects, and screen overlays.</li>
+
+                        <li><strong>Custom Quiz Lists:</strong> Players can select different quiz topics by updating the XML files and modifying the selection menu.</li>
+
+                        <li><strong>Score System:</strong> Tracks correct and incorrect answers, shuffles quiz questions for variety, and displays final score statistics in the "End" scene.</li>
+                    </ul>
+                </div>
+                <!-- Video Section -->
+                <div class="video-container">
+                    <br><br>
+                    <br><br>
+                     <p class="image-label2">Heads Up!: Two Themes</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/SBKVg9GvSzc" 
+                        title="Heads Up!" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <!-- Video Section -->
+                <div class="video-container">
+                    <br><br>
+                    <br><br>
+                     <p class="image-label2">Clash of Clans: Deploying Archers and Barbarians</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/xCP1G6IQdjs" 
+                        title="Clash of Clans: Deploying Troops" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <br><br>
+                    <br><br>
+                     <p class="image-label2">Clash of Clans: Move Buildings + Save/Load Data</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/EiSzUqOZe2Y" 
+                        title="Clash of Clans: Moving Buildings + Save/Load Data" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Project Description -->
+                <div class="description">
+                    <h2>Clash of Clans</h2>
+                    <h2>Deploying Units</h2>
+                    <ul>
+                        <li><strong>AI City Combat System:</strong> AI units navigate and attack destructible buildings using low-poly city assets and RPG-style characters.</li>
+                        
+                        <li><strong>Character and AI Setup:</strong> The character reuses movement and animations from a previous lab, separating AI and player control with a Pilot system.</li>
+                        
+                        <li><strong>AI Navigation and Targeting:</strong> AI moves using NavMeshAgents, prioritizing and attacking buildings based on value and distance.</li>
+                        
+                        <li><strong>Combat System:</strong> AI attacks buildings with animation-triggered damage, destroying them over time with a balanced attack cooldown.</li>
+                        
+                        <li><strong>Unit Deployment System:</strong> Players deploy troops by clicking on the map, selecting from different unit types with unique stats and a deployment limit.</li>
+                        
+                        <li><strong>Expansion Options:</strong> Buildings can fight back, destroyed buildings swap for damaged versions, and strategic unit placement enhances gameplay.</li>
+                    </ul>
+                    <br><br>
+                    <hr>
+                    <br><br>
+                    <h2>Moving Buildings (Save + Load)</h2>
+                    <ul>
+                        <li><strong>City Building System:</strong> Players design a city by placing, dragging, and rotating buildings, roads, and trees.</li>
+
+                        <li><strong>Game Scene Setup:</strong> The project includes two scenes, “Empty” for editing and “Start” for gameplay, with procedural grass generation.</li>
+
+                        <li><strong>Building Placement:</strong> Clicking on a prototype spawns a draggable city object, which is added to the playfield grid.</li>
+
+                        <li><strong>Drag and Drop System:</strong> Buildings can be dragged, repositioned, and rotated while ensuring no overlap.</li>
+
+                        <li><strong>Grid-Based Storage:</strong> Objects are tracked in a structured grid system with lookup tables for efficient placement.</li>
+
+                        <li><strong>Save and Load Feature:</strong> The city layout is stored in XML format, allowing users to save and reload their designs.</li>
+
+                        <li><strong>Smooth Movement and Rotation:</strong> Objects smoothly transition between positions and rotate gradually instead of snapping.</li>
+
+                        <li><strong>Gameplay Modes:</strong> A toggle button switches between edit mode (placing buildings) and play mode (resource accumulation).</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h2>Fortnite</h2>
+                    <ul>
+                        <li><strong>Game Setup:</strong> Players control a sword-wielding character in a 3D environment using pre-existing assets and animations.</li>
+
+                        <li><strong>Character Movement:</strong> Uses Unity's CharacterController for movement, with keyboard and virtual joystick support.</li>
+
+                        <li><strong>Camera System:</strong> Implements a follow camera with adjustable azimuth and elevation, controlled via keyboard or virtual joystick.</li>
+
+                        <li><strong>Animation Integration:</strong> Uses a blend tree for directional movement animations and a trigger-based attack animation.</li>
+
+                        <li><strong>Attack System:</strong> Players perform a spinning sword attack using a UI button or spacebar input.</li>
+
+                        <li><strong>AI and Targets:</strong> Enemy targets exist for testing attack mechanics, triggering destruction on hit.</li>
+
+                        <li><strong>Expansion Options:</strong> Players can add camera collision avoidance, destructible targets, or convert the character into a shooter.</li>
+                    </ul>
+                </div>
+
+                 <!-- Video Section -->
+                <div class="video-container">
+                    <br><br>
+                     <p class="image-label2">Fortnite: Joystick + Target Enemies</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/jgqU1FISj9M" 
+                        title="Fortnite" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Video Section -->
+                <div class="video-container">
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                     <p class="image-label2">Subway Surfers: Shader Bend + Object Pooling</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/EL5M5GdP_kg" 
+                        title="Subway Surfers" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <!-- Project Description -->
+                <div class="description">
+                    <h2>Subway Surfers</h2>
+                    <ul>
+                        <li><strong>Subway Surfer Clone:</strong> An infinite runner where the player dodges obstacles while running along a never-ending track.</li>
+
+                        <li><strong>Game Scene Setup:</strong> The project starts with a fully playable scene in “Game.unity” using Unity’s CharacterController.</li>
+
+                        <li><strong>Player Movement:</strong> The cat avatar moves between three lanes using swipe gestures and responds to jumps, ducks, and crashes.</li>
+
+                        <li><strong>Swipe Controls:</strong> Implemented via a UI-based Swiper component, detecting left, right, up, and down gestures.</li>
+
+                        <li><strong>Camera Follow:</strong> A FollowCam script ensures the camera smoothly tracks the player’s movement with LateUpdate().</li>
+
+                        <li><strong>Curved World Shader:</strong> A shader bends the track to create an artificial horizon, reducing the need for infinite draw distance.</li>
+
+                        <li><strong>Object Pooling:</strong> An ObjectPool system reuses objects like bananas and pickup effects instead of continuously instantiating them.</li>
+
+                        <li><strong>Banana Pickups:</strong> A PickupSpawner places bananas on the track, and collected bananas trigger visual and audio feedback.</li>
+
+                        <li><strong>Bending</strong> The bender shader adjusts bend direction and amount smoothly over time, preventing sudden changes.</li>
+
+                        <li><strong>Bend Frequency:</strong> The track bends often enough to be noticeable within 30 seconds while ensuring smooth transitions.</li>
+
+                        <li><strong>Draw-in Optimization:</strong> The bending effect conceals track loading, preventing the center of the track from appearing on screen just as in the real implementation of Subway Surfers.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h2>Candy Crush</h2>
+                    <ul>
+                        <li><strong>Fruit Match-3 Game:</strong> A grid-based puzzle game where players swap fruit characters to create matches of three or more.</li>
+
+                        <li><strong>Game Scene Setup:</strong> The project starts with a single scene, "Game.unity," where fruit characters fall into a 6x6 grid.</li>
+
+                        <li><strong>GemGrid.cs:</strong> Handles grid generation, falling mechanics, and match detection for the fruit characters.</li>
+
+                        <li><strong>Match Detection:</strong> The game detects horizontal and vertical matches of three or more identical fruits and removes them.</li>
+
+                        <li><strong>Fruit Swapping:</strong> Players can swipe fruits left, right, up, or down to swap adjacent fruits and trigger matches.</li>
+
+                        <li><strong>Animations & Effects:</strong> Uses SimpleAnim.cs from Lab04 for fruit animations and a sound effect when matches occur.</li>
+
+                        <li><strong>Pointer Controls:</strong> Implements pointer handlers to detect player input for touching, dragging, and swapping fruits.</li>
+
+                        <li><strong>Game Over Condition:</strong> The game ends when the player runs out of moves, displaying a "Game Over" message before restarting.</li>
+
+                        <li><strong>Move Counter:</strong> Players start with 10 moves, with each swipe reducing the count. When moves reach zero, the game resets.</li>
+
+                        <li><strong>Level Progression (Design Path):</strong> Levels vary in grid size, fruit types, and move limits, progressing sequentially after each game over.</li>
+
+                        <li><strong>Level Configuration:</strong> Level data is stored XML file to define the number of fruits and moves per level.</li>
+
+                        <li><strong>Expanded Gameplay:</strong> A fifth fruit type (lemon) is introduced, with different levels using different subsets of the available fruits.</li>
+                    </ul>
+                </div>
+
+                <!-- Video Section -->
+                <div class="video-container">
+                     <p class="image-label2">Candy Crush: Level Variation</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/2vdC4xTxJpM" 
+                        title="Candy Crush" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <p id="padding2" class="image-label2">XML Level Variation</p>
+                    <img src="Images/LevelConfig.png" alt="Level Configuration XML" width="200" height="400">
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Video Section -->
+                <div class="video-container">
+                    <br><br>
+                    <br><br>
+                     <p class="image-label2">Flappy Penguin: Score and Timer</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/glzHbKVFge0" 
+                        title="Flappy Penguin" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <!-- Project Description -->
+                <div class="description">
+                    <h2>Flapping Penguin</h2>
+                    <ul>
+                        <li><strong>Flappy Penguin Game:</strong> A side-scrolling game where the player controls a penguin's vertical movement by flapping its wings to avoid obstacles.</li>
+
+                        <li><strong>Game Scene Setup:</strong> The game consists of a single scene, "Game.unity," featuring a scrolling background, a player-controlled penguin, and randomly generated pipe obstacles.</li>
+
+                        <li><strong>Forced Scrolling:</strong> The penguin moves forward automatically at a set speed, with vertical movement controlled by player input (space bar or mouse click).</li>
+
+                        <li><strong>Background Scrolling:</strong> The sky background tiles infinitely by spawning new sections on the right and deleting old ones on the left using the <code>RepeatBackground</code> script.</li>
+
+                        <li><strong>Pipe Obstacles:</strong> Pipes spawn at randomized heights at set horizontal intervals, creating a moving obstacle course for the player.</li>
+
+                        <li><strong>Collision Detection:</strong> The player has a trigger-based CircleCollider2D, while the pipes have BoxCollider2D and Rigidbody2D (with gravity disabled). Colliding with a pipe triggers the game over state.</li>
+
+                        <li><strong>Death Animation & Sound:</strong> A crash animation plays when the player collides with an obstacle, and a randomized squawk sound is played.</li>
+
+                        <li><strong>Flap Sound Effect:</strong> Each time the player flaps, a sound effect is triggered using an AudioSource component.</li>
+
+                        <li><strong>Programming Path - Score System:</strong> 
+                            <ul>
+                                <li>Added a UI timer displaying time in min:sec.tenths format, starting from 0:00.0 and counting up.</li>
+                                <li>Implemented a score system that increments each time the player successfully passes a pipe.</li>
+                                <li>Reset both the timer and score whenever the game resets.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h2>Missle Command</h2>
+                    <ul>
+                        <li><strong>Game Scene Setup:</strong> The game consists of a single scene, "Game.unity," featuring cities to protect, enemy bomb attacks, and player-controlled missiles.</li>
+
+                        <li><strong>Missile Input & Targeting:</strong> Players aim by touching the screen (or clicking), with targeting reticles appearing at touch positions. Releasing fires a missile.</li>
+
+                        <li><strong>Missile & Bomb Behavior:</strong> Missiles move toward their target and explode, destroying nearby bombs. Enemy bombs descend toward cities and explode upon impact.</li>
+
+                        <li><strong>Bezier Curve Missile Paths:</strong> Instead of straight-line movement, missiles follow cubic Bezier curves, creating varied flight paths.</li>
+
+                        <li><strong>Explosion Effects:</strong> Animated explosion effects play upon impact, with randomized speed, size, and rotation for variety. Effects self-delete after playing.</li>
+
+                        <li><strong>City Damage System:</strong> Cities transition between alive and destroyed states using an Animator. Destroyed cities reset when the game restarts.</li>
+
+                        <li><strong>Multi-Touch Support:</strong> The game supports multi-touch, allowing multiple missiles to be fired at different targets simultaneously on mobile devices.</li>
+
+                        <li><strong>Bezier Curves:</strong> Implemented a BezierCubic class for smooth missile trajectories, randomized control points for dynamic arcs, and ensured missiles stay on screen while following natural curves.</li>
+                    </ul>
+                </div>
+
+                <!-- Video Section -->
+                <div class="video-container">
+                    <br><br>
+                    <br><br>
+                     <p class="image-label2">Missle Command: Bezier Curves</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/INCKQf4ZVXY" 
+                        title="Missle Command" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            
+
+            <!-- Project Content -->
+            <!-- <div class="project-content"> -->
+                <!-- Project Description -->
+                <!-- <div class="description">
+                    <h2>Black Jack</h2>
+                    <ul>
+                    <li><strong>Blackjack Game:</strong> A digital version of Blackjack where players compete against the dealer by drawing cards to get as close to 21 as possible without busting.</li>
+
+                    <li><strong>Game Setup:</strong> The game starts with a shuffled deck, and both the player and dealer receive two initial cards. The player can choose to "Hit" (draw a card) or "Stay" (end their turn).</li>
+
+                    <li><strong>Game Mechanics:</strong> The dealer reveals their cards after the player stays and continues drawing until reaching a score of at least 17, determining the winner based on final scores.</li>
+
+                    <li><strong>Scoring System:</strong> Numbered cards retain their value, face cards are worth 10, and aces can count as 1 or 11, whichever is most advantageous.</li>
+
+                    <li><strong>Deck Management:</strong> The deck consists of 52 cards, shuffled using a random swap algorithm, and cards are drawn dynamically using the <code>Deck.GetCard()</code> method.</li>
+
+                    <li><strong>Player Actions:</strong> The player can click the "Hit" button to draw a card or the "Stay" button to end their turn, with buttons dynamically enabling/disabling based on game state.</li>
+
+                    <li><strong>Dealer Logic:</strong> The dealer automatically plays after the player stays, drawing cards until reaching 17 or higher, then comparing scores to determine the winner.</li>
+
+                    <li><strong>Game Over State:</strong> If the player's score exceeds 21, they bust and lose immediately. Otherwise, the game determines the winner and displays the appropriate "Win" or "Lose" banner.</li>
+                </ul>
+
+                </div> -->
+
+                <!-- Video Section -->
+                <!-- <div class="video-container">
+                    <br><br>
+                    <br><br>
+                     <p class="image-label2">Black Jack</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/INCKQf4ZVXY" 
+                        title="Claw Machine" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About Magen Mozeh</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    
+    <!-- Navigation Bar with Dropdown Menus -->
+    <div id="navbar">
+        <div id="nav">
+            <ul>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#projects">Projects</a>
+                    <ul>
+                        <li><a href="#hardware">IoT</a></li>
+                        <li><a href="#unity">Unity</a></li>
+                        <li><a href="#ios">IOS</a></li>
+                        <li><a href="#web">Web Dev</a></li>
+                    </ul> 
+                </li>
+            </ul>
+             <ul>
+                <li>
+                    <a href="#product-design">Product Design</a>
+                </li>
+            </ul>
+             <ul>
+                <li>
+                    <a href="#research">Research</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#coursework">Course Work</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#jams">Game Jams</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li> 
+            </ul>
+            <ul>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div> <!-- #nav -->
+    </div> <!-- #navbar -->
+
+    <div id="home" class="container">
+        <canvas id="canvas1"></canvas>
+        <h1>My Name is Magen!</h1>
+        <h2>I'm a <span class="auto-type">Gameplay</span> Programmer.</h2>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="hidden section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="Images/me.png" alt="Your Photo" class="about-image">
+            <p>
+                I’m a BS/MS Computer Science student at USC who wears many hats! On the software side, I enjoy building mobile apps, frameworks, and full-stack websites, while also experimenting with graphics, rendering pipelines, and gameplay programming as every pixel tells a story.
+                <br><br>
+                I also love working hands-on with hardware, from microcontrollers and connected IoT devices to PCB design and 3D modeling in CAD. Product design and prototyping let me merge engineering with creativity to bring user-centered ideas to life. 
+                <br><br>
+                On the research side, I’m diving deeper into machine learning with a growing interest in AGI, NLP, and intelligent systems, and I plan to continue exploring these areas throughout my current time at USC.
+                <br><br>
+                Outside of tech, one of my main hobbies is jazz improvisation on the saxophone: 
+                trading fours, weaving through blues changes, and slipping bebop lines into my solos while I play the jazz standards. 
+                I’m grateful to have studied in person with 
+               <a href="https://www.alexhahnmusic.com/" target="_blank">Alex Hahn</a>, 
+               <a href="https://www.katiethiroux.com/" target="_blank">Katie Thiroux</a>, 
+               <a href="https://davidcroziermusic.com/" target="_blank">David Crozier</a>, 
+               and <a href="https://www.davidarnay.com/" target="_blank">David Arnay</a>.
+            </p>
+        </div>
+    </section>
+
+<!-- Project Section -->
+<a id="hardware"></a>
+<section id="projects">
+    <h2>Hardware Projects - IoT</h2>
+    <div id="color">
+        <h3 id="center-text">Click on each card for more info.</h3>
+    </div>
+    <div class="card-container">
+        <!-- Project 1 -->
+        <div class="project">
+            <a href="Description1.html" target="_blank">
+                <h4 id="colored-p">Personal Project</h4>
+                <img src="Images/BluetoothCar.png" alt="Bluetooth car" width="250" height="300">
+                <h3>Bluetooth Car</h3>
+                <p>Using Adafruit components, I built a Bluetooth-controlled car, operated via an remote controlled screen interface.</p>
+                <p id="colored-p">Adafruit | C++ | Particle IoT</p>
+            </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <a href="Description2.html" target="_blank">
+                <h4 id="colored-p">Personal Project</h4>
+                <img src="Images/SmartRobot.png" alt="SmartRobot" width="400" height="300">
+                <h3>IoT Smart Robot for Children</h3>
+                <p>IoT Interactive smart robot tailored specifically for children, equipped to mimic human-like movements and express various moods. </p>
+                <p id="colored-p">OpenCV | Mediapipe | Initial State | C++ | Particle IoT | DeepFace</p>
+            </a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project">
+            <a href="Description3.html" target="_blank">
+                <h4 id="colored-p">Personal Project</h4>
+                <img src="Images/HandReactivity.png" alt="HandReactivity" width="400" height="300">
+                <h3>Hand Reactivity</h3>
+                <p>Utilizing OpenCV for image processing and MediaPipe for hand landmark tracking, this project detects hand number gestures and maps them to control LED states.</p>
+                <p id="colored-p">OpenCV | Mediapipe | C++ | Particle IoT</p>
+            </a>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project">
+            <a href="Description22.html" target="_blank">
+                <h4 id="colored-p">Personal / Class Project</h4>
+                <img src="Images/TVRemotes.png" alt="HandReactivity" width="400" height="270">
+                <h3>Power Saving Robot (PSR)</h3>
+                <p>Bot that traverses around until it finds any unused TV and turns it off to conserve energy.</p>
+                <p id="colored-p">OpenCV | C++ | IoT + Bluetooth | Recognition using ML | XCode for App Making</p>
+            </a>
+        </div>
+
+    </div>
+</section>
+<a id="unity"></a>
+<section id="projects">
+    <hr>
+    <h2>Unity Projects - Computer Science Games</h2>
+    <div class="card-container">
+        <!-- Project 1 -->
+        <div class="project">
+            <a href="Description11.html" target="_blank">
+                <h4 id="colored-p">Partner-Based | Personal + Semester-Long Project</h4>
+                <img src="Images/Zoofers.png" alt="McRib" width="400" height="190">
+                <h3>Zoofer's Moofers</h3>
+                <p>Welcome to Mr. Wondertainment’s Wacky Wonder Toyshop! This A surreal, SCP-inspired game where players, from a toddler’s perspective and guided by an IoT glove, collect and experiment with reality-bending toys with chaotic funtastic environements.</p>
+                <p id="colored-p">Unity Engine | C# | Blender | Graphic Design</p>
+            </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <a href="Description4.html" target="_blank">
+                <h4 id="colored-p">Lead Programmer | Team Based</h4>
+                <img src="Images/Momentum.png" alt="Momentum" width="250" height="190">
+                <h3>Momentum</h3>
+                <p>Momentum is a 3D superhero comic-style game where you play as a teengaed hero with alien enhanced ability to save a city from mutants.</p>
+                <p id="colored-p">Unity Engine | C#</p>
+            </a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project">
+            <a href="Description8.html" target="_blank">
+                <h4 id="colored-p">Programmer | Team Based | Audio Designer</h4>
+                <img src="Images/TestamentSplash.png" alt="IronTestament" width="400" height="190">
+                <h3>Iron Testament</h3>
+                <p>Iron Testament is a turn-based strategy game where players command a sect of life-worshipping robots in a post-apocalyptic world to reclaim Earth from an AI enemy uprising through tactical combat abilities and strategic positioning. </p>
+                <p id="colored-p">Unity Engine | C# | Blender</p>
+            </a>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project">
+            <a href="Description10.html" target="_blank">
+                <h4 id="colored-p">Personal Project</h4>
+                <img src="Images/BridgeBreakout.png" alt="Bridge Breakout" width="400" height="190">
+                <h3>Bridge Breakout</h3>
+                <p>Bridge Breakout is a fast-paced mobile action-adventure game where players use a grappling hook to swing across highways, stop bandits, and protect bridges from destruction while managing enemy threats and vehicle safety.</p>
+                <p id="colored-p">Unity Engine | C# | Blender</p>
+            </a>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project">
+            <a href="Description5.html" target="_blank">
+                <h4 id="colored-p">Programmer | Team Based | Game + Level Designer</h4>
+                <img src="Images/Venger.png" alt="Venger" width="400" height="190">
+                <h3>Venger</h3>
+                <p>Venger is a 3D first-person shooter thesis project set in 1990s Soviet-style apartments, where players must escape mysterious pursuers, overcoming fear and despair to transform into relentless survivors in an intense, adrenaline-fueled journey.</p>
+                 <p id="colored-p">Unity Engine | C#</p>
+            </a>
+        </div>
+    </div>
+    <a id="ios"></a>
+    <br><br>
+    <hr>
+    <h2>Swift - IOS App</h2>
+    <div class="card-container">
+        <!-- Project 1 -->
+        <div class="project">
+            <a href="Description6.html" target="_blank">
+                <h4 id="colored-p">Personal Project</h4>
+                <img src="Images/QuestMates.png" alt="QuestMates">
+                <h3>QuestMates</h3>
+                <p>QuestMates is an iOS AR game where users match, compete for currency, customize avatars, and socialize through chat rooms, with real-time weather-based updates via the Weatherstack API and Firebase integration.</p>
+                <p id="colored-p">Swift | Firebase | WeatherStack API</p>
+            </a>
+        </div>
+    </div>
+    <a id="web"></a>
+    <br><br>
+    <hr>
+    <h2>Website Building</h2>
+    <div class="card-container">
+        <!-- Project 1 -->
+        <div class="project">
+            <a href="Description7.html" target="_blank">
+                <h4 id="colored-p">Personal Project</h4>
+                <img src="Images/Equinox.png" alt="Equinox Clothing Brand" width="400" height="190">
+                <h3>Equinox Clothing Brand</h3>
+                <p>I designed a clothing website with interactive, responsive elements, allowing users to 'purchase' clothing seamlessly across all pages.</p>
+                <p id="colored-p">HTML | CSS | JavaScript</p>
+            </a>
+        </div>
+        <!-- Project 2 -->
+        <div class="project">
+            <a href="Description12.html" target="_blank">
+                <h4 id="colored-p">Personal Project</h4>
+                <img src="Images/Tide.png" alt="Tide Pods" width="400" height="190">
+                <h3>Tide Commercial Ad</h3>
+                <p>Commercial Ad Website</p>
+                <p id="colored-p">HTML | CSS</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="product-design">
+  <h2>Product Design</h2>
+    <div id="color">
+        <h3 id="center-text">Click on each card for more info.</h3>
+    </div>
+  <div class="card-container">
+    <!-- Product 1 -->
+    <div class="project">
+        <a href="Description23.html"target="_blank">
+            <h4 id="colored-p">Product Design</h4>
+            <img src="Images/FidgetSpinner.png" alt="Fidget Spinner" width="200" height="200">
+            <h3>Fidget Spinner</h3>
+            <p>Added with a 22 cm metal bearing</p>
+            <p id="colored-p">Fusion 360</p>
+        </a>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="project">
+        <a href="Description24.html"target="_blank">
+            <h4 id="colored-p">Product Design</h4>
+            <img src="Images/Rings.png" alt="Impossible Geometry" width="270" height="200">
+            <h3>Impossible Geometry</h3>
+            <p>Two rings intertwined</p>
+            <p id="colored-p">Fusion 360</p>
+        </a>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="project">
+        <a href="Description25.html"target="_blank">
+            <h4 id="colored-p">Product Design</h4>
+            <img src="Images/Lego1.png" alt="Lego Bricks" width="200" height="200">
+            <h3>Legos</h3>
+            <p>Standard + Unqiue Brick</p>
+            <p id="colored-p">Fusion 360</p>
+        </a>
+    </div>
+
+  </div>
+</section>
+
+<section id="research">
+  <h2>Research</h2>
+    <div id="color">
+        <h3 id="center-text">Click on each card for more info.</h3>
+    </div>
+  <div class="card-container">
+    <!-- Research 1 -->
+    <div class="project">
+        <a href="Description21.html"target="_blank">
+            <h4 id="colored-p">Research on AGI</h4>
+            <img src="Images/HOF.png" alt="AGI Research" width="300" height="200">
+            <h3>Hint-on-Failure Program-of-Thought (HoF-PoT)</h3>
+            <p>Collaborative USC research project exploring a novel prompting method for large language models. Our approach provides targeted on-failure hints during reasoning steps to improve accuracy and efficiency on ARC-AGI benchmarks.</p>
+            <p id="colored-p">USC | AI Research | ARC-AGI | LLM Reasoning</p>
+        </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Course Section -->
+    <section id="coursework">
+        <h2>Relevant Course Work</h2>
+        <h3 id="color"><b>Among other relevant courses list here I have taken IOS App development, Data Structures and Object Oriented Design, Algorithms and the Theory of Computing.</b></h3>
+    <div class="card-container">
+        <!-- Course 1 -->
+        <div class="project">
+            <a href="Description13.html" target="_blank">
+                <h4 id="colored-p">Programming</h4>
+                <img src="Images/ITP380.png" alt="ITP 380 Course" width="400" height="190">
+                <h3>ITP 380: Video Game Programming</h3>
+                <p>The course covers game development fundamentals, including vector math, entity-component systems, sprite rendering, movement physics, input handling, collision detection, and AI pathfinding techniques.</p>
+                <p id="colored-p">C++ | SDL Library</p>
+            </a>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="project">
+            <a href="Description15.html" target="_blank">
+                <h4 id="colored-p">Programming | Unity Engineering</h4>
+                <img src="Images/Apps.png" alt="ITP 382 Course" width="400" height="190">
+                <h3>ITP 382: Mobile Game Development</h3>
+                <p>Industry-standard techniques for building interactive game applications, managing game state, optimizing performance, and integrating assets in Unity. We explored mobile games through object-oriented design and implemented touch-based input, UI systems, and real-time feedback mechanisms.</p>
+                <p id="colored-p">Unity Engine | C#</p>
+            </a>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="project">
+            <a href="Description14.html" target="_blank">
+                <h4 id="colored-p">Programming | Unity Engineering</h4>
+                <img src="Images/ThumbnailDadsGame.png" alt="CTIN 489 Course" width="250" height="190">
+                <h3>CTIN 489: Intermediate Game Design and Production</h3>
+                <p>We focus on the full game development cycle, covering ideation, prototyping, preproduction, full production, and postproduction while emphasizing team collaboration, project scoping, usability testing, version control, and Unity development.</p>
+                <p id="colored-p">Unity Engine | C# | Blender</p>
+            </a>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="project">
+            <a href="Description16.html" target="_blank">
+                <h4 id="colored-p">Particle Firmware | Frizting</h4>
+                <img src="Images/HeartRate.png" alt="ITP 348 Course" width="200" height="190">
+                <h3>ITP 348: Making Smart Devices</h3>
+                <p>We learned about hardware components, cloud integration, and microcontroller programming to build interactive smart devices. The course covered sensor data processing, API communication, circuit design, and real-time monitoring using embedded systems. Upon clicking this page is only some of the activities we did.</p>
+                <p id="colored-p">C++ | Particle IoT</p>
+            </a>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="project">
+            <a href="Description17.html" target="_blank">
+                <h4 id="colored-p">Maya Software</h4>
+                <img src="Images/AnimationImage.png" alt="CTAN 452 Course" width="400" height="190">
+                <h3>CTAN 452: 3D Computer Animation</h3>
+                <p>We covered fundamental concepts such as keyframing, and scene organization, along with advanced techniques in modeling, rigging, cameras and animation; covered NURBS and polygonal surfaces, set up character skeletons with forward and inverse kinematics, apply constraints and deformers, and refine their work through lighting, rendering, and final animation projects that was a Rue Golberg Animation.</p>
+                <p id="colored-p">Maya AudoDesk</p>
+            </a>
+        </div>
+
+        <!-- Course 7 -->
+        <div class="project">
+            <a href="Description19.html" target="_blank">
+                <h4 id="colored-p">Fusion 360</h4>
+                <img src="Images/Pcb.png" alt="ITP 388 Course" width="400" height="190">
+                <h3>ITP 388: Developing Connected Devices</h3>
+                <p>Advanced connected device hardware design and firmware development, covering professional-quality PCB design, schematic capture, and firmware programming for production-grade microcontrollers using Embedded-C. Students build real-world applications, including USB peripherals, Bluetooth and Wi-Fi interfaces, and sensor-driven devices, gaining hands-on experience in developing wireless and wired communication systems.</p>
+                <p id="colored-p">C++</p>
+            </a>
+        </div>
+    </div>
+    </section>
+
+    <a id="jams"></a>
+     <section id="game-jams">
+        <h2>Game Jams</h2>
+        <div class="card-container">
+            <div class="project">
+                <a href="Description18.html" target="_blank">
+                <h4 id="colored-p">Programmer</h4>
+                <img src="Images/OfficeOddity.png" alt="Office Oddity Roblox" width="400" height="190">
+                <h3>Spring 2024: Roblox x Open Alpha Game Jam: Office Oddity</h3>
+                <p>USC Open Alpha collaborates with Roblox to host a two day game jam.</p>
+                <p id="colored-p">Lua</p>
+                </a>
+            </div>
+
+             <div class="project">
+                <a href="Description20.html" target="_blank">
+                    <h4 id="colored-p">Artist</h4>
+                    <img src="Images/DHm0HB.png" alt="Boo Who?" width="400" height="190">
+                    <h3>Fall 2022: Boo Who?</h3>
+                    <p>USC Games program offers a game jam. Two-day deadline.</p>
+                    <p id="colored-p">Pixlr | 2D Sprites + UI</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- <section id="Experience">
+        <div class="time-line">
+            <div class="container-time-line">
+                <div class="text-content" style="--dly:1s">
+                    <h2>HTML</h2>
+                    <p>hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1</p>
+                </div>
+            </div>
+            <div class="container-time-line" style="--dly:2s">
+                <div class="text-content">
+                    <h2>HTML</h2>
+                    <p>hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1</p>
+                </div>
+            </div>
+            <div class="container-time-line" style="--dly:3s">
+                <div class="text-content">
+                    <h2>HTML</h2>
+                    <p>hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1</p>
+                </div>
+            </div>
+            <div class="container-time-line" style="--dly:4s">
+                <div class="text-content">
+                    <h2>HTML</h2>
+                    <p>hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1hi hi hi hi hi hi!!1</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Skills Section -->
+    <a id="skills"></a>
+    <section id="background-color">
+        <h1 id="center-text">Skills</h1>
+        <br><br>
+        <div class = "banner">
+            <div class="slider" style="--quantity: 10">
+               <div class="item" style="--position: 1"><img src="Images/C++.png" alt=""></div>
+                <div class="item" style="--position: 2"><img src="Images/CSharp.png" alt=""></div>
+                <div class="item" style="--position: 3"><img src="Images/html.png" alt=""></div>
+                <div class="item" style="--position: 4"><img src="Images/css.png" alt=""></div>
+                <div class="item" style="--position: 5"><img src="Images/swift.png" alt=""></div>
+                <div class="item" style="--position: 6"><img src="Images/JavaScript.png" alt=""></div>
+                <div class="item" style="--position: 7"><img src="Images/python.png" alt=""></div>
+                <div class="item" style="--position: 8"><img src="Images/Lua.png" alt=""></div>
+                <div class="item" style="--position: 9"><img src="Images/Blender.png" alt=""></div>
+                <div class="item" style="--position: 10"><img src="Images/Unity.png" alt=""></div>
+            </div>
+            <div class="content-banner">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <canvas id="contactCanvas"></canvas>
+        <div class="contact-content">
+            <div class="card-container">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+                    <div class="contact-left-title">
+                        <h2 id="color">Contact Me.</h2>
+                        <p>Let's Collaborate.</p>
+                        <hr>
+                    </div>
+                    <h4 id="color"><b>Personal: magenmozeh1378@gmail.com | School: mozeh@usc.edu</b></h4>
+                    <input type="hidden" name="access_key" value="fa16bab5-3e61-484a-b2c0-64a9c0d4a40a">
+                    <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+                    <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+                    <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+                    <button type="submit">Submit<img src="Images/arrow_icon.png" alt=""></button>
+                </form>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Point to your external JS file -->
+
+    <script>
+        var typed = new Typed(".auto-type",{
+            strings : ["Gameplay", "Hardware", "Innovative"],
+            typeSpeed : 150,
+            backSpeed : 150,
+            loop: true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#unity" class="back-button">Back to Projects</a>
+
+            <!-- Project Content -->
+            <div class="project-content">
+
+                <!-- Project Description -->
+                <div class="description">
+                    <h1 id="center-text">Venger</h1>
+                    <ul>
+                      <li>One of the lead contributors and pioneers to the project in Game Design.</li>
+                      <li>Immerses players in a tense escape from mysterious pursuers within fictional 1990s Soviet-style apartments.</li>
+                      <li>Inspired by <em>Perturbator – Venger</em>, blending physical and emotional challenges into extreme survival scenarios.</li>
+                      <li>Players grow stronger, develop resilience, and transition from fear and passivity to determination and aggression.</li>
+                      <li>Gameplay emphasizes adrenaline, pride, and emotional empowerment as players embody the spirit of “Venger” — never breaking down or giving up.</li>
+                      <li>Collaborated with a nine-person team including a director, designers, programmers, artists, and a narrative advisor.</li>
+                      <li>Project timeline: in development from September 2024 to May 2025.</li>
+                    </ul>
+                    <br><br>
+                    <hr>
+                    <br><br>
+                    <div class="image-container">
+                        <p class="image-label2">Venger Trailer</p>
+                        <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/x_edH-hIWT8" 
+                        title="Civilian Event" frameborder="0" allowfullscreen>
+                    </iframe>
+                    </div>
+
+                    <br><br>
+                    <hr>
+                    <br><br>
+                    <div class="next-to-each">
+                         <img src="Images/Venger1.png" alt="Venger Preview 1" width="300" height="315">
+                        <img src="Images/Venger2.png" alt="Venger Preview 2" width="300" height="315">
+                        <img src="Images/Venger3.png" alt="Venger Preview 3" width="300" height="315">
+                    </div>
+            </div>
+
+
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h2 id="center-text">Level and Game Design</h2>
+                        <div class="pdf-container-venger">
+                            <div class="pdf-item">
+                                <h3 id="padding">Level Design Blueprints</h3>
+                                <iframe src="Level Design-Blueprint.pdf" width="100%" height="300px"></iframe>
+                            </div>
+
+                            <div class="pdf-item">
+                                <h3 id="padding">Enemy Types & Level Ideas</h3>
+                                <iframe src="Enemy Types & Design (Including Level Ideas).pdf" width="100%" height="300px"></iframe>
+                            </div>
+                        </div>
+                    <ul>
+                        <li>Designed enemy behaviors and level layouts emphasizing light, shadow, and sound to create life-or-death encounters for player experience.</li>
+                        <li>Designed labyrinthine, dark environments with high-contrast scenes, where light was a tool for survival or danger. Shadows could conceal threats or offer safety, while sound guided players in locating or misleading enemies, creating an intense, high-stakes balance of awareness and reaction.</li>
+                        <li>Created level blueprints that emphasized light, shadow, and sound dynamics.</li>
+                        <li>Planned enemy types that interacted uniquely with their environments.</li>
+                        <li>Designed enemies as puzzles, requiring players to analyze, process quickly, and react rather than rely solely on shooting skills.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                     <h2 id="center-text">Unity Engineering</h2>
+                     <div class="video-container">
+                        <p class="image-label2">SDF SFX</p>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/AD1Yp-3VQNY" 
+                            title="Civilian Event" frameborder="0" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <ul id="padding2">
+                        <li>Developed a VFX particle system for the Echo enemy, adding animations so particles morph, disappear, and reappear like dust taking form.</li>
+                       <li><b>How I made it:</b> Used VFX Shader Graph with <b>SDF particle deformation</b> to morph particles into the Echo enemy’s shape. Added <b>noise, velocity adjustments, and animated lifetime values</b> to create a fluid dissolve-and-reform effect, enhanced with <b>force influences</b> for seamless transitions. The result is an eerie, spectral enemy that feels unpredictable in dimly lit environments.</li>
+                       </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+

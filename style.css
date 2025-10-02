@@ -1,0 +1,898 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: yellowgreen;
+}
+
+/* Section styling */
+.section {
+    padding: 20px;
+    box-sizing: border-box;
+    color: black;
+    background-color: green;
+/*    position: relative; Ensure z-index applies*/
+    z-index: 20;
+    place-items: center;
+    align-content: center;
+}
+
+/* Custom color for the skills section */
+.blue-bg {
+    background-color: blue;
+    z-index: 20;
+}
+
+.time-line {
+    width: 1000px;
+    margin: 100px auto;
+    position: relative;
+}
+
+.time-line::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background: linear-gradient(yellow, green);
+    border-radius: 50px;
+    animation: LineAnimated 5s linear forwards;
+}
+
+@keyframes LineAnimated {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+.container-time-line {
+    width: 50%;
+    position: relative;
+    padding: 10px 20px;
+    animation: Animate-Container 1s linear forwards;
+    opacity: 0;
+    animation-delay: var(--dly)
+}
+
+@keyframes Animate-Container {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+}
+
+.container-time-line:nth-child(even) {
+    right: -50%;
+
+}
+
+.container-time-line:nth-child(odd)::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: linear-gradient(yellow, green);
+    top: 0;
+    right: -7px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.container-time-line:nth-child(even)::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: linear-gradient(yellow, green);
+    top: 0;
+    left: -12.5px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.text-content {
+    padding: 20px 30px;
+/*    background: grey;*/
+    box-shadow: 0 5px 10px #191919;
+    border-radius: 10px;
+
+}
+
+.text-content h2 {
+    font-size: 25px;
+}
+
+.text-content p {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.container {
+    position: relative; /* Allow child elements like canvas to position inside */
+    width: 100%;
+    height: 100vh;
+    background-color: #020412;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Ensure z-index applies */
+    z-index: 20;
+}
+
+.hidden {
+    opacity: 0;
+/*    filter: blur(5px);*/
+    transform: translateX(-100%);
+    transition: all 1.5s;
+}
+
+.show {
+    opacity: 1;
+/*    filter: blur(0);*/
+    transform: translateX(0);
+}
+
+.banner {
+    width: 100%;
+    height: auto; /* Adjust height dynamically */
+    min-height: 75vh; /* Prevent excessive shrinking */
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0; /* Add padding for spacing */
+}
+
+
+.banner .slider {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+}
+@keyframes autoRun {
+    from {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    } to {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item {
+    position: absolute;
+    inset: 0;
+    transform: 
+        rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) 
+        translateZ(400px); /* Change the distance here if necessary */
+}
+
+
+.banner .slider .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner .content-banner {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    color: #fff;
+    font-size: 100px; /* Larger font size for h1 */
+    z-index: 20;
+    margin: 20px 0;
+}
+
+h2 {
+    color: #fff;
+    font-size: 50px; /* Smaller font size for h2 */
+    z-index: 20;
+    margin: 20px 0;
+}
+
+span {
+    color: #fff724;
+    z-index: 20;
+}
+
+#canvas1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(#36454F, #000000);
+    z-index: -1;
+}
+
+#canvas2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(#36454F, #000000);
+    z-index: -1;
+}
+
+/* Navbar styling */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: darkgreen;
+    box-shadow: 0px 3px 5px yellow;
+    z-index: 1000; /* Ensure the navbar stays on top */
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+}
+
+#nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav li {
+    position: relative;
+    text-align: center;
+    width: 200px;
+}
+
+#nav a {
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 50px;
+    color: yellowgreen; /* Make text visible */
+    display: block;
+}
+
+#nav a:hover,
+#nav #active-nav {
+    background-color: black;
+    color: yellow;
+}
+
+#nav ul ul {
+    display: none;
+    position: absolute;
+    background: black;
+    top: 50px;
+}
+
+#nav ul ul li a {
+    color: green; /* Change to your desired color */
+}
+
+
+#nav li:hover > ul {
+    display: block;
+    background: yellowgreen;
+}
+
+#background-color {
+    background-color: darkgreen;
+     padding: 50px; /* Adds space around the section */
+}
+
+#coursework {
+    text-align: center; /* Centers the section heading and content */
+    padding: 50px; /* Adds space around the section */
+    background-color: darkgreen; /* Dark background for contrast */
+    color: white; /* White text for readability */
+}
+
+#research {
+      text-align: center; /* Centers the section heading and content */
+    padding: 50px; /* Adds space around the section */
+    background-color: #111; /* Dark background for contrast */
+    color: white; /* White text for readability */
+}
+
+#product-design {
+      text-align: center; /* Centers the section heading and content */
+    padding: 50px; /* Adds space around the section */
+    background-color: darkgreen; /* Dark background for contrast */
+    color: white; /* White text for readability */
+}
+
+/* ===== GAME JAMS SECTION STYLING ===== */
+#game-jams {
+    text-align: center; /* Centers the section heading and content */
+    padding: 50px; /* Adds space around the section */
+    background-color: #111; /* Dark background for contrast */
+    color: white; /* White text for readability */
+}
+
+/* ===== PROJECTS SECTION STYLING ===== */
+#projects {
+    text-align: center; /* Centers the section heading and content */
+    padding: 50px; /* Adds space around the section */
+    background-color: #111; /* Dark background for contrast */
+    color: white; /* White text for readability */
+}
+
+/* ==== GRID CONTAINER FOR PROJECT CARDS ==== */
+.card-container {
+    display: grid; /* Enables CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    /* Creates a responsive grid with columns that are at least 300px wide */
+    gap: 20px; /* Adds space between project cards */
+    padding: 20px; /* Adds padding around the grid */
+    justify-items: center; /* Centers grid items horizontally */
+}
+
+/* ==== INDIVIDUAL PROJECT CARD ==== */
+.project {
+    background: #222; /* Dark background for each project card */
+    padding: 15px; /* Adds space inside the card */
+    border-radius: 10px; /* Rounds the corners for a smooth look */
+    box-shadow: 0px 4px 10px rgba(128, 179, 35, 0.8);
+    /* Adds a neon magenta glow effect */
+    text-align: center; /* Centers all text inside the card */
+    width: 300px; /* Sets a fixed width for each card */
+    transition: transform 0.3s; /* Smooth animation for hover effect */
+}
+
+/* ==== PROJECT IMAGE ==== */
+.project img {
+    max-width: 100%; /* Ensures the image takes full width of the card */
+    border-radius: 5px; /* Slightly rounds the corners of the image */
+}
+
+/* ==== PROJECT TITLE ==== */
+.project h3 {
+    margin-top: 10px; /* Adds space above the title */
+    font-size: 1.5em; /* Increases font size */
+    color: yellowgreen; /* Sets a neon cyan color */
+}
+
+/* ==== PROJECT DESCRIPTION ==== */
+.project p {
+    font-size: 1em; /* Normal font size */
+    color: lightgray; /* Light gray text for readability */
+}
+
+/* ==== PROJECT LINK BUTTON ==== */
+.project a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps text color unchanged */
+    display: block; /* Ensures the entire div is clickable */
+    width: 100%;
+    height: 100%;
+}
+
+/* ==== HOVER EFFECT ==== */
+.project:hover {
+    transform: scale(1.05); /* Slightly enlarges the card on hover */
+    box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.8);
+}
+
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adds spacing between the image and text */
+}
+
+.about-content p {
+    font-size: 20px; /* Adjust as needed */
+    color: white;
+}
+
+
+.about-image {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 10px; /* Optional for rounded corners */
+}
+
+#colored-p {
+    color: yellowgreen;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+/* Wrapper for Back Button & Project Content */
+.content-wrapper {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 85%;
+    max-width: 1100px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.8); /* Soft yellow glow */
+}
+
+/* Back Button */
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    background-color: darkgreen;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 18px;
+    z-index: 100;
+    transition: background 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    background-color: yellowgreen;
+}
+
+/* Video Container */
+.video-container {
+    flex: 1;
+    min-width: 320px;
+    text-align: center;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 10px;
+}
+
+/* Description Styling */
+.description {
+    flex: 1;
+    min-width: 320px;
+    padding: 20px;
+    color: white;
+    text-align: left;
+    background: rgba(0, 40, 0, 0.7); /* Semi-transparent dark green */
+    border-radius: 10px;
+}
+
+/* Styling for Unordered Lists Inside .description */
+.description ul {
+    list-style-type: disc; /* Ensure bullets appear */
+    padding-left: 20px; /* Indent for proper spacing */
+}
+
+/* Styling for List Items Inside .description */
+.description ul li {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: lightgray; /* Yellow text to contrast with dark green */
+}
+
+#color {
+    color: yellow;
+}
+
+
+.description h1 {
+    color: yellowgreen;
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.description h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: yellowgreen;
+}
+
+.description p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.project-content {
+    display: flex;
+    align-items: flex-start; /* Align items to start instead of center */
+    justify-content: space-between;
+    flex-wrap: wrap; /* Ensures stacking on smaller screens */
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+    background: darkgreen; /* Dark green background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.8); /* Soft yellow glow */
+    margin-top: 40px;
+}
+
+/* Ensure video and PDF have equal widths */
+.video-container,
+.pdf-container {
+    flex: 1;
+    min-width: 48%; /* Both take nearly half the width */
+    text-align: center;
+}
+
+/* Make sure the video and PDF are properly sized */
+.video-container iframe,
+.pdf-container iframe {
+    width: 100%;
+    height: 315px; /* Consistent height for better alignment */
+    border-radius: 10px;
+}
+
+#vid2 {
+     padding-top: 50px;
+}
+
+.pdf-container h3 {
+    color: yellowgreen;
+}
+.pdf-container p {
+    padding-bottom: 10px;
+}
+
+/* Responsive: Stack video and PDF on smaller screens */
+@media (max-width: 768px) {
+    .project-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-container,
+    .pdf-container {
+        min-width: 100%;
+    }
+
+    .pdf-container iframe {
+        height: 500px;
+    }
+}
+.image-container {
+    padding-left: 75px;
+}
+
+.pdf-container-venger {
+    display: flex;
+    justify-content: space-between; /* Aligns PDFs side by side */
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 20px; /* Adds spacing between PDFs */
+}
+
+.pdf-item {
+    display: flex;
+    flex-direction: column; /* Stacks title above iframe */
+    align-items: center; /* Centers text above iframe */
+    width: 48%; /* Adjusts width to fit nicely */
+    text-align: center; /* Centers the title text */
+    padding-bottom: 20px;
+}
+#padding {
+    padding-bottom: 20px;
+}
+#padding2 {
+    padding-top: 20px;
+}
+#next-to {
+    display: flex; /* Aligns items in a row */
+    justify-content: center; /* Centers them horizontally */
+    gap: 20px; /* Adds space between images */
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+}
+
+.image-container {
+    text-align: center; /* Centers text and image */
+    display: flex;
+    flex-direction: column; /* Stacks text above image */
+    align-items: center;
+    margin: 0; /* Removes any margin around the text */
+    padding: 0; /* Ensures no extra space */
+    align-items: center;
+}
+
+.image-label {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px; /* Ensures space between text and image */
+}
+
+.image-label2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 10px;
+}
+
+
+/* === Embedded Website Styling === */
+.embedded-container {
+    display: flex;
+    justify-content: center; /* Centers the iframe horizontally */
+    align-items: center; /* Centers vertically if needed */
+    height: 100vh; /* Makes it take almost the full page */
+    width: 100vw; /* Ensures full viewport width */
+    padding: 20px;
+    background: #020412; /* Match background color */
+}
+
+.embedded-site {
+    width: 95vw; /* Almost full viewport width */
+    height: 90vh; /* Almost full viewport height */
+    max-width: 1400px; /* Prevents excessive stretching */
+    border: none; /* Removes border */
+    border-radius: 10px; /* Smooths corners */
+    box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.8); /* Adds a subtle glow */
+}
+
+#pdding {
+    padding-top: 30px;
+}
+
+.video-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.inline-container {
+    text-align: center; /* Centers the images */
+    font-size: 0; /* Removes space between inline-block elements */
+}
+
+.inline-item {
+    display: inline-block;
+    width: 450px; /* Ensures proper alignment */
+    margin: 0 10px; /* Adds spacing */
+    font-size: initial; /* Restores font size */
+}
+
+#contact {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 100px 0;
+    background: radial-gradient(#36454F, #000000);
+    overflow: hidden;
+    z-index: 10; /* Ensure the contact section is above everything */
+}
+
+#contactCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Moves the particles fully behind the contact content */
+}
+
+.contact-content {
+    position: relative; /* Ensures it is above the particles */
+    z-index: 1; /* Moves contact form ABOVE the particles */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack elements vertically */
+    width: 100%;
+    text-align: center;
+}
+
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures all elements inside are centered */
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Limit width for better readability */
+    margin: 0 auto; /* Centers the container */
+}
+
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.contact-left-title {
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: green;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 50px;
+}
+
+.contact-left textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+.contact-inputs:focus {
+    border: 5px solid yellowgreen;
+}
+
+.contact-inputs::placeholder {
+    color: gray;
+}
+
+.contact-left button {
+    display: flex;
+    align-items: center;
+    padding:15px 30px;
+    font-size: 16px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, yellowgreen, green);
+    cursor: pointer;
+}
+
+.contact-left button img {
+    height: 15px;
+}
+
+.next-to-each {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    align-items: flex-start; 
+    flex-wrap: wrap;
+}
+
+.glove-content {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    flex-direction: column;
+}
+
+#center-text {
+    text-align: center;
+}
+
+#pdf-itp388 {
+    width: 800px;  /* Remove quotes */
+    height: 600px; /* Remove quotes */
+    border: none;  /* No need for `style:` */
+    padding-top: 20px;
+}
+
+.top-padding {
+    padding-top: 20px;
+}
+
+.brainstorm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  gap: 20px;
+  justify-items: center; /* center images in their cells */
+}
+
+.image-container2 img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.wwise-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+.image-container {
+  flex: 1 1 300px; /* each container takes ~300px but can shrink/grow */
+  text-align: center;
+}
+
+.wwise-img {
+  width: 100%;    /* responsive scaling */
+  height: auto;   /* keeps aspect ratio */
+  max-width: 350px; /* optional: cap size on large screens */
+  border-radius: 6px; /* optional styling */
+}
+
+.watergun-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+.watergun-grid img { width: 100%; height: auto; }
+
+.toy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.toy-grid .card { text-align: center; max-width: 320px; }
+
+.toy-grid img,
+.toy-grid video {
+  width: 100%;
+  height: auto;          /* keep aspect ratio */
+  display: block;
+  border-radius: 6px;
+}
+
+.image-row {
+  display: flex;
+  justify-content: center;   /* center the whole row */
+  gap: 20px;                 /* space between images */
+  flex-wrap: wrap;           /* allow wrapping on smaller screens */
+}
+
+.image-container {
+  text-align: center;        /* centers the labels with images */
+}
+
+.images-display {
+  display: flex;
+  justify-content: flex-start; /* remove centering, pack left */
+  gap: 10px;                   /* only 10px between */
+  align-items: flex-start;
+}
+
+
+
+

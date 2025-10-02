@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+        <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#hardware" class="back-button">Back to Projects</a>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- RIGHT COLUMN -->
+                <div class="description">
+                    <h2 id="center-text">Power Saving Robot (PSR)</h2>
+                    <h2 id="center-text">Adafruit | C++ | IoT | XCode for App Dev | Recognition Using ML + OpenCV</h2>
+                    <p>
+                       The <strong>Power Saving Robot</strong> (PSR) is a self driving bot that saves energy by 
+                        automatically turning off TVs when no one is present in the room. 
+                        It integrates <strong>mmWave presence detection</strong>, an <strong>IR Blaster</strong> for 
+                        infrared signal transmission, and a <strong>Swift iOS app with ML-based TV detection</strong>. 
+                        When the system detects no occupancy, the robot navigates using ultrasonic sensors 
+                        and actuates servos to press the TV power button.
+                    </p>
+                    <br>
+                    <hr>
+                    <div id="center-text">
+                        <h3 id="colored-p"><b>Key Features</b></h3>
+                    </div>
+                    <ul>
+                        <li><strong>Occupancy Detection:</strong> mmWave radar checks every 9 seconds to verify presence.</li>
+                        <li><strong>Infrared Transmission:</strong> IR Blaster mounted on top sends power-off signals to TVs.</li>
+                        <li><strong>Smart Behavior:</strong> Stops movement when people return; resumes after no presence.</li>
+                        <li><strong>Wireless Communication:</strong> Bluetooth connection with iOS Swift app.</li>
+                        <li><strong>Servo Mechanism:</strong> Two servos align and press the TV’s power button when needed.</li>
+                        <li><strong>Obstacle Avoidance:</strong> Three ultrasonic sensors (front, left, right) guide navigation.</li>
+                        <li><strong>Testing Phase:</strong> System currently in prototype testing with working IR + presence logic.</li>
+                    </ul>
+                </div>
+                <!-- LEFT COLUMN -->
+               <div class="video-container">
+                    <p class="image-label2">Power Saving Robot Demo</p>
+                    <iframe width="460" height="315" 
+                            src="https://www.youtube.com/embed/4Xh59EgXER0" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+
+                    <p class="image-label2">Project Report</p>
+                    <iframe src="Images/PSR.pdf" width="560" height="400" style="border:none;"></iframe>
+                </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+              <!-- RIGHT COLUMN -->
+              <div class="description">
+                <h1 id="center-text">IR Blaster Testing</h1>
+                <hr>
+                <h2 id="center-text">Soldered Components Together and then Tested IR Blaster on TV Sets</h2>
+
+                <div class="image-row">
+                    <div class="image-container">
+                        <p class="image-label2">IR Blaster Test (Video)</p>
+                        <video width="250" height="350" controls>
+                          <!-- Some browsers prefer MP4; MOV often works but MP4 is safest -->
+                          <source src="Images/PR.mov" type="video/mp4">
+                          <source src="Images/PR.mov" type="video/quicktime">
+                          Your browser does not support the video tag.
+                        </video>
+                    </div>
+                     <div class="image-container">
+                    <p class="image-label2">IR Blaster</p>
+                    <img src="Images/PRBlast.png" width="300" height="350" alt="IR Blaster module">
+                  </div>
+
+                  <div class="image-container">
+                    <p class="image-label2">Soldering PCB for Project + IR Blaster</p>
+                    <img src="Images/Soldering.png" width="250" alt="Soldered PCBs">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+

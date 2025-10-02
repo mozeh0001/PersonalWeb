@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#ios" class="back-button">Back to Projects</a>
+
+            <!-- Project Content -->
+            <div class="project-content">
+
+                <div class="image-container">
+                    <br><br>
+                    <img src="Images/QuestMates.png" alt="QuestMates App Logo" width="450" height="450">
+                    <p class="image-label">App Logo</p> <!-- This ensures the text is above the image -->
+                </div>
+
+
+                <!-- Project Description -->
+                <div class="description">
+                    <div id="center-text">
+                        <h1>QuestMates</h1>
+                        <h2>iOS Swift | Firebase | WeatherStack API</h2>
+                        <p>
+                            An application inspired by Pokemon Go, Pikmin Bloom and ROBLOX, QuestMates is designed for IOS for users to join and match with each other to compete in AR games to gain currency and personalize their experience by customizing in-game avatars or "go for a walk" to communicate with other users via Firebase. They can join chat rooms while the app's background updates based on weatherstack API upon asking for the user's location.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="video-container">
+                    <p class="image-label2">Screen 1 - iPhone</p>
+                    <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/qw0758Bt3Ss" 
+                        title="Bluetooth Car Project" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-container">
+                     <p class="image-label2">Screen 2 - iPad</p>
+                    <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/-dTLsckVazo" 
+                        title="Bluetooth Car Project" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="description">
+                    <h2 id="center-text">The App in Action!</h2>
+                    <ul>
+                        <li>Coins and Avatar data saves to disk upon closing and opening app.</li>
+                        <li>Customizable avatar</li>
+                        <li>Game matching to complete in an AR space via game center.</li>
+                        <li>Real-time weather background from WeatherStack API and user's specific location.</li>
+                        <li>"Take a walk" to talk with friends via chat rooms using Firebase firestore database.</li>
+                        <li>First video is iPhone and second video is iPad. Scales to fit screen size.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content" id="next-to">
+                <div class="image-container">
+                    <p class="image-label2">Day</p> <!-- This ensures the text is above the image -->
+                    <img src="Images/Day.png" alt="Day Background" width="270" height="350">
+                </div>
+                <div class="image-container">
+                    <p class="image-label2">Evening</p> <!-- This ensures the text is above the image -->
+                    <img src="Images/Evening.png" alt="Evening Background" width="270" height="350">
+                </div>
+                <div class="image-container">
+                    <p class="image-label2">Night</p> <!-- This ensures the text is above the image -->
+                    <img src="Images/Night.png" alt="Night Background" width="270" height="350">
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content" id="next-to">
+                <!-- Project Content -->
+                <div class="description">
+                  <h2 id="center-text">Wireframes</h2>
+                  <embed src="Wireframe.pdf" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h2 id="center-text">Apple Frameworks</h2>
+                    <ul>
+                        <li><b>GameKit</b> to access game center and compete in multiplayer location-based challenges in real-time with matchmaking via user authentication.</li>
+                        <li><b>SceneKit</b> for avatar customization and "going for a walk," handles the 3D rendering and animations for characters and environments.</li>
+                        <li><b>ARKit</b> Scene tracking to dfor users to compete in a one minute challenge.</li>
+                        <li><b>MapKit</b> to gain access to user's location for weather background updates.</li>
+                        <li><b>SwiftUI:</b> UI layout and user interaction framework for stacking views injecting UIKit into a view as well like joystick and chat box and buttons alerts</li>
+                        <li><b>CoreLocation:</b> Retrieves and manages the user’s geographic location for WeatherStack API background.</li>
+                        <li><b>QuartzCore:</b> Provides animation utilities like CAAnimation.</li>
+                        <li><b>FirebaseFirestore:</b> Handles real-time database operations for chat functionality and chat party rooms.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h2 id="center-text">User Demographics</h2>
+                    <ul>
+                            <li><b>Age Range:</b> 13–45+ years old</li>
+                            <li><b>Gender:</b> All genders</li>
+                            <li><b>Interests:</b> Fans of AR games, exploration, fitness, and casual gaming; those who enjoy Pokémon GO, Pikmin Bloom, or nurturing games like Tamagotchi.</li>
+                            <li><b>Location:</b> Urban areas (due to denser landmarks and resources) and suburban regions</li>
+                            <li><b>Behavior:</b> Active individuals who enjoy walking, outdoor activities, or socializing through games.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+

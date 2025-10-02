@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#hardware" class="back-button">Back to Projects</a>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h1 id="center-text">Smart Robot For Children</h1>
+                    <h2 id="center-text">OpenCV | Mediapipe | Initial State | C++ | Particle IoT | DeepFace</h2>
+                    <p>
+                        An interactive robot designed for children that mimics human-like movements, 
+                        displays facial expressions, and promotes physical engagement.
+                    </p>
+
+                <br><br>
+                <hr>
+                <br><br>
+                    <!-- Video Section -->
+                <div class="next-to-each">
+                    <div class="video-container">
+                        <p class="image-label2">Robot in Action</p>
+                        <iframe width="360" height="315"
+                            src="https://www.youtube.com/embed/gmNPRwM0OYc" 
+                            title="Smart Robot For Children" frameborder="0" allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="pdf-container">
+                        <p class="image-label2">Developer Documentation</p>
+                        <iframe src="Developer Documentation.pdf" width="100%" height="600px"></iframe>
+                    </div>
+                </div>
+                <br><br>
+                <hr>
+                    <h2>Overview</h2>
+                    <ul>
+                        <li> Uses Particle Argon and servos to mimic human movements</li>
+                        <li>Displays facial expressions via MicroOLED screen</li>
+                        <li>Uses DeepFace, OpenCV, and MediaPipe for emotion and body detection</li>
+                        <li>Encourages active interaction over passive screen time</li>
+                        <li>Logs user interactions and emotions for insights</li>
+                    </ul>
+                    <br><br>
+                    <hr>
+                    <h2>Heart Rate Monitoring for Child Stress Levels</h2>
+                    <ul>
+                        <li>Monitors real-time BPM to detect stress</li>
+                        <li>Data is sent via Particle Cloud API</li>
+                        <li>Heart frame animation for user-friendly displayablity</li>
+                        <div class="image-container">
+                            <p class="image-label2">Interactive Heart State - BPM Reading<p>
+                            <video width="200" height="315" controls>
+                                <source src="Images/IMG_0907 4.MOV" type="video/mp4">
+                            </video>
+                        </div>
+                    </ul>
+                    <br><br>
+                    <hr>
+                    <h2>Facial Recognition & Emotion Display</h2>
+                    <ul>
+                        <li>Detects human faces using OpenCV</li>
+                        <li>Analyzes emotions using DeepFace AI</li>
+                        <li>Displays real-time graphical emotions on the OLED screen</li>
+                    </ul>
+
+                     <div class="image-container" id="padding2">
+                        <p class="image-label2">Emotions Displayed on OLED</p>
+                        <img src="Images/Emotions.png" alt="Emotions" width="670" height="250">
+                    </div>
+                    <br><br>
+                    <hr>
+                    <h2>Body Mimicking & Motion Tracking</h2>
+                    <ul>
+                        <li>Uses MediaPipe to track and mimic human movements</li>
+                        <li>Robot can wave, kick, and replicate poses</li>
+                        <li>Real-time servo angle calculations adjust limb positioning</li>
+                    </ul>
+
+                    <div class="image-container" id="padding2">
+                        <p class="image-label2">Body Tracking - MediaPipe Diagram</p>
+                        <img src="Images/HumanTrack.png" alt="MediaPipe Diagram" width="370" height="250">
+                    </div>
+                    <br><br>
+                    <hr>
+                    <h2>Remote Control & Blynk App</h2>
+                    <ul>
+                        <li>Controlled via the Blynk app</li>
+                        <li>Sliders allow manual control of joints for real-time pose adjustments</li>
+                        <li>Facial expression tracker updates the OLED screen</li>
+                    </ul>
+
+                    <div class="image-container" id="padding2">
+                        <p class="image-label2">Blynk Interface - Control Robot Remotely with App</p>
+                        <img src="Images/BlynkRobot.png" alt="Control Robot with Blynk App" width="670" height="350">
+                    </div>
+                    <br><br>
+                    <hr>
+                    <h2>Data Tracking & Analytics</h2>
+                    <ul>
+                        <li>Tracks how often each emotion is displayed</li>
+                        <li>Stores interaction patterns and trends</li>
+                        <li>Provides behavioral insights over time</li>
+                    </ul>
+
+                    <div class="image-container" id="padding2">
+                        <p class="image-label2">Child Mood Over Time</p>
+                        <img src="Images/Moods.png" alt="Initial State" width="670" height="150">
+                    </div>
+                    <br><br>
+                    <hr>
+                    <h2>Hardware Components</h2>
+                    <ul>
+                        <li>10 servos for joint control (arms, legs, elbows, hips)</li>
+                        <li>MicroOLED display for facial expressions</li>
+                        <li>PIR sensor detects human presence</li>
+                        <li>Heart rate sensor for real-time BPM tracking</li>
+                    </ul>
+
+                    <div id="project-content" class="next-to-each">
+                        <div class="image-container" id="padding2">
+                            <p class="image-label2">Fritzing Layout</p>
+                            <img src="Images/RobotFritzing.png" alt="Fritzing" width="370" height="250">
+                        </div>
+                        <div class="image-container" id="padding2">
+                            <p class="image-label2">OLED Screen Display if Child Detected - PIR Sensor</p>
+                            <img src="Images/HumanPIR.png" alt="PIR Sensor" width="370" height="250">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+
+

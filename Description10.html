@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#unity" class="back-button">Back to Projects</a>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h1 id="center-text">Bridge Breakout Mobile Game</h1>
+                    <h2 id="center-text">Personal Project | Unity | C# | Blender</h2>
+                    <hr>
+                    <h2 id="center-text">Overview</h2>
+                    <p id="padding">
+                      Bridge Breakout is an action-adventure game of 5 levels each 2 minutes long where you use a grappling hook to travel across highways and stop bandits from attacking bridges. Your goal is to protect the roads, prevent cars from falling, and take down enemies trying to cause destruction. Swing between broken sections, fight off threats, and keep the highways safe!
+                    </p>
+                    <ul id="padding2">
+                        <li>I created this mobile game in Unity. I planned and designed the levels in Blender, and all assets and scripts are original, including the skybox, except for the modeled bandits.</li>
+                    </ul>
+                    <div class="video-container">
+                        <p class="image-label2">Gameplay</p>
+                        <iframe width="560" height="315" 
+                            src="https://www.youtube.com/embed/yKqvZEZsfmU" 
+                            title="Bridge Breakout Gameplay" frameborder="0" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <br><br>
+                    <hr>
+                    <h2 id="center-text">UI + Input</h2>
+                    <ul id="padding2">
+                        <li>UI of bridge health goes down if cars fall into water or bridge columns are attacked. Left joystick controls movement and right joystick controls camera. Crosshair turns red if enemy in sight and attack button works as followed. Tap on screen to use grapple hook.</li>
+                        <li>Line renderer animates for the grappling hook using sin.</li>
+                        <!-- <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;"> -->
+                            <div class="video-container" id="padding2">
+                                <p class="image-label2">Controls for Mobile Input (Joystick + Buttons)</p>
+                                <iframe width="260" height="315" 
+                                    src="https://www.youtube.com/embed/eyd5H8obPFU" 
+                                    title="Bridge Breakout Gameplay" frameborder="0" allowfullscreen>
+                                </iframe>
+                            </div>
+                        <br><br>
+                        <hr>
+                        <h2 id="center-text">Visual Effects (VFX)</h2>
+                        <li id="padding2">Used VFX graph to create water splashes when cars fall with physics-based collisions and particle system to make fire + explosions. Body of water is also using shader graph.</li>
+                        <div class="video-container">
+                             <p class="image-label2">Water Splash VFX</p>
+                            <iframe width="260" height="315" 
+                                src=" https://www.youtube.com/embed/146iPL7XIBU" 
+                                title="Water VFX" frameborder="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <br><br>
+                        <hr>
+                        <h2 id="center-text">Level Design</h2>
+                        <li id="padding2">Created the highways, buildings using blender</li>
+                        <div class="video-container">
+                            <p class="image-label2" id="padding2">Inspired Level Design. I modeled curved roads in blender and freeway signs.</p>
+                            <img src="Images/LevelDesign.png" alt="Bridge Level Design" width="450" height="315">
+                        </div>
+                        <br><br>
+                        <hr>
+                        <h2 id="center-text">State Machine + AI Travel</h2>
+                        <li id="padding2">Made the enemy state machine that relies heavily on the navmesh and can jump across bridges and highways using Navmesh links animations sync with jumps.</li>
+                        <li>Created an enemy state machine to transition between attacking player, road segements, and bridge columns and patroling.</li>
+                        <div class="inline-container">
+                            <div class="inline-item">
+                                <p class="image-label2">Enemy State Machine</p>
+                                <img src="Images/BanditStateMachine.png" alt="Bandit State Machine" width="450" height="315">
+                            </div>
+                            <div class="inline-item">
+                                <p class="image-label2">NavMesh Layout</p>
+                                <img src="Images/BridgeLinks.png" alt="NavMesh Layout" width="450" height="315">
+                            </div>
+                        </div>
+                        <br><br>
+                        <hr>
+                        <h2 id="center-text">Optimizing Data</h2>
+                        <li id="padding2">I created a waypoint system for cars to traverse realistically while using object pooling to turn them inactive for good memory usage in Unity's garbadge collector.</li>
+                        <div class="inline-container">
+                            <div class="inline-item">
+                                <p class="image-label2">Object Pooling</p>
+                                <img src="Images/ObjectPool.png" alt="Object Pool" width="250" height="315">
+                            </div>
+                            <div class="inline-item">
+                                <p class="image-label2">CPU Usage Data from Object Pooling</p>
+                                <img src="Images/GarbadgeCollector.png" alt="CPU Data" width="450" height="315">
+                            </div>
+                            <div class="inline-item" id="padding2">
+                                <p class="image-label2">Waypoints Placed Along Roads for Cars to Follow</p>
+                                <img src="Images/Waypoints.png" alt="Waypoints" width="450" height="315">
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+

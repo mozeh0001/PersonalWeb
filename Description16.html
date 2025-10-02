@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#coursework" class="back-button">Back to Projects</a>
+
+            <h2 id="color" class="top-padding">ITP 348: Making Smart Devices</h2>
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Temperature Dashboard</h1>
+                    <ul>
+                        <li><strong>Environment Monitor and Dashboard:</strong> A device that tracks temperature and humidity using a DHT20 sensor, displays data on an OLED screen, and uploads readings to a cloud-based dashboard.</li>
+
+                        <li><strong>Hardware Components:</strong> The project utilizes a Photon 2 microcontroller, breadboard, DHT20 sensor, micro OLED display, push button, and jumper wires for circuit assembly.</li>
+
+                        <li><strong>Button Toggle Functionality:</strong> A latch-style button allows users to switch between displaying current temperature and humidity and viewing historical high and low values on the OLED screen.</li>
+
+                        <li><strong>DHT20 Sensor Integration:</strong> The device continuously measures temperature and humidity while tracking the highest and lowest recorded values.</li>
+
+                        <li><strong>OLED Display Output:</strong>
+                            <ul>
+                                <li><strong>Screen 1:</strong> Displays real-time temperature and humidity data.</li>
+                                <li><strong>Screen 2:</strong> Shows the recorded high and low values for both temperature and humidity.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Cloud Data Transmission:</strong> The device publishes temperature and humidity data to the Initial State dashboard using Particle webhooks for real-time monitoring.</li>
+
+                        <li><strong>Dashboard Visualization:</strong> The dashboard is configured with four key widgets:
+                            <ul>
+                                <li><strong>Current temperature:</strong> Displayed using a gauge.</li>
+                                <li><strong>Current humidity:</strong> Displayed using a gauge.</li>
+                                <li><strong>Historical temperature:</strong> Shown in a graph format.</li>
+                                <li><strong>Historical humidity:</strong> Shown in a graph format.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Video Section -->
+                <div class="video-container">
+                     <p class="image-label2">Temperature Dashboard with Initial State Diagram</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/YRIHgThRCjo" 
+                        title="Temperature Dashboard" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <!-- Video Section -->
+                <div class="video-container">
+                     <p class="image-label2">UFO + Potentiometer</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/tF-VYUsFb08" 
+                        title="UFO + Potentiometer LEDs" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Scanning Light: Potentiometer and LEDs</h1>
+                    <ul>
+                        <li><strong>Scanning Light:</strong> A project that creates an oscillating light pattern using five LEDs, with brightness and speed controlled by a potentiometer.</li>
+
+                        <li><strong>Hardware Components:</strong> Uses a Photon 2 microcontroller, breadboard, five LEDs, five 330-ohm resistors, a 10k-ohm potentiometer, and jumper wires for circuit assembly.</li>
+
+                        <li><strong>Oscillating Light Pattern:</strong> The LEDs blink sequentially from right to left and back, mimicking the visual effects seen in Knight Rider’s KITT and Battlestar Galactica’s Cylons.</li>
+
+                        <li><strong>Potentiometer-Controlled Speed:</strong> The potentiometer adjusts the blink rate of the LEDs:
+                            <ul>
+                                <li><strong>Fully clockwise:</strong> The lights blink rapidly, creating the illusion of being constantly on.</li>
+                                <li><strong>Fully counterclockwise:</strong> The lights blink very slowly.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Potentiometer-Controlled Brightness:</strong> The potentiometer also adjusts LED brightness using PWM:
+                            <ul>
+                                <li><strong>Fully clockwise:</strong> LEDs are at maximum brightness.</li>
+                                <li><strong>Fully counterclockwise:</strong> LEDs are dim but never completely off.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Code Implementation:</strong> Uses a loop with either a counter variable or a for loop to iterate through LED states, avoiding while loops.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Tea Brewing Process</h1>
+                    <ul>
+                        <li><strong>State Machine Tea Brewer with Blynk:</strong> A tea brewing simulation using state machines and a Blynk app for control.</li>
+
+                        <li><strong>State Machine Logic:</strong> Five states (Idle, Heat, Steep, Hold, Pour) transition based on time, brewing status, and cup presence.</li>
+
+                        <li><strong>App Functionality:</strong> Controls brewing, displays state, monitors cup presence, and toggles sound playback.</li>
+
+                        <li><strong>Cup Status:</strong> Prevents pouring if the cup is missing.</li>
+
+                        <li><strong>State Status:</strong> Displays the current brewing state in the Blynk app.</li>
+
+                        <li><strong>Sound Toggle:</strong> Enables/disables melody playback at the end of brewing.</li>
+
+                        <li><strong>Brewing Toggle:</strong> Starts or stops the brewing process.</li>
+
+                        <li><strong>Blynk Datastreams:</strong> Manages real-time communication between the app and Photon 2.</li>
+
+                        <li><strong>Testing:</strong> Verifies state transitions, cup detection, app interactions, and melody playback.</li>
+
+                        <li><strong>Implementation Stages:</strong>
+                            <ul>
+                                <li><strong>State Machine Logic:</strong> Defines states and transition conditions.</li>
+                                <li><strong>Blynk Integration:</strong> Sets up app controls and datastreams.</li>
+                                <li><strong>App-Device Communication:</strong> Syncs brewing status and user inputs.</li>
+                                <li><strong>Melody Playback:</strong> Plays a 16-note tune at the end of brewing.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                 <!-- Video Section -->
+                <div class="video-container">
+                    <br><br>
+                     <p class="image-label2">Tea Brewing States + Magnetic Switch</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/nV42Ewr9Qv4" 
+                        title="Tea Brewing" frameborder="0" allowfullscreen>
+                    </iframe>
+
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>LED Dice</h1>
+                    <ul>
+                        <li><strong>Electronic Dice:</strong> A project that simulates a six-sided die using a 3x3 grid of LEDs, with a push button triggering a random roll.</li>
+
+                        <li><strong>Hardware Components:</strong> Uses a Photon 2 microcontroller, breadboard, nine LEDs, nine resistors, one push button, and jumper wires for circuit assembly.</li>
+
+                        <li><strong>Die Roll Simulation:</strong> When the button is pressed, a random number between 1 and 6 is generated, displaying the corresponding LED pattern.</li>
+
+                        <li><strong>Button Latch Mechanism:</strong> The push button is configured as a latch, meaning holding it down will not trigger multiple rolls—each press results in a single roll.</li>
+
+                        <li><strong>Extra Credit - Arrays:</strong> The six LED patterns for different die values are stored in an array, allowing efficient control via a loop:
+                            <ul>
+                                <li><strong>3x3 LED Grid:</strong> Each position corresponds to an index in a 9-element array.</li>
+                                <li><strong>LED Pin Mapping:</strong> A second array stores pin assignments for faster access.</li>
+                                <li><strong>Loop Implementation:</strong> Uses a for loop to quickly set LED states based on the generated die roll.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+
+                 <!-- Video Section -->
+                <div class="video-container">
+                     <p class="image-label2">LED Interactive Dice</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/wVcK6idc9bc" 
+                        title="LED Dice" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <p id="padding2" class="image-label2">Dice Value Represented by 3x3 Grid</p>
+                    <img src="Images/Dice.png" alt="Dice LED Representation" width="400" height="75">
+                </div>
+            </div>
+
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                 <!-- Video Section -->
+                <div class="video-container">
+                    <p id="padding2" class="image-label2">Heart Rate Monitor</p>
+                    <img src="Images/HeartRate.png" alt="Heart Rate Monitor" width="400" height="500">
+                </div>
+                <div class="description">
+                    <h1>Heart Rate Monitor</h1>
+                    <ul>
+                        <li><strong>Heart Rate Sensor:</strong> Measures heart rate using the Pulse Sensor Amped with a green light similar to Apple Watch.</li>
+
+                        <li><strong>Pulse Sensor Amped Wiring:</strong> Connects GND to ground, VCC to 3.3V power, and Data to an analog pin for readings.</li>
+
+                        <li><strong>Library Installation:</strong> Install the <code>PulseSensorAmped_P2</code> library from Workbench for sensor functionality.</li>
+
+                        <li><strong>Configuration:</strong> Includes <code>PulseSensorAmped.h</code>, defines the pulse pin as <code>A0</code>, and initializes a PulseSensor object.</li>
+
+                        <li><strong>Initialization:</strong> Calls <code>analogRead(PIN_PULSE)</code> before attaching and starting the PulseSensor to prevent library issues.</li>
+
+                        <li><strong>Sensor Readings:</strong> Uses <code>PulseSensorAmped_data(int BPM, int IBI)</code> to retrieve beats per minute (BPM) and interbeat interval (IBI).</li>
+
+                        <li><strong>Handling Signal Loss:</strong> Detects disconnection with <code>PulseSensorAmped_lost()</code> to monitor sensor stability.</li>
+
+                        <li><strong>Credits:</strong> Based on official documentation and library resources.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>OLED: Etch-a-Sketch</h1>
+                    <h2>I2C Communication</h2>
+                    <ul>
+                        <li><strong>OLED Screens and I2C Communication:</strong> This course covers the fundamentals of OLED screens, their advantages, and how to establish communication using the I2C protocol.</li>
+
+                        <li><strong>Organic Light-Emitting Diodes (OLEDs):</strong> OLEDs are advanced display components that are thinner, bendable, and provide better visual output compared to regular LEDs. They are commonly used in high-end TVs, monitors, and mobile screens, though they are more expensive than traditional LEDs.</li>
+
+                        <li><strong>Micro OLED Screen:</strong> The project utilizes a SparkFun Micro OLED breakout board featuring a 64x48 pixel blue text display.</li>
+
+                        <li><strong>OLED Breakout Board:</strong> This board provides access to the delicate pins of the OLED screen and enables I2C communication, minimizing the number of required connections to just two pins.</li>
+
+                        <li><strong>I2C Communication:</strong> I2C (Inter-Integrated Circuit) is a serial, synchronous communication protocol that allows a central device to communicate with multiple peripherals. It operates using two primary pins: SDA (data) and SCL (clock), making it a standardized and efficient solution for various components. While it simplifies wiring, I2C consumes more power and has a lower transfer speed than some alternatives like SPI.</li>
+
+                        <li><strong>Photon 2 - OLED Pin Mapping:</strong> The OLED connects to the Photon 2 microcontroller using four key pins: 
+                            <ul>
+                                <li><strong>GND:</strong> Establishes the ground connection.</li>
+                                <li><strong>3V3:</strong> Provides a 3.3V power supply.</li>
+                                <li><strong>SDA (Blue):</strong> Serves as the data pin for serial communication.</li>
+                                <li><strong>SCL (Yellow):</strong> Functions as the clock pin for synchronization.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>OLED Library:</strong> The SparkFunMicroOLED library is used to simplify communication with the OLED, allowing for easy text rendering and display management.</li>
+
+                        <li><strong>Lab - Etch-a-Sketch:</strong> We completed a lab project involves creating an interactive Etch-a-Sketch using an OLED screen, with two potentiometers controlling the drawing movement and a button used to reset the display.</li>
+                    </ul>
+                </div>
+
+                <!-- Video Section -->
+                <div class="video-container">
+                    <p class="image-label2">Etch a Sketch</p>
+                    <img src="Images/Shuckle.png" alt="Shuckle from OLED Etch a Sketch" width="400" height="300">
+                    <p id="padding2" class="image-label2">Fritzing OLED Diagram</p>
+                    <img src="Images/OLed.png" alt="Fritzing OLED Diagram" width="400" height="250">
+                    <p id="padding2" class="image-label2">IC2 Synchronous Communication OLED</p>
+                    <img src="Images/IC2.png" alt="Shuckle from OLED Etch a Sketch" width="400" height="300">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+

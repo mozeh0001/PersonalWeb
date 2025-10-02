@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#coursework" class="back-button">Back to Projects</a>
+
+            <h2 id="color" class="top-padding">CTIN 489: Intermediate Game Design and Production</h2>
+            <h3 id="colored-p">In Intermediate Game Design and Production, we explored the full game development cycle by creating prototypes for people to playtest, gathering feedback to refine designs, and answering experience goal questions to shape player interactions.</h3>
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Video Section -->
+                <div class="video-container">
+                    <br><br>
+                     <p class="image-label2">Interactive Toy: Claw Machine</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/AX47aivuU8g" 
+                        title="Claw Machine" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Project Description -->
+                <div class="description">
+                    <h2>Prototype: Interactive Claw Machine</h2>
+                    <p>
+                        The question we were aiming to pursue for playtesters as they tried this prototype is: <b>"Can a game be designed to intentionally perplex players through a sense of no reward yet still motivate them to continue playing?"</b>
+                    </p>
+                    <br><br>
+                    <ul>
+                        <li><strong>Claw Machine Overview:</strong> Players control a claw to grab toys; successful drops reward a banana peel and trigger a strange sound.</li>
+                        <li><strong>Claw Movement:</strong> The claw moves left, right, forward, and backward using arrow keys and descends or retracts with the spacebar.</li>
+                        <li><strong>Rope & Claw Animation:</strong> The rope animates with a sine wave, and the claw smoothly opens and closes using Lerp.</li>
+                        <li><strong>Toy Grabbing Mechanic:</strong> The claw detects toys, grabs them, lifts them, and releases them into a prize chute.</li>
+                        <li><strong>Banana Reward System:</strong> Dropping a toy spawns a banana peel at a set location with a weird sound.</li>
+                        <li><strong>Lighting Effects:</strong> Lights toggle between two colors, chase in waves, and create an arcade-like vibe.</li>
+                        <li><strong>First-Person Mode:</strong> Players use FPS-style controls with mouse rotation and WASD movement.</li>
+                        <li><strong>Restart Functionality:</strong> Pressing 'R' resets the scene for a fresh attempt.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h2>Optical Illusiory Enviornments</h2>
+                    <p>
+                      We were inspired by non-Euclidean spaces and mind-bending visual distortions create a surreal, dreamlike world that challenges players' perception of reality before we dived into making a semester-long project based on personal preference.
+                    </p>
+                    <h2 class="passing2">Infinite Vortex</h2>
+                    <ul>
+                        <li><strong>Endless Swirling Effect:</strong> A constantly rotating vortex that gives the illusion of an infinite portal.</li>
+                        <li><strong>Depth Illusion:</strong> The effect creates a sense of falling or being pulled into another dimension.</li>
+                        <li><strong>Dynamic Animation:</strong> The vortex moves and twists over time, making it feel alive and ever-changing.</li>
+                        <li><strong>Hypnotic Visuals:</strong> The swirling motion draws the player's eye, reinforcing the feeling of entering a surreal space.</li>
+                        <li><strong>Non-Euclidean Aesthetics:</strong> Warped space and shifting geometry add to the illusion of breaking reality.</li>
+                        <li><strong>Customizable Speed & Intensity:</strong> The effect can be adjusted to create subtle movement or rapid, chaotic spirals.</li>
+                        <li><strong>Seamless Transition:</strong> Blends naturally with the surrounding environment, making the portal feel immersive.</li>
+                    </ul>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                </div>
+                <div class="video-container">
+                    <p class="image-label2">Infinite Vortex Prototype</p>
+                    <p class="image-label2" id="color">WARNING: Portal may cause sneezing, dizziness, and an irrational fear of doorways.</p>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/XmHp073kyS8" 
+                        title="Infinite Vortex Prototype" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <p class="image-label2" id="padding2">Vortex Pre-planning & Inspirational Inspo</p>
+                    <div id="project-content" class="next-to-each">
+                        <div class="image-container">
+                        <img src="Images/PrePlan.png" alt="Vortex Preplan" width="200" height="200">
+                        </div>
+                        <div class="image-container">
+                            <img src="Images/ImageInspo.png" alt="Vortex Inspo" width="200" height="200">
+                        </div>
+                         <div class="image-container">
+                            <iframe width="50" height="215"
+                            src="https://www.youtube.com/embed/bCP3Fc-fNmQ" 
+                            title="Infinite Vortex Prototype" frameborder="0" allowfullscreen>
+                             </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+

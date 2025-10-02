@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#unity" class="back-button">Back to Projects</a>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>Iron Testament</h1>
+                    <h2>Programmer & Audio Designer</h2>
+                    <h2>Unity | C# | GarageBand | Wwise | Blender</h2>
+                    <p>
+                       Iron Testament is a turn-based strategy game developed by Rat Economy, a team of 19 USC Games students, and showcased at the USC Games Expo. Players lead a sect of life-worshipping robots against an adversary AI uprising, using positioning and unique abilities to outmaneuver enemies through tactical, turn-based combat.
+                    </p>
+                </div>
+              <div class="video-container">
+                    <p class="image-label2">Gameplay</p>
+                    <iframe width="500" height="415" 
+                            src="https://www.youtube.com/embed/CX0Cask985U" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Project Description -->
+                <div class="description">
+                    <h1 id="center-text">Programming</h1>
+                    <h2 id="center-text">A* Pathfinding Algorithm</h2>
+                    <ul>
+                      <li>Worked through weekly and bi-weekly sprints to deliver features.</li>
+                      <li>Implemented A* pathfinding so players can move their units to desired grid spots.</li>
+                      <li>Added line renderer functionality to visualize the path units would follow.</li>
+                      <li>Collaborated with the team to showcase the specific gameplay systems I developed.</li>
+                    </ul>
+                    <!-- Video Row Wrapper -->
+                    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                        <div class="video-container" id="padding2">
+                            <p class="image-label2">A* Movement.</p>
+                            <iframe width="560" height="315" 
+                                src="https://www.youtube.com/embed/et35ITfi0zM" 
+                                title="A* Pathfinding" frameborder="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-container" id="padding2">
+                            <p class="image-label2">Movement V2</p>
+                            <iframe width="560" height="315" 
+                                src="https://www.youtube.com/embed/C-ck0k_O2XY" 
+                                title="A* Pathfinding" frameborder="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-container" id="padding2">
+                            <p class="image-label2">Conditional A* to not move on separate islands</p>
+                            <iframe width="360" height="315" 
+                                src="https://www.youtube.com/embed/AYizGv3qz0o" 
+                                title="Scoping the A* Algorithm" frameborder="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="image-container">
+                            <p class="image-label2">Before and After A* Added</p>
+                            <video width="400" height="315" controls>
+                                <source src="Images/My_Movie_53.mov" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <br><br>
+                    <hr>
+                    <h2 id="center-text">Transparency Trigger Based on Raycast</h2>
+                     <div class="image-container">
+                        <video width="200" height="315" controls>
+                            <source src="Images/IMG_2993.mov" type="video/mp4">
+                        </video>
+                    </div>
+                    <ul>
+                              <li>Implemented a transparency effect for objects obstructing the camera’s line of sight to a unit.</li>
+                              <li>Used raycasts to detect intersections between the camera and objects.</li>
+                              <li>Optimized the effect to only activate when the camera is close, accounting for raycast range limitations.</li>
+                        </ul>
+                    <br><br>
+                    <hr>
+                    <h2 id="center-text">Tile Indicators</h2>
+                        <ul>
+                          <li>Created attack and range patterns around the bot grid.</li>
+                          <li>Implemented Manhattan and Euclidean tile highlighting to represent ability ranges.</li>
+                          <li>Enabled players to visualize how far their abilities could reach through grid highlights.</li>
+                        </ul>
+                    <div class="image-container" id="padding2">
+                        <p class="image-label2">Tiles Highlighed Euclidean + Manhattan</p>
+                        <img src="Images/EM.png" alt="Manhattan Euclidean Tiles" width="670" height="350">
+                    </div>
+                    <br><br>
+                    <hr>
+                     <div>
+                        <h2 id="center-text">Programming the UI</h2>
+                            <ul>
+                              <li>Developed health bars that billboard to the camera.</li>
+                              <li>Implemented a cyan preview for proposed health when damage is dealt.</li>
+                              <li>Added lerping health indicators above bots for actual damage.</li>
+                              <li>Built an in-game console system to log messages, similar to Minecraft or Call of Duty.</li>
+                              <li>Enabled scrolling, fade-out, and timed removal of log messages.</li>
+                              <li>Added toggle functionality between recent logs and full history.</li>
+                              <li>Ensured scroll-to-bottom behavior for continuous updates.</li>
+                              <li>Styled logs and text with Unity Rich-Text for color effects.</li>
+                            </ul>
+
+                        <br><br>
+                        <div class="next-to-each">
+                            <!-- Add the flexbox container directly here -->
+                            <div class="image-container">
+                                <p class="image-label2">Billboarding UI to Camera</p>
+                                <img src="Images/IronTestamentUI.png" alt="UI Above Unit" width="270" height="315">
+                            </div>
+                            <div class="image-container">
+                                <p class="image-label2">Lerped Messages</p>
+                                <iframe width="560" height="315" 
+                                    src="https://www.youtube.com/embed/sL2sU1uFsc8" 
+                                    title="A* Pathfinding" frameborder="0" allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="image-container">
+                                <p class="image-label2">In-Game Console Log</p>
+                                <video width="300" height="315" controls>
+                                    <source src="Images/IMG_2194.mov" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="image-container">
+                                <p class="image-label2">Rich-Text for Color</p>
+                                <img src="Images/RichTextEditor.png" alt="Rich-Text" width="470" height="250">
+                            </div>
+                        </div>
+                    </div>
+                     <br><br>
+                    <hr>
+                    <div id="padding2">
+                        <h2 id="center-text">Muzzle Flash Effect</h2>
+                       <ul>
+                          <li>Used Photoshop to design the muzzle flash.</li>
+                          <li>Modeled the muzzle mesh in Blender.</li>
+                          <li>Combined assets into a VFX effect.</li>
+                          <li>Implemented the effect for the Reaper unit’s abilities.</li>
+                        </ul>
+                        <br><br>
+                        <!-- Flexbox container -->
+                        <div id="project-content" style="display: flex; justify-content: center; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+                            <div class="image-container">
+                                <p class="image-label2">Drew Photoshop Flash</p>
+                                <img src="Images/Muzzle.png" alt="Drawn Muzzle via Photoshop" width="250" height="250">
+                            </div>
+                            <div class="image-container">
+                                <p class="image-label2">VFX and Blender</p>
+                                <img src="Images/Flash.png" alt="VFX + Blender" width="470" height="250">
+                            </div>
+                            <div class="image-container">
+                                <p class="image-label2">Muzzle Flash Ability In-Game</p>
+                                <iframe width="560" height="315" 
+                                    src="https://www.youtube.com/embed/zOquhwfIPdc" 
+                                    title="Muzzle + Line Renderer" frameborder="0" allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="project-content">
+
+                <!-- Project Description -->
+                <div class="description">
+                    <h2 id="center-text">Audio Design</h2>
+                        <ul>
+                          <li>Composed a techno-synth soundtrack tailored to the Purifier faction.</li>
+                          <li>Designed metallic clanging effects and futuristic weapon sounds to match the militant, electronic aesthetic.</li>
+                          <li>Implemented dynamic transitions between passive and active states based on combat.</li>
+                          <li>Integrated the system into Wwise for real-time audio transitions within Unity.</li>
+                          <li>Enhanced immersion and responsiveness by aligning music with player actions.</li>
+                        </ul>
+
+                    <br><br>
+                    <hr>
+                    <br><br>
+                    <p><b></b></p>
+
+                    <!-- Video Row Wrapper -->
+                    <div class="next-to-each">
+
+ <!--                        <div class="video-container">
+                            <p class="image-label2">Purifier passive and active tracks I composed in GarageBand, integrated into Unity gameplay.</p>
+                            <iframe width="560" height="315" 
+                                src="https://www.youtube.com/embed/5v5a7odeUP0?start=36" 
+                                title="Song in Unity Iron Testament Gameplay" frameborder="0" allowfullscreen>
+                            </iframe>
+                        </div> -->
+
+                        <div class="video-container">
+                            <p class="image-label2" id="pdding">Active purifier sound in Wwise</p>
+                            <iframe width="560" height="315" 
+                                src="https://www.youtube.com/embed/6GiqVuVezdY" 
+                                title="Song in Wwise" frameborder="0" allowfullscreen>
+                            </iframe>
+                        </div>
+
+                    </div>
+
+                    <br><br>
+                    <hr>
+                    <br><br>
+                    <div id="center-text">
+                        <p id="colored-p"><b>These audio sounds I designed were done in layers for enhanced sound:</b></p>
+                    </div>
+                    <p><b>Metal Impact:</b></p>
+                    <br><br>
+                    <audio controls>
+                        <source src="Audio/MetalImpactVar1.wav" type="audio/wav">
+                       
+                    </audio>
+                    <audio controls>
+                         <source src="Audio/MetalImpactVar2.wav" type="audio/wav">
+                    </audio>
+
+                    <audio controls>
+                         <source src="Audio/MetallicImpact(2).wav" type="audio/wav">
+                    </audio>
+
+                    <br><br>
+                    <p><b>Futuristic Rifle:</b></p>
+                    <br><br>
+                    <audio controls>
+                         <source src="Audio/Var1Rifle.wav" type="audio/wav">
+                    </audio>
+
+                    <audio controls>
+                         <source src="Audio/Var2Rif.wav" type="audio/wav">
+                    </audio>
+
+                    <audio controls>
+                         <source src="Audio/Var3Rifle.wav" type="audio/wav">
+                    </audio>
+            </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#hardware" class="back-button">Back to Projects</a>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Video Section -->
+                <div class="video-container">
+                    <br><br>
+                    <br><br>
+                    <p class="image-label2">LED Hand Reactivity Showcase</p>
+                    <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/yPx9ndWck8g" 
+                        title="LED Hand Reactivity" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Project Description -->
+                <div class="description">
+                    <h1>LED Hand Reactivity</h1>
+                    <h2>OpenCV | Mediapipe | C++ | Particle IoT</h2>
+                    <p>
+                        A real-time hand tracking system using MediaPipe, OpenCV, and Particle Argon  
+                        to detect finger positions and control LEDs accordingly.
+                    </p>
+                    <ul>
+                        <li>Captures video frames and processes them in RGB</li>
+                        <li>Detects hand landmarks and determines finger positions</li>
+                        <li>Maps finger states to corresponding LED colors</li>
+                        <li>Sends finger data to the Particle device for updates</li>
+                        <li>Displays the raised finger count on the video feed</li>
+                        <li>Registers the `setLEDs` function for remote LED control</li>
+                        <li>Works with both left and right hands</li>
+                        <li>Configures device ID, access token, and API for communication for real-time updates</li>
+                        <li>it uses the particle cloud to remote LED gestures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+
