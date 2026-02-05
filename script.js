@@ -16,6 +16,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+    document.querySelector('.nav-list')?.classList.toggle('open');
+});
+
+document.querySelectorAll('.has-dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            link.parentElement.classList.toggle('open');
+        }
+    });
+});
+
 function initParticles(canvas) {
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
@@ -125,4 +138,6 @@ function initParticles(canvas) {
     init();
     animate();
 }
+
+
 

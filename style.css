@@ -9,6 +9,17 @@ body {
     background-color: yellowgreen;
 }
 
+#home h1 {
+    font-size: clamp(40px, 8vw, 100px);
+    margin: 0;
+    line-height: 1.1;
+}
+
+#home h2 {
+    font-size: clamp(20px, 4vw, 50px);
+    margin-top: 20px;
+}
+
 /* Section styling */
 .section {
     padding: 20px;
@@ -58,9 +69,13 @@ body {
     width: 50%;
     position: relative;
     padding: 10px 20px;
-    animation: Animate-Container 1s linear forwards;
+    box-sizing: border-box;
+
     opacity: 0;
-    animation-delay: var(--dly)
+    animation: Animate-Container 1s ease-out forwards;
+    animation-delay: var(--dly);
+
+    transform-origin: center;
 }
 
 @keyframes Animate-Container {
@@ -124,7 +139,7 @@ body {
 .container {
     position: relative; /* Allow child elements like canvas to position inside */
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     background-color: #020412;
     display: flex;
     flex-direction: column;
@@ -228,7 +243,7 @@ span {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background: radial-gradient(#36454F, #000000);
     z-index: -1;
 }
@@ -238,7 +253,7 @@ span {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background: radial-gradient(#36454F, #000000);
     z-index: -1;
 }
@@ -252,23 +267,6 @@ span {
     background-color: darkgreen;
     box-shadow: 0px 3px 5px yellow;
     z-index: 1000; /* Ensure the navbar stays on top */
-}
-
-#nav {
-    display: flex;
-    justify-content: center;
-}
-
-#nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-#nav li {
-    position: relative;
-    text-align: center;
-    width: 200px;
 }
 
 #nav a {
@@ -285,21 +283,8 @@ span {
     color: yellow;
 }
 
-#nav ul ul {
-    display: none;
-    position: absolute;
-    background: black;
-    top: 50px;
-}
-
 #nav ul ul li a {
     color: green; /* Change to your desired color */
-}
-
-
-#nav li:hover > ul {
-    display: block;
-    background: yellowgreen;
 }
 
 #background-color {
@@ -439,6 +424,18 @@ span {
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.8); /* Soft yellow glow */
+}
+
+.content-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.content-wrapper img,
+.content-wrapper iframe,
+.content-wrapper video {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Back Button */
@@ -641,7 +638,7 @@ span {
     display: flex;
     justify-content: center; /* Centers the iframe horizontally */
     align-items: center; /* Centers vertically if needed */
-    height: 100vh; /* Makes it take almost the full page */
+    height: 100dvh; /* Makes it take almost the full page */
     width: 100vw; /* Ensures full viewport width */
     padding: 20px;
     background: #020412; /* Match background color */
@@ -914,3 +911,160 @@ span {
     border-radius: 8px;
     border: none;
 }
+
+/* ======================
+   NAVBAR (CLEAN + FINAL)
+   ====================== */
+
+#nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-list {
+    display: flex;
+    width: 100%;
+}
+
+.nav-list li {
+    flex: 1;
+    text-align: center;
+    list-style: none;
+}
+
+.nav-list a {
+    display: block;
+    padding: 15px 0px;
+    font-weight: bold;
+    color: yellowgreen;
+    text-decoration: none;
+}
+
+.nav-list a:hover {
+    background: black;
+    color: yellow;
+}
+
+.has-dropdown {
+    position: relative;
+}
+
+/* Dropdown (desktop) */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    background: yellowgreen;
+    z-index: 2000;
+}
+
+.has-dropdown:hover .dropdown {
+    display: block;
+}
+
+/* Hamburger */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: yellow;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: darkgreen;
+    }
+
+    .nav-list.open {
+        display: flex;
+    }
+
+    /* Disable hover dropdown */
+    .has-dropdown:hover .dropdown {
+        display: none;
+    }
+
+    .dropdown {
+        position: static;
+        background: #111;
+    }
+
+    .has-dropdown.open .dropdown {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 150px;
+    }
+
+    .about-content p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Skills section height */
+    .banner {
+        min-height: 55vh;
+    }
+
+    /* Shrink the 3D carousel */
+    .banner .slider {
+        width: 140px;
+        height: 180px;
+        left: calc(50% - 70px);
+    }
+
+    .banner .slider .item {
+        transform: 
+            rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+            translateZ(250px);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .banner {
+        min-height: auto;
+        padding: 50px 0 80px;
+    }
+
+    .banner .slider {
+        width: 120px;
+        height: 150px;
+        left: calc(50% - 60px);
+    }
+
+    .banner .slider .item {
+        transform:
+            rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+            translateZ(180px);
+    }
+}
+
+
+
+

@@ -13,59 +13,33 @@
     <!-- Navigation Bar with Dropdown Menus -->
     <div id="navbar">
         <div id="nav">
-            <ul>
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="#about">About</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
+            <div class="menu-toggle">☰</div>
+
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+
+                <li class="has-dropdown">
                     <a href="#projects">Projects</a>
-                    <ul>
+                    <ul class="dropdown">
                         <li><a href="#hardware">IoT</a></li>
                         <li><a href="#unity">Unity</a></li>
-                        <li><a href="#ios">IOS</a></li>
+                        <li><a href="#ios">iOS</a></li>
                         <li><a href="#web">Web Dev</a></li>
-                    </ul> 
+                    </ul>
                 </li>
+
+                <li><a href="#product-design">Product Design</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#coursework">Course Work</a></li>
+                <li><a href="#jams">Game Jams</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-             <ul>
-                <li>
-                    <a href="#product-design">Product Design</a>
-                </li>
-            </ul>
-             <ul>
-                <li>
-                    <a href="#research">Research</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="#coursework">Course Work</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="#jams">Game Jams</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="#skills">Skills</a>
-                </li> 
-            </ul>
-            <ul>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div> <!-- #nav -->
-    </div> <!-- #navbar -->
+        </div>
+    </div>
+
+
 
     <div id="home" class="container">
         <canvas id="canvas1"></canvas>
@@ -79,11 +53,13 @@
         <div class="about-content">
             <img src="Images/me.png" alt="Your Photo" class="about-image">
             <p>
-                I’m a BS/MS Computer Science student at USC who wears many hats! On the software side, I enjoy building mobile apps, frameworks, and full-stack websites, while also experimenting with graphics, rendering pipelines, and gameplay programming as every pixel tells a story.
+                I’m a BS/MS Computer Science student at USC focused on gameplay engineering and interactive systems. I enjoy building gameplay mechanics, tools, and real-time systems that shape how players interact with and experience games.
                 <br><br>
-                I also love working hands-on with hardware, from microcontrollers and connected IoT devices to PCB design and 3D modeling in CAD. Product design and prototyping let me merge engineering with creativity to bring user-centered ideas to life. 
+                My work often blends software with interactive hardware and IoT, using microcontrollers, sensors, and custom devices to prototype novel input methods and physical-digital gameplay experiences. I’m especially interested in rapid prototyping and system iteration, whether that’s in-engine, in firmware, or through experimental hardware setups.
                 <br><br>
                 On the research side, I’m diving deeper into machine learning with a growing interest in AGI, NLP, and intelligent systems, and I plan to continue exploring these areas throughout my current time at USC.
+                <br><br>
+                I also explore ML/AI prototyping with an interest in gameplay systems, intelligent behaviors, and tools that enhance player experience and creative workflows. Outside of engineering, I’m a jazz saxophonist, and improvisation strongly influences how I think about systems, timing, and player expression.
                 <br><br>
                 Outside of tech, one of my main hobbies is jazz improvisation on the saxophone: 
                 trading fours, weaving through blues changes, and slipping bebop lines into my solos while I play the jazz standards. 
@@ -93,6 +69,7 @@
                <a href="https://davidcroziermusic.com/" target="_blank">David Crozier</a>, 
                and <a href="https://www.davidarnay.com/" target="_blank">David Arnay</a>.
             </p>
+            <br>
         </div>
     </section>
 
@@ -158,7 +135,7 @@
         <!-- Project 1 -->
         <div class="project">
             <a href="Description11.html" target="_blank">
-                <h4 id="colored-p"> Lead Engineer | Partner-Based | Personal + Semester-Long Project</h4>
+                <h4 id="colored-p"> Lead Engineer (Hardware, Systems, Mechanics, AI, UI) | Partner-Based | Personal + Semester-Long Project</h4>
                 <img src="Images/Zoofers.png" alt="McRib" width="400" height="190">
                 <h3>Zoofer's Moofers</h3>
                 <p>Welcome to Mr. Wondertainment’s Wacky Wonder Toyshop! This A surreal, SCP-inspired game where players, from a toddler’s perspective and guided by an IoT glove, collect and experiment with reality-bending toys with chaotic funtastic environements.</p>
@@ -169,7 +146,7 @@
         <!-- Project 2 -->
         <div class="project">
             <a href="Description4.html" target="_blank">
-                <h4 id="colored-p">Lead Programmer | Team Based</h4>
+                <h4 id="colored-p">Lead Programmer | Team Based | Event + AI Engineering</h4>
                 <img src="Images/Momentum.png" alt="Momentum" width="250" height="190">
                 <h3>Momentum</h3>
                 <p>Momentum is a 3D superhero comic-style game where you play as a teengaed hero with alien enhanced ability to save a city from mutants.</p>
@@ -180,7 +157,7 @@
         <!-- Project 3 -->
         <div class="project">
             <a href="Description8.html" target="_blank">
-                <h4 id="colored-p">Programmer | Team Based | Audio Designer</h4>
+                <h4 id="colored-p">Gameplay Programmer | UI Engineer | Team Based | Audio Designer</h4>
                 <img src="Images/TestamentSplash.png" alt="IronTestament" width="400" height="190">
                 <h3>Iron Testament</h3>
                 <p>Iron Testament is a turn-based strategy game where players command a sect of life-worshipping robots in a post-apocalyptic world to reclaim Earth from an AI enemy uprising through tactical combat abilities and strategic positioning. </p>
@@ -191,7 +168,7 @@
         <!-- Project 4 -->
         <div class="project">
             <a href="Description10.html" target="_blank">
-                <h4 id="colored-p">Personal Project</h4>
+                <h4 id="colored-p">Personal Project | Gameplay Systems | Mechanics | UI & AI Engineer</h4>
                 <img src="Images/BridgeBreakout.png" alt="Bridge Breakout" width="400" height="190">
                 <h3>Bridge Breakout</h3>
                 <p>Bridge Breakout is a fast-paced mobile action-adventure game where players use a grappling hook to swing across highways, stop bandits, and protect bridges from destruction while managing enemy threats and vehicle safety.</p>
@@ -408,13 +385,23 @@
      <section id="game-jams">
         <h2>Game Jams</h2>
         <div class="card-container">
+              <div class="project">
+                <a href="Description28.html" target="_blank">
+                <h4 id="colored-p">Game Engineering | Honorable Mention Award</h4>
+                <img src="Images/IToldYouSo.png" alt="I Told You So." width="400" height="190">
+                <h3>Winter 2025 Ratchet It Up Solo Game Jam: I Told You So.</h3>
+                <p>Sony Interactive: PlayStation Career Pathways</p>
+                <p id="colored-p">Unity | WebGL | Node.js | C# | Python | Iot | C++ | Ollama LLM | ElevenLabs Voice Integration</p>
+                </a>
+            </div>
+
             <div class="project">
                 <a href="Description18.html" target="_blank">
                 <h4 id="colored-p">Programmer</h4>
                 <img src="Images/OfficeOddity.png" alt="Office Oddity Roblox" width="400" height="190">
-                <h3>Spring 2024: Roblox x Open Alpha Game Jam: Office Oddity</h3>
+                <h3>Spring 2024 Roblox x Open Alpha Game Jam: Office Oddity</h3>
                 <p>USC Open Alpha collaborates with Roblox to host a two day game jam.</p>
-                <p id="colored-p">Lua</p>
+                <p id="colored-p">Lua | Roblox Studio</p>
                 </a>
             </div>
 

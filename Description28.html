@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- Background Particles Effect -->
+    <div class="container">
+        <canvas id="canvas2"></canvas>
+
+        <!-- Wrapper for Back Button & Project Content -->
+        <div class="content-wrapper">
+            <a href="MyPersonalWebsite.html#unity" class="back-button">Back to Projects</a>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <!-- Video Section -->
+                <!-- <div class="video-container">
+                    <iframe width="560" height="315" 
+                        src="" 
+                        title="LED Hand Reactivity" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div> -->
+              <!--    <div class="image-container">
+                        <p class="image-label2">Concept Art Figure 1</p>
+                        <img id="padding2" src="Images/ConceptArtDadsGame.png" alt="Momentum Game Preview" width="400" height="250">
+                        <p id="padding2" class="image-label2">Concept Art Figure 2</p>
+                        <img src="Images/ConceptArtDadsGame2.png" alt="Momentum Game Preview" width="400" height="250">
+
+                </div> -->
+                <!-- Project Description -->
+                <div class="description">
+                    <h1 id="center-text">I Told You So.</h1>
+                    <hr>
+                    <h2 id="center-text">Solo Game Jam | Game Engineering | WebGL | Node.Js | Unity | C# | IoT</h2>
+                    <div id="center-text">
+                       <ul>
+                            <li><strong>Original Tool-Based Game:</strong> Programmed a game from scratch featuring a tool with a fantastical twist.</li>
+                            <li><strong>Unity WebGL + LLM Integration:</strong> Built a Unity WebGL game combining physical hardware input with voice-driven interaction using LLMs.</li>
+                            <li><strong>Physical Input Choice:</strong> Players use a physical switch and button to select between reassuring or ominous fortunes.</li>
+                            <li><strong>Real-Time Visual Feedback:</strong> Hardware state is reflected through synced green and red lighting with an RGB LED.</li>
+                            <li><strong>Award Recognition:</strong> Received Honorable Mention at the PlayStation Career Pathways – Ratchet It Up Game Jam.</li>
+                        </ul>
+                    </div>
+                    <div id="center-text">
+                        <p class="image-label2">Showcase</p>
+                        <iframe width="560" height="315" 
+                            src="https://www.youtube.com/embed/rc9Ds3dRtCI" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <br><br>
+                    </div>
+                    <hr>
+                        <div class="wwise-row">
+                            <div class="image-container">
+                                 <p id="padding2" class="image-label2">Pleasant Fortune</p>
+                                <img src="Images/Pleasant.png" alt="Pleasant Switch" width="450" height="300">
+                                <p id="padding2" class="image-label2">Correlating Particle Firmware 1</p>
+                                <img src="Images/Firmware1.png" alt="Pleasant Switch" width="450" height="300">
+                            </div>
+                            <div class="image-container">
+                                <p id="padding2" class="image-label2">Ominious Fortune</p>
+                                <img src="Images/Ominious.png" alt="Ominious Switch" width="450" height="300">
+                                <p id="padding2" class="image-label2">Correlating Particle Firmware 2</p>
+                                <img src="Images/Firmware2.png" alt="Pleasant Switch" width="450" height="300">
+                        </div>
+                    </div>
+                    <br><br>
+                    <hr>
+                    <h2 id="center-text">Technical Stack</h2>
+                    <ul>   
+                        <li><strong>Engine:</strong> Unity (WebGL)</li>
+                        <li><strong>Hardware:</strong> Arduino / Particle microcontroller</li>
+                        <li><strong>Firmware:</strong> C++ (Particle)</li>
+                        <li><strong>Backend:</strong> Node.js (hardware polling, LLM, TTS)</li>
+                        <li><strong>LLM:</strong> Ollama (local) and Groq (cloud)</li>
+                        <li><strong>Audio:</strong> Text-to-speech fortune delivery</li>
+                    </ul>
+                    <br><br>
+                        <div class="image-container">
+                            <p class="image-label2">Particle Webhooks Stream Hardware Data (via ngrok) & Exposing Variables to Backend</p>
+                            <img src="Images/webhook.png" alt="Exposed Variable" width="1880" height="900">
+                        </div>
+                        <br>
+                        <div class="image-container">
+                            <p class="image-label2">ngrok Server Connectivity Status</p>
+                            <img src="Images/ngrokserver.png" alt="ngrok status" width="580" height="900">
+                        </div>
+                    <br><br>
+                    <hr>
+                    <h2 id="center-text">Core Interaction & Scoring</h2>
+                    <ul>
+                        <li><strong>Preview Mechanic:</strong> Physical switch previews the fortune’s tone before committing to a reading.</li>
+                        <li><strong>Commitment-Based Scoring:</strong> A consultation only counts if the player speaks and listens until the fortune finishes.</li>
+                        <li><strong>No Partial Credit:</strong> Interrupting or stopping early does not increment the score.</li>
+                        <li><strong>Intentional Design:</strong> Scoring reflects commitment rather than speed or accuracy.</li>
+                        <li><strong>Tangible Outcome:</strong> Completed consultations print a fortune ticket with randomized lucky numbers.</li>
+                    </ul>
+                    <br>
+                    <div class="image-container">
+                            <p class="image-label2">Prints Lucky Numbers After Interaction</p>
+                            <img src="Images/Ticket.png" alt="ngrok status" width="280" height="300">
+                        </div>
+                </div>
+            </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script> <!-- Ensure this includes the particle effect logic -->
+
+</body>
+</html>
+
+

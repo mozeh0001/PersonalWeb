@@ -27,7 +27,7 @@
                         title="LED Hand Reactivity" frameborder="0" allowfullscreen>
                     </iframe>
                 </div> -->
-                <img src="Images/Momentum.png" alt="Momentum Game Preview" width="400" height="370">
+                <img src="Images/Momentum.png" alt="Momentum Game Preview" width="400" height="370" style="margin-top: 40px;">
 
 
                 <!-- Project Description -->
@@ -50,12 +50,12 @@
                       Players save civilians from a collapsing building using real-time physics and event-based triggers.
                     </p>
                     <ul>
-                        <li>After building collapses player has to pick up debris off of player.</li>
-                        <li>I implementated a the state machine to manage civilian behavior, transitioning between Patrolling, Hurt, Saved, and Walking to the Door based on enviornmental and player interactions.</li>
-                        <li>Players can stop buildings from falling by pressing 'G' on their keyboard in this beta completion.</li>
-                        <li>The physics used is triggered based on colliders as when the player goes onto the building the "latch" as they stop it from falling the exact point of grab is gotten by .collision.</li>
-                        <li>Camera shakes for real-time interactions when holding building so that player experience is vibrant.</li>
-                        <li>States become triggered as enemies in their state machine swarm buildings and attack when player distance is far.</li>
+                        <li>After a building collapse, players must clear debris from trapped civilians.</li>
+                        <li>Implemented a state machine managing civilian behavior (Patrolling, Hurt, Saved, Evacuating).</li>
+                        <li>Players can prevent buildings from collapsing by pressing <strong>G</strong> (beta interaction).</li>
+                        <li>Collider-driven physics capture precise grab points when stabilizing structures.</li>
+                        <li>Camera shake provides real-time feedback during high-tension interactions.</li>
+                        <li>Enemy AI swarm and attack buildings based on player distance using a separate state machine.</li>
                     </ul>
                     <div class="image-container">
                         <img src="Images/StateMachineCivilian.png" alt="Civilian State Machine Image" width="300" height="200">
@@ -100,15 +100,15 @@
                 <div class="description">
                     <h1>UI</h1>
                     <p>
-                       Responsive anchored UI for enhanced gameplay and screen ratio responsiveness. I implemented them with collaboration from our UI team. 
+                       Implemented responsive, anchored UI to support multiple screen ratios in collaboration with the UI team.
                     </p>
                     <ul>
-                        <li>Health bar with chip away effect. Subscribes to update the UI instantly when the player takes damage, ensuring overlays and health bars reflect real-time changes.</li>
-                        <li>Blood overlay beating effect to indicate that health is low from subscribed changes.</li>
-                        <li>Speedometer with corresponding speed lines that toggle between frames quicker based on flying speed. Arrow shows current player speed.</li>
-                        <li>Enemy and civilian health bars with canvas group to billboard and fade out based on camera direction and how far camera is.</li>
-                        <li>Blood splatter effect that randomly splashes on screen when enemies are attacked</li>
-                        <li>Interactive Main Menu using cinema machine and virtual cameras and interactive buttons.</li>
+                        <li>Health bar with chip-away effect, updating instantly via event subscriptions.</li>
+                        <li>Pulsing blood overlay triggered when player health is low.</li>
+                        <li>Speedometer with animated speed lines that scale based on flight velocity.</li>
+                        <li>Enemy and civilian health bars using canvas groups to billboard and fade based on camera distance and direction.</li>
+                        <li>Randomized blood splatter effects triggered on enemy hits.</li>
+                        <li>Interactive main menu built with Cinemachine virtual cameras and UI buttons.</li>
                         <li>Pause screen in beta.</li>
                         <li>End screen with animations for enhancement.</li>
                         <br><br>
@@ -166,11 +166,11 @@
                     </ul>
                     <h2>Flying Enemy - Prototype</h2>
                     <ul>
-                        <li><strong>Chase Player State:</strong> The enemy continuously follows the player, maintaining a set distance while avoiding obstacles using NavMesh and raycasting.</li>
-                        <li><strong>Dash Attack State:</strong> If the player enters a specific attack range, the enemy dashes toward the player in bursts, attempting to strike them.</li>
-                        <li><strong>State Transition Logic:</strong> The enemy switches to <em>Dash Attack</em> when the player is within range and back to <em>Chase Player</em> if the player moves too far.</li>
-                        <li><strong>Obstacle Avoidance:</strong> Uses sphere casts and raycasts to prevent movement through objects and adjust positioning accordingly.</li>
-                        <li><strong>Rotation Handling:</strong> The enemy always faces the player while chasing, ensuring its movement is directed properly.</li>
+                        <li><strong>Chase State:</strong> Enemy follows the player at a set distance using NavMesh and raycasting.</li>
+                        <li><strong>Dash Attack State:</strong> Enemy performs burst dashes when the player enters attack range.</li>
+                        <li><strong>State Transitions:</strong> Switches between Chase and Dash based on player distance.</li>
+                        <li><strong>Obstacle Avoidance:</strong> Uses raycasts and sphere casts to navigate around geometry.</li>
+                        <li><strong>Rotation Handling:</strong> Enemy continuously faces the player during pursuit.</li>
                     </ul>
                 </div>
             </div>
