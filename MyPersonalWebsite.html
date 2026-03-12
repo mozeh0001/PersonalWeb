@@ -12,6 +12,9 @@
         
         <!-- Navigation Bar with Dropdown Menus -->
         <div id="navbar">
+            <div class="hamburger" onclick="toggleMenu()">
+                ☰
+            </div>
             <div id="nav">
                 <ul>
                     <li>
@@ -513,13 +516,18 @@
             });
         </script>
         <script>
+            function toggleMenu() {
+                const nav = document.getElementById("nav");
+                nav.classList.toggle("show");
+            }
+
+            /* CLOSE MENU WHEN LINK IS CLICKED (MOBILE) */
             document.querySelectorAll("#nav a").forEach(link => {
                 link.addEventListener("click", () => {
-                    document.querySelectorAll("#nav ul ul").forEach(menu => {
-                        menu.style.display = "none";
-                    });
+                    const nav = document.getElementById("nav");
+                    nav.classList.remove("show");
                 });
             });
-        </script>
+            </script>
     </body>
 </html>
