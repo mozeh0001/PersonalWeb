@@ -16,26 +16,20 @@
 // });
 
 
-// V2 goes correspondingly
-document.addEventListener('scroll', () => {
-    const hiddenElements = document.querySelectorAll('.hidden');
+document.addEventListener("scroll", () => {
+    const hiddenElements = document.querySelectorAll(".hidden");
+    const windowHeight = window.innerHeight;
 
     hiddenElements.forEach((el) => {
-        const elementTop = el.getBoundingClientRect().top;
-        const elementHeight = el.offsetHeight;
-        const windowHeight = window.innerHeight;
+        const rect = el.getBoundingClientRect();
+        const elementTop = rect.top;
+        const elementBottom = rect.bottom;
 
-        // Calculate the visibility percentage of the element
-        const visibleHeight = Math.min(windowHeight, elementHeight + elementTop) - Math.max(0, elementTop);
-        const visibility = Math.max(0, visibleHeight / elementHeight);
-
-        // Adjust classes based on the visibility percentage
-        if (visibility > 0.05) {
-            el.classList.add('show');
-            el.style.transform = `translateX(${(1 - visibility) * -100}%)`;
+        // If any part of the element is visible
+        if (elementTop < windowHeight && elementBottom > 0) {
+            el.classList.add("show");
         } else {
-            el.classList.remove('show');
-            el.style.transform = `translateX(-100%)`;
+            el.classList.remove("show");
         }
     });
 });
