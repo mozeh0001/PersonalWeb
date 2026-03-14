@@ -975,3 +975,66 @@ iframe{
 
 }
 
+/* ===== MOBILE NAVBAR FIX ===== */
+
+/* hide hamburger on desktop */
+.hamburger {
+    display: none;
+}
+
+/* mobile layout */
+@media (max-width: 768px) {
+
+    /* show hamburger only on small screens */
+    .hamburger {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        font-size: 28px;
+        cursor: pointer;
+        color: yellowgreen;
+        z-index: 1100;
+    }
+
+    /* stack navbar container */
+    #nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: darkgreen;
+        margin-top: 60px;
+    }
+
+    /* when JS adds .show */
+    #nav.show {
+        display: flex;
+    }
+
+    /* each nav group full width */
+    #nav ul {
+        width: 100%;
+    }
+
+    #nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    #nav a {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* dropdowns in mobile */
+    #nav ul ul {
+        position: static;
+        display: none;
+        background: #111;
+        width: 100%;
+    }
+
+    #nav li:hover > ul {
+        display: block;
+    }
+}
