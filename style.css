@@ -9,6 +9,17 @@ body {
     background-color: yellowgreen;
 }
 
+#footer {
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: #FFF;
+    text-align: center;
+    z-index: 21;
+}
+
 /* Section styling */
 .section {
     padding: 20px;
@@ -28,7 +39,8 @@ body {
 }
 
 .time-line {
-    width: 1000px;
+    width: 90%;
+    max-width: 1000px;
     margin: 100px auto;
     position: relative;
 }
@@ -206,14 +218,14 @@ body {
 
 h1 {
     color: #fff;
-    font-size: 100px; /* Larger font size for h1 */
+    font-size: clamp(32px, 8vw, 100px);
     z-index: 20;
     margin: 20px 0;
 }
 
 h2 {
     color: #fff;
-    font-size: 50px; /* Smaller font size for h2 */
+    font-size: clamp(22px, 5vw, 50px);
     z-index: 20;
     margin: 20px 0;
 }
@@ -230,7 +242,7 @@ span {
     width: 100vw;
     height: 100vh;
     background: radial-gradient(#36454F, #000000);
-    z-index: -1;
+    z-index: -2;
 }
 
 #canvas2 {
