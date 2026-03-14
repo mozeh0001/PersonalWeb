@@ -981,6 +981,16 @@ iframe{
     width:100%;
 }
 
+.next-to-each{
+    flex-direction: column;
+    align-items: center;
+}
+
+.pdf-container iframe{
+    height: 600px;
+    aspect-ratio: 3 / 4;
+}
+
 .image-container{
     padding-left:0;
 }
