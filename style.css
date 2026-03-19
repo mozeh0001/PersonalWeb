@@ -216,6 +216,29 @@ body {
     align-items: center;
 }
 
+@media (max-width: 768px) {
+
+    /* shrink the whole carousel container */
+    .banner .slider {
+        width: 120px;
+        height: 160px;
+        top: 15%;
+    }
+
+    /* reduce 3D depth (THIS is the main fix) */
+    .banner .slider .item {
+        transform: 
+            rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) 
+            translateZ(150px);
+    }
+
+    /* make images behave nicer */
+    .banner .slider .item img {
+        object-fit: contain;   /* prevents cropping on small screens */
+    }
+
+}
+
 h1 {
     color: #fff;
     font-size: clamp(32px, 8vw, 100px);
@@ -612,9 +635,6 @@ span {
         height: 500px;
     }
 }
-.image-container {
-    padding-left: 75px;
-}
 
 .pdf-container-venger {
     display: flex;
@@ -645,13 +665,12 @@ span {
 }
 
 .image-container {
-    text-align: center; /* Centers text and image */
+    text-align: center;
     display: flex;
-    flex-direction: column; /* Stacks text above image */
+    flex-direction: column;
     align-items: center;
-    margin: 0; /* Removes any margin around the text */
-    padding: 0; /* Ensures no extra space */
-    align-items: center;
+    flex: 1 1 300px;
+    padding-left: 0; /* remove old left padding */
 }
 
 .image-label {
@@ -757,8 +776,10 @@ span {
 .contact-left {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     gap: 20px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .contact-left-title {
@@ -777,7 +798,8 @@ span {
 }
 
 .contact-inputs {
-    width: 400px;
+    width: 100%;
+    max-width: 500px;
     height: 50px;
     border: none;
     outline: none;
@@ -804,7 +826,12 @@ span {
 .contact-left button {
     display: flex;
     align-items: center;
-    padding:15px 30px;
+    justify-content: center;
+    
+    width: 100%;
+    max-width: 500px;
+
+    padding: 15px 30px;
     font-size: 16px;
     color: #fff;
     gap: 10px;
@@ -871,11 +898,6 @@ span {
   flex-wrap: wrap; /* allows wrapping on smaller screens */
 }
 
-.image-container {
-  flex: 1 1 300px; /* each container takes ~300px but can shrink/grow */
-  text-align: center;
-}
-
 .wwise-img {
   width: 100%;    /* responsive scaling */
   height: auto;   /* keeps aspect ratio */
@@ -913,10 +935,6 @@ span {
   justify-content: center;   /* center the whole row */
   gap: 20px;                 /* space between images */
   flex-wrap: wrap;           /* allow wrapping on smaller screens */
-}
-
-.image-container {
-  text-align: center;        /* centers the labels with images */
 }
 
 .images-display {
@@ -1060,3 +1078,5 @@ iframe{
         display: block;
     }
 }
+
+
