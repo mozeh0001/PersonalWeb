@@ -20,23 +20,19 @@
             src="app.js">
     </script>
 
-    <script type="importmap">
 
+    <!-- Three.js Import Map -->
+    <script type="importmap">
     {
         "imports": {
-
-            "three":
-            "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
-
-            "three/addons/":
-            "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
-
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
         }
     }
-
     </script>
 
 </head>
+
 
 
 <body>
@@ -56,6 +52,7 @@
 
             </a>
 
+
             <div class="project-content">
 
                 <div class="description">
@@ -71,6 +68,10 @@
                     </h2>
 
 
+                    <hr>
+                    <br>
+
+
                     <p>
                         A collection of mechanical CAD models created
                         in PTC Creo from dimensioned engineering
@@ -81,6 +82,7 @@
                 </div>
 
             </div>
+
 
             <div class="project-content">
 
@@ -102,8 +104,10 @@
                     <br>
 
 
-                    <div class="image-row">
+                    <div class="media-row">
 
+
+                        <!-- Reference Drawing -->
 
                         <div class="image-container">
 
@@ -114,9 +118,7 @@
 
                             <img
                                 src="Images/multi.png"
-
                                 alt="Multi-feature CAD model reference drawing"
-
                                 style="
                                     width: 400px;
                                     max-width: 100%;
@@ -124,6 +126,10 @@
                                 ">
 
                         </div>
+
+
+
+                        <!-- Interactive Model -->
 
                         <div class="image-container">
 
@@ -134,19 +140,19 @@
 
                             <div
                                 id="creo-model-1"
-
-                                style="
-                                    width: 500px;
-                                    max-width: 100%;
-                                    height: 400px;
-                                    margin: 0 auto;
-                                ">
+                                class="creo-viewer">
 
                             </div>
+
                         </div>
+
+
                     </div>
+
                 </div>
+
             </div>
+
 
             <div class="project-content">
 
@@ -168,10 +174,10 @@
                     <br>
 
 
-                    <div class="image-row">
+                    <div class="media-row">
 
 
-                        <!-- REFERENCE DRAWING -->
+                        <!-- Reference Drawing -->
 
                         <div class="image-container">
 
@@ -182,9 +188,7 @@
 
                             <img
                                 src="Images/threaded.png"
-
                                 alt="Threaded component reference drawing"
-
                                 style="
                                     width: 400px;
                                     max-width: 100%;
@@ -195,7 +199,7 @@
 
 
 
-                        <!-- INTERACTIVE MODEL -->
+                        <!-- Interactive Model -->
 
                         <div class="image-container">
 
@@ -206,19 +210,19 @@
 
                             <div
                                 id="creo-model-2"
-
-                                style="
-                                    width: 500px;
-                                    max-width: 100%;
-                                    height: 400px;
-                                    margin: 0 auto;
-                                ">
+                                class="creo-viewer">
 
                             </div>
+
                         </div>
+
+
                     </div>
+
                 </div>
+
             </div>
+
 
             <div class="project-content">
 
@@ -240,10 +244,10 @@
                     <br>
 
 
-                    <div class="image-row">
+                    <div class="media-row">
 
 
-                        <!-- REFERENCE DRAWING -->
+                        <!-- Reference Drawing -->
 
                         <div class="image-container">
 
@@ -254,9 +258,7 @@
 
                             <img
                                 src="Images/structural.png"
-
                                 alt="Structural CAD model reference drawing"
-
                                 style="
                                     width: 400px;
                                     max-width: 100%;
@@ -267,7 +269,7 @@
 
 
 
-                        <!-- INTERACTIVE MODEL -->
+                        <!-- Interactive Model -->
 
                         <div class="image-container">
 
@@ -278,44 +280,41 @@
 
                             <div
                                 id="creo-model-3"
-
-                                style="
-                                    width: 500px;
-                                    max-width: 100%;
-                                    height: 400px;
-                                    margin: 0 auto;
-                                ">
+                                class="creo-viewer">
 
                             </div>
+
                         </div>
+
+
                     </div>
+
                 </div>
+
             </div>
+
+
         </div>
+
     </div>
 
 
     <script type="module">
 
-
         import * as THREE
             from "three";
-
 
         import { OBJLoader }
             from "three/addons/loaders/OBJLoader.js";
 
-
         import { OrbitControls }
             from "three/addons/controls/OrbitControls.js";
-
 
 
         function createOBJViewer(
             containerId,
             modelPath
         ) {
-
 
             const container =
                 document.getElementById(
@@ -337,7 +336,6 @@
 
             const scene =
                 new THREE.Scene();
-
 
 
             const camera =
@@ -377,13 +375,16 @@
             renderer.setPixelRatio(
 
                 Math.min(
-
                     window.devicePixelRatio,
-
                     2
-
                 )
 
+            );
+
+
+            renderer.setClearColor(
+                0x111111,
+                1
             );
 
 
@@ -391,6 +392,9 @@
                 renderer.domElement
             );
 
+
+
+            /* Orbit Controls */
 
             const controls =
                 new OrbitControls(
@@ -413,6 +417,9 @@
             controls.enablePan = true;
 
 
+
+            /* Lighting */
+
             const ambientLight =
                 new THREE.AmbientLight(
 
@@ -426,7 +433,6 @@
             scene.add(
                 ambientLight
             );
-
 
 
             const directionalLight =
@@ -455,7 +461,6 @@
             );
 
 
-
             const backLight =
                 new THREE.DirectionalLight(
 
@@ -481,37 +486,34 @@
                 backLight
             );
 
+
+
+            /* OBJ Loader */
+
             const loader =
                 new OBJLoader();
 
 
             loader.load(
 
-
                 modelPath,
+
+
+                /* Successful Load */
 
                 function (object) {
 
-
                     console.log(
-
                         "Successfully loaded:",
-
                         modelPath
-
                     );
 
-
-
-                    // Apply material
 
                     object.traverse(
 
                         function (child) {
 
-
                             if (child.isMesh) {
-
 
                                 child.material =
                                     new THREE.MeshStandardMaterial({
@@ -532,6 +534,9 @@
 
                     );
 
+
+                    /* Find Object Bounds */
+
                     const box =
                         new THREE.Box3()
                             .setFromObject(
@@ -541,37 +546,26 @@
 
                     const size =
                         box.getSize(
-
                             new THREE.Vector3()
-
                         );
 
 
                     const center =
                         box.getCenter(
-
                             new THREE.Vector3()
-
                         );
 
 
+                    /* Center Object */
 
-                    object.position.x -=
-                        center.x;
-
-
-                    object.position.y -=
-                        center.y;
-
-
-                    object.position.z -=
-                        center.z;
+                    object.position.sub(
+                        center
+                    );
 
 
                     scene.add(
                         object
                     );
-
 
 
                     const maxDimension =
@@ -585,6 +579,23 @@
 
                         );
 
+
+                    if (
+                        !Number.isFinite(maxDimension) ||
+                        maxDimension <= 0
+                    ) {
+
+                        console.error(
+                            "Invalid model dimensions:",
+                            modelPath
+                        );
+
+                        return;
+
+                    }
+
+
+                    /* Position Camera */
 
                     camera.position.set(
 
@@ -614,7 +625,6 @@
                     camera.updateProjectionMatrix();
 
 
-
                     controls.target.set(
 
                         0,
@@ -631,11 +641,11 @@
                 },
 
 
+                /* Loading Progress */
+
                 function (xhr) {
 
-
                     if (xhr.total > 0) {
-
 
                         const percent =
                             Math.round(
@@ -650,11 +660,8 @@
                         console.log(
 
                             modelPath +
-
                             ": " +
-
                             percent +
-
                             "% loaded"
 
                         );
@@ -664,8 +671,9 @@
                 },
 
 
-                function (error) {
+                /* Error */
 
+                function (error) {
 
                     console.error(
 
@@ -682,8 +690,10 @@
             );
 
 
-            function animate() {
 
+            /* Render Loop */
+
+            function animate() {
 
                 requestAnimationFrame(
                     animate
@@ -707,12 +717,14 @@
             animate();
 
 
+
+            /* Responsive Resize */
+
             window.addEventListener(
 
                 "resize",
 
                 function () {
-
 
                     const width =
                         container.clientWidth;
@@ -743,6 +755,7 @@
 
         }
 
+
         createOBJViewer(
 
             "creo-model-1",
@@ -772,8 +785,15 @@
 
     </script>
 
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-<script src="script.js"></script>
+
+
+    <script
+        src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js">
+    </script>
+
+    <script src="script.js"></script>
+
 
 </body>
+
 </html>

@@ -1743,6 +1743,21 @@ iframe{
     margin: 0 0 10px 0;
 }
 
+.creo-viewer {
+    width: 500px;
+    max-width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.creo-viewer canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
 
 
 
