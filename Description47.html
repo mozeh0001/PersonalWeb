@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+
+    <title>Creo CAD Models</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <script defer
+            src="app.js">
+    </script>
+
+    <script type="importmap">
+
+    {
+        "imports": {
+
+            "three":
+            "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+
+            "three/addons/":
+            "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+
+        }
+    }
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <canvas id="canvas2"></canvas>
+
+
+        <div class="content-wrapper">
+
+
+            <a href="MyPersonalWebsite.html#product-design"
+               class="back-button">
+
+                Back to Projects
+
+            </a>
+
+            <div class="project-content">
+
+                <div class="description">
+
+                    <h1>
+                        Creo CAD Models
+                    </h1>
+
+
+                    <h2>
+                        Creo | CAD | Mechanical Design |
+                        Parametric Modeling
+                    </h2>
+
+
+                    <p>
+                        A collection of mechanical CAD models created
+                        in PTC Creo from dimensioned engineering
+                        references. Each model can be inspected using
+                        an interactive 3D viewer.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="description">
+
+                    <h1>
+                        Multi-Feature CAD Model
+                    </h1>
+
+
+                    <p>
+                        Mechanical CAD model created in PTC Creo using
+                        multiple geometric features and operations.
+                    </p>
+
+
+                    <br>
+                    <hr>
+                    <br>
+
+
+                    <div class="image-row">
+
+
+                        <div class="image-container">
+
+                            <p class="image-label2">
+                                Reference Drawing
+                            </p>
+
+
+                            <img
+                                src="Images/multi.png"
+
+                                alt="Multi-feature CAD model reference drawing"
+
+                                style="
+                                    width: 400px;
+                                    max-width: 100%;
+                                    height: auto;
+                                ">
+
+                        </div>
+
+                        <div class="image-container">
+
+                            <p class="image-label2">
+                                Interactive 3D Model
+                            </p>
+
+
+                            <div
+                                id="creo-model-1"
+
+                                style="
+                                    width: 500px;
+                                    max-width: 100%;
+                                    height: 400px;
+                                    margin: 0 auto;
+                                ">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-content">
+
+                <div class="description">
+
+                    <h1>
+                        Threaded Component
+                    </h1>
+
+
+                    <p>
+                        Threaded mechanical component modeled in
+                        PTC Creo from a dimensioned reference.
+                    </p>
+
+
+                    <br>
+                    <hr>
+                    <br>
+
+
+                    <div class="image-row">
+
+
+                        <!-- REFERENCE DRAWING -->
+
+                        <div class="image-container">
+
+                            <p class="image-label2">
+                                Reference Drawing
+                            </p>
+
+
+                            <img
+                                src="Images/threaded.png"
+
+                                alt="Threaded component reference drawing"
+
+                                style="
+                                    width: 400px;
+                                    max-width: 100%;
+                                    height: auto;
+                                ">
+
+                        </div>
+
+
+
+                        <!-- INTERACTIVE MODEL -->
+
+                        <div class="image-container">
+
+                            <p class="image-label2">
+                                Interactive 3D Model
+                            </p>
+
+
+                            <div
+                                id="creo-model-2"
+
+                                style="
+                                    width: 500px;
+                                    max-width: 100%;
+                                    height: 400px;
+                                    margin: 0 auto;
+                                ">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-content">
+
+                <div class="description">
+
+                    <h1>
+                        Structural CAD Model
+                    </h1>
+
+
+                    <p>
+                        Structural mechanical model created in PTC Creo
+                        from a dimensioned engineering reference.
+                    </p>
+
+
+                    <br>
+                    <hr>
+                    <br>
+
+
+                    <div class="image-row">
+
+
+                        <!-- REFERENCE DRAWING -->
+
+                        <div class="image-container">
+
+                            <p class="image-label2">
+                                Reference Drawing
+                            </p>
+
+
+                            <img
+                                src="Images/structural.png"
+
+                                alt="Structural CAD model reference drawing"
+
+                                style="
+                                    width: 400px;
+                                    max-width: 100%;
+                                    height: auto;
+                                ">
+
+                        </div>
+
+
+
+                        <!-- INTERACTIVE MODEL -->
+
+                        <div class="image-container">
+
+                            <p class="image-label2">
+                                Interactive 3D Model
+                            </p>
+
+
+                            <div
+                                id="creo-model-3"
+
+                                style="
+                                    width: 500px;
+                                    max-width: 100%;
+                                    height: 400px;
+                                    margin: 0 auto;
+                                ">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module">
+
+
+        import * as THREE
+            from "three";
+
+
+        import { OBJLoader }
+            from "three/addons/loaders/OBJLoader.js";
+
+
+        import { OrbitControls }
+            from "three/addons/controls/OrbitControls.js";
+
+
+
+        function createOBJViewer(
+            containerId,
+            modelPath
+        ) {
+
+
+            const container =
+                document.getElementById(
+                    containerId
+                );
+
+
+            if (!container) {
+
+                console.error(
+                    "Could not find container:",
+                    containerId
+                );
+
+                return;
+
+            }
+
+
+            const scene =
+                new THREE.Scene();
+
+
+
+            const camera =
+                new THREE.PerspectiveCamera(
+
+                    45,
+
+                    container.clientWidth /
+                    container.clientHeight,
+
+                    0.1,
+
+                    10000
+
+                );
+
+
+            const renderer =
+                new THREE.WebGLRenderer({
+
+                    antialias: true,
+
+                    alpha: true
+
+                });
+
+
+            renderer.setSize(
+
+                container.clientWidth,
+
+                container.clientHeight
+
+            );
+
+
+            renderer.setPixelRatio(
+
+                Math.min(
+
+                    window.devicePixelRatio,
+
+                    2
+
+                )
+
+            );
+
+
+            container.appendChild(
+                renderer.domElement
+            );
+
+
+            const controls =
+                new OrbitControls(
+
+                    camera,
+
+                    renderer.domElement
+
+                );
+
+
+            controls.enableDamping = true;
+
+            controls.dampingFactor = 0.05;
+
+            controls.enableZoom = true;
+
+            controls.enableRotate = true;
+
+            controls.enablePan = true;
+
+
+            const ambientLight =
+                new THREE.AmbientLight(
+
+                    0xffffff,
+
+                    2
+
+                );
+
+
+            scene.add(
+                ambientLight
+            );
+
+
+
+            const directionalLight =
+                new THREE.DirectionalLight(
+
+                    0xffffff,
+
+                    3
+
+                );
+
+
+            directionalLight.position.set(
+
+                5,
+
+                10,
+
+                7
+
+            );
+
+
+            scene.add(
+                directionalLight
+            );
+
+
+
+            const backLight =
+                new THREE.DirectionalLight(
+
+                    0xffffff,
+
+                    1.5
+
+                );
+
+
+            backLight.position.set(
+
+                -5,
+
+                3,
+
+                -5
+
+            );
+
+
+            scene.add(
+                backLight
+            );
+
+            const loader =
+                new OBJLoader();
+
+
+            loader.load(
+
+
+                modelPath,
+
+                function (object) {
+
+
+                    console.log(
+
+                        "Successfully loaded:",
+
+                        modelPath
+
+                    );
+
+
+
+                    // Apply material
+
+                    object.traverse(
+
+                        function (child) {
+
+
+                            if (child.isMesh) {
+
+
+                                child.material =
+                                    new THREE.MeshStandardMaterial({
+
+                                        color: 0xbfc7d5,
+
+                                        roughness: 0.5,
+
+                                        metalness: 0.15,
+
+                                        side: THREE.DoubleSide
+
+                                    });
+
+                            }
+
+                        }
+
+                    );
+
+                    const box =
+                        new THREE.Box3()
+                            .setFromObject(
+                                object
+                            );
+
+
+                    const size =
+                        box.getSize(
+
+                            new THREE.Vector3()
+
+                        );
+
+
+                    const center =
+                        box.getCenter(
+
+                            new THREE.Vector3()
+
+                        );
+
+
+
+                    object.position.x -=
+                        center.x;
+
+
+                    object.position.y -=
+                        center.y;
+
+
+                    object.position.z -=
+                        center.z;
+
+
+                    scene.add(
+                        object
+                    );
+
+
+
+                    const maxDimension =
+                        Math.max(
+
+                            size.x,
+
+                            size.y,
+
+                            size.z
+
+                        );
+
+
+                    camera.position.set(
+
+                        maxDimension * 1.5,
+
+                        maxDimension * 1.2,
+
+                        maxDimension * 2
+
+                    );
+
+
+                    camera.near =
+                        Math.max(
+
+                            maxDimension / 1000,
+
+                            0.01
+
+                        );
+
+
+                    camera.far =
+                        maxDimension * 100;
+
+
+                    camera.updateProjectionMatrix();
+
+
+
+                    controls.target.set(
+
+                        0,
+
+                        0,
+
+                        0
+
+                    );
+
+
+                    controls.update();
+
+                },
+
+
+                function (xhr) {
+
+
+                    if (xhr.total > 0) {
+
+
+                        const percent =
+                            Math.round(
+
+                                xhr.loaded /
+                                xhr.total *
+                                100
+
+                            );
+
+
+                        console.log(
+
+                            modelPath +
+
+                            ": " +
+
+                            percent +
+
+                            "% loaded"
+
+                        );
+
+                    }
+
+                },
+
+
+                function (error) {
+
+
+                    console.error(
+
+                        "ERROR LOADING OBJ:",
+
+                        modelPath,
+
+                        error
+
+                    );
+
+                }
+
+            );
+
+
+            function animate() {
+
+
+                requestAnimationFrame(
+                    animate
+                );
+
+
+                controls.update();
+
+
+                renderer.render(
+
+                    scene,
+
+                    camera
+
+                );
+
+            }
+
+
+            animate();
+
+
+            window.addEventListener(
+
+                "resize",
+
+                function () {
+
+
+                    const width =
+                        container.clientWidth;
+
+
+                    const height =
+                        container.clientHeight;
+
+
+                    camera.aspect =
+                        width / height;
+
+
+                    camera.updateProjectionMatrix();
+
+
+                    renderer.setSize(
+
+                        width,
+
+                        height
+
+                    );
+
+                }
+
+            );
+
+        }
+
+        createOBJViewer(
+
+            "creo-model-1",
+
+            "Models/creo-1.obj"
+
+        );
+
+
+        createOBJViewer(
+
+            "creo-model-2",
+
+            "Models/creo-2.obj"
+
+        );
+
+
+        createOBJViewer(
+
+            "creo-model-3",
+
+            "Models/creo-3.obj"
+
+        );
+
+
+    </script>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

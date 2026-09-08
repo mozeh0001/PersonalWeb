@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>RPL Avionics</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <canvas id="canvas2"></canvas>
+
+    <div class="content-wrapper">
+
+        <a href="MyPersonalWebsite.html#clubs" class="back-button">
+            Back to Projects
+        </a>
+
+        <div class="project-content">
+
+            <div class="video-container">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p class="image-label2">
+                    RPL Avionics
+                </p>
+
+                <iframe
+                    width="560"
+                    height="250"
+                    src="https://www.youtube.com/embed/IMWkPhBCyDc"
+                    title="RPL Avionics"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+            <div class="description">
+
+                <h1>
+                    <a href="https://www.uscrpl.com/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       style="color: inherit; text-decoration: underline;">
+                        RPL Avionics
+                    </a>
+                </h1>
+
+                <h2>
+                    Computer Vision | Machine Learning | Avionics |
+                    Altium | Embedded Systems
+                </h2>
+
+                <hr>
+                <br>
+
+                <p>
+                    I am a member of the RPL Avionics team,
+                    contributing to the hardware and software systems used
+                    to support the team's rockets.
+                </p>
+
+                <br>
+
+                <p>
+                    My work currently spans two areas: developing a
+                    machine-learning computer vision system
+                    for rocket detection and tracking, and contributing to
+                    avionics hardware development and PCB design using
+                    Altium Designer.
+                </p>
+
+                <br>
+                <hr>
+                <br>
+
+                <ul>
+
+                    <li>
+                        <strong>Team:</strong>
+                        RPL Avionics
+                    </li>
+
+                    <li>
+                        <strong>Focus Areas:</strong>
+                        Computer Vision, Machine Learning, PCB Design, Avionics
+                    </li>
+
+                    <li>
+                        <strong>Tools:</strong>
+                        Python, YOLO11, OpenCV, Altium Designer
+                    </li>
+
+                    <li>
+                        <strong>Project Type:</strong>
+                        Rocketry / Avionics Development
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="project-content">
+
+            <div class="description">
+
+        <h1>Machine Learning Rocket Detection</h1>
+
+        <hr>
+        <br>
+
+        <p>
+            As part of RPL Avionics, I am developing a
+            <strong>YOLO11 object detection system</strong> for identifying
+            the team's rocket in images and launch footage.
+        </p>
+
+        <br>
+
+        <ul>
+
+            <li>
+                <strong>Dataset & Annotation:</strong>
+                Built a custom rocket dataset and created YOLO
+                bounding-box annotations.
+            </li>
+
+            <li>
+                <strong>Preprocessing:</strong>
+                Developed Python tools to convert HEIC, HEIF,
+                and Sony ARW images for training.
+            </li>
+
+            <li>
+                <strong>Model Training:</strong>
+                Fine-tuned YOLO11 on the custom dataset and
+                evaluated performance on validation images.
+            </li>
+
+            <li>
+                <strong>Detection:</strong>
+                Built image and video inference tools that locate
+                rockets and visualize confidence-scored predictions.
+            </li>
+
+        </ul>
+
+    </div>
+
+        <!-- VIDEO ON SIDE -->
+
+        <div class="video-container">
+
+        <p class="image-label2">
+            Rocket Detection in Video
+        </p>
+
+        <iframe
+            width="560"
+            height="250"
+            src="https://www.youtube.com/embed/ssbMVTNJFLw"
+            title="RPL Rocket Detection"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+    </div>
+
+
+<div class="project-content">
+
+    <div class="description">
+
+        <h1>Python Implementation</h1>
+
+        <hr>
+        <br>
+
+        <p>
+            Custom Python tools support dataset preparation,
+            YOLO training, and rocket detection inference. (Scrollable Sections)
+        </p>
+
+        <!-- Python File 1 -->
+        <p class="image-label2">
+            Model Training
+        </p>
+
+        <pre style="
+            text-align: left;
+            overflow-x: auto;
+            max-height: 200px;
+            background-color: black;
+        "><code>
+from ultralytics import YOLO
+
+
+
+
+# we start with a pretrained YOLO model
+# it already understands many general visual features
+#
+# we will retrain it specifically to detect rockets
+model = YOLO("yolo11n.pt")
+
+
+
+# train model
+results = model.train(
+
+    # tells YOLO where our dataset is
+    data="data.yaml",
+
+    # number of times YOLO sees the complete training dataset
+    epochs=50,
+
+    # resize images to 640 x 640 while training
+    imgsz=640,
+
+    # number of images processed together
+    batch=16,
+
+    # name of this training experiment
+    name="rocket_detector_v5"
+)
+
+
+print("Rocket detector training complete!")
+        </code></pre>
+
+
+        <br><br>
+
+
+        <!-- Python File 2 -->
+        <p class="image-label2">
+            Image Preprocessing & Conversion
+        </p>
+
+        <pre style="
+            text-align: left;
+            overflow-x: auto;
+            max-height: 200px;
+            background-color: black;
+        "><code>
+from pathlib import Path
+
+from PIL import Image
+from pillow_heif import register_heif_opener
+import rawpy
+
+
+# allow Pillow to open HEIC / HEIF
+register_heif_opener()
+
+
+# folders to check
+IMAGE_FOLDERS = [
+    Path("dataset/images/train"),
+    Path("dataset/images/val")
+]
+
+
+# convert images
+for folder in IMAGE_FOLDERS:
+
+    print()
+    print(f"Checking folder: {folder}")
+
+    if not folder.exists():
+        print(f"Folder does not exist: {folder}")
+        continue
+
+    for image_path in folder.iterdir():
+
+        extension = image_path.suffix.lower()
+
+        # HEIC / HEIF -> JPG
+        if extension in [".heic", ".heif"]:
+
+            print(f"Found HEIC: {image_path.name}")
+
+            try:
+                image = Image.open(image_path)
+                image = image.convert("RGB")
+
+                output_path = image_path.with_suffix(".jpg")
+
+                image.save(
+                    output_path,
+                    "JPEG",
+                    quality=95
+                )
+
+                print(f"Converted -> {output_path.name}")
+
+            except Exception as error:
+                print(f"FAILED: {image_path.name}")
+                print(error)
+
+        # ARW -> JPG
+        elif extension == ".arw":
+
+            print(f"Found ARW: {image_path.name}")
+
+            try:
+                with rawpy.imread(str(image_path)) as raw:
+
+                    rgb = raw.postprocess()
+
+                    image = Image.fromarray(rgb)
+
+                    output_path = image_path.with_suffix(".jpg")
+
+                    image.save(
+                        output_path,
+                        "JPEG",
+                        quality=95
+                    )
+
+                print(f"Converted -> {output_path.name}")
+
+            except Exception as error:
+                print(f"FAILED: {image_path.name}")
+                print(error)
+
+
+print()
+print("Finished converting images!")
+        </code></pre>
+
+
+        <br><br>
+
+        <!-- Python File 2 -->
+        <p class="image-label2">
+            Video Detection & Tracking
+        </p>
+
+        <pre style="
+            text-align: left;
+            overflow-x: auto;
+            max-height: 200px;
+            background-color: black;
+        "><code>
+from ultralytics import YOLO
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
+import cv2
+
+
+
+# load trained model
+model = YOLO(
+    "runs/detect/rocket_detector_v5/weights/best.pt"
+)
+
+
+
+# select video
+root = Tk()
+root.withdraw()
+
+video_path = askopenfilename(
+    title="Choose a rocket video",
+    filetypes=[
+        ("Video Files", "*.mp4 *.avi *.mov *.mkv")
+    ]
+)
+
+root.destroy()
+
+if not video_path:
+    print("No video selected.")
+    quit()
+
+
+
+# open video
+cap = cv2.VideoCapture(video_path)
+
+if not cap.isOpened():
+    print("Could not open video.")
+    quit()
+
+
+# get original video information
+fps = cap.get(cv2.CAP_PROP_FPS)
+
+width = int(
+    cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+)
+
+height = int(
+    cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+)
+
+print()
+print(f"Video resolution: {width} x {height}")
+print(f"Video FPS: {fps:.2f}")
+
+
+
+# create output video
+output_path = "rocket_detection_output.mp4"
+
+fourcc = cv2.VideoWriter_fourcc(
+    *"mp4v"
+)
+
+writer = cv2.VideoWriter(
+    output_path,
+    fourcc,
+    fps,
+    (width, height)
+)
+
+
+
+# display settings
+MAX_DISPLAY_WIDTH = 1920
+MAX_DISPLAY_HEIGHT = 1080
+
+
+
+# process video frame by frame
+frame_number = 0
+
+
+while True:
+
+    success, frame = cap.read()
+
+    if not success:
+        break
+
+    frame_number += 1
+
+
+    # running yolo
+    results = model.predict(
+        source=frame,
+
+        # inimum confidence
+        conf=0.15,
+
+        # dont print YOLO information for every frame
+        verbose=False
+    )
+
+
+    boxes = results[0].boxes
+
+
+    # keep only the best rocket detection
+    if len(boxes) > 0:
+
+        best_box = max(
+            boxes,
+            key=lambda box: float(box.conf[0])
+        )
+
+        confidence = float(
+            best_box.conf[0]
+        )
+
+        x1, y1, x2, y2 = best_box.xyxy[0]
+
+        x1 = int(x1)
+        y1 = int(y1)
+        x2 = int(x2)
+        y2 = int(y2)
+
+
+
+        # draw bounding box
+        cv2.rectangle(
+            frame,
+            (x1, y1),
+            (x2, y2),
+            (0, 255, 0),
+            3
+        )
+
+        # draw confidence text
+        cv2.putText(
+            frame,
+            f"rocket {confidence * 100:.1f}%",
+            (x1, max(y1 - 10, 30)),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            1,
+            (0, 255, 0),
+            2
+        )
+
+
+
+    # save full resolution frame
+    writer.write(frame)
+
+
+    # make smaller copy for display
+    display_frame = frame.copy()
+
+    scale = min(
+        MAX_DISPLAY_WIDTH / width,
+        MAX_DISPLAY_HEIGHT / height,
+        1.0
+    )
+
+    display_width = int(
+        width * scale
+    )
+
+    display_height = int(
+        height * scale
+    )
+
+    display_frame = cv2.resize(
+        display_frame,
+        (display_width, display_height)
+    )
+
+    # show video
+    cv2.imshow(
+        "Rocket Video Detection",
+        display_frame
+    )
+
+
+    # press Q to stop the video early
+    if cv2.waitKey(1) & 0xFF == ord("q"):
+        break
+
+
+
+# clean up
+cap.release()
+writer.release()
+
+cv2.destroyAllWindows()
+
+
+
+print()
+print("Finished processing video!")
+print(f"Frames processed: {frame_number}")
+print(f"Saved to: {output_path}")
+        </code></pre>
+
+
+        <br><br>
+
+         <!-- Python File 2 -->
+        <p class="image-label2">
+            Custom Bounding Box Annotation Tool
+        </p>
+
+        <pre style="
+            text-align: left;
+            overflow-x: auto;
+            max-height: 200px;
+            background-color: black;
+        "><code>
+from pathlib import Path
+import cv2
+
+
+
+# settings
+SPLIT = "val"
+
+IMAGE_DIR = Path(f"dataset/images/{SPLIT}")
+LABEL_DIR = Path(f"dataset/labels/{SPLIT}")
+
+LABEL_DIR.mkdir(parents=True, exist_ok=True)
+
+# maximum size of the labeling window
+MAX_WIDTH = 1000
+MAX_HEIGHT = 700
+
+
+# get images
+
+image_files = []
+
+for extension in ["*.jpg", "*.jpeg", "*.png", "*.JPG", "*.JPEG", "*.PNG"]:
+    image_files.extend(IMAGE_DIR.glob(extension))
+
+image_files = sorted(image_files)
+
+print(f"Found {len(image_files)} images.")
+
+
+
+# label each image
+for image_path in image_files:
+
+    label_path = LABEL_DIR / f"{image_path.stem}.txt"
+
+    # don't make us label an image again
+    if label_path.exists():
+        print(f"Already labeled: {image_path.name}")
+        continue
+
+    image = cv2.imread(str(image_path))
+
+    if image is None:
+        print(f"Could not open: {image_path.name}")
+        continue
+
+    # original image dimensions
+    original_height, original_width = image.shape[:2]
+
+
+
+    # shrink the image for display
+    scale = min(
+        MAX_WIDTH / original_width,
+        MAX_HEIGHT / original_height,
+        1.0
+    )
+
+    display_width = int(original_width * scale)
+    display_height = int(original_height * scale)
+
+    display_image = cv2.resize(
+        image,
+        (display_width, display_height)
+    )
+
+
+
+    # draw box
+    print()
+    print(f"Image: {image_path.name}")
+    print("Draw a tight box around the rocket.")
+    print("Press ENTER or SPACE when finished.")
+
+    x, y, w, h = cv2.selectROI(
+        "Label Rocket",
+        display_image,
+        showCrosshair=True,
+        fromCenter=False
+    )
+
+    cv2.destroyAllWindows()
+
+    if w == 0 or h == 0:
+        print("No box selected.")
+        continue
+
+
+    # convert back to normal image size
+    x = x / scale
+    y = y / scale
+    w = w / scale
+    h = h / scale
+
+
+    # convert to yolo format
+    center_x = (x + w / 2) / original_width
+    center_y = (y + h / 2) / original_height
+
+    normalized_width = w / original_width
+    normalized_height = h / original_height
+
+
+    # Save label
+
+    # 0 = rocket
+    with open(label_path, "w") as file:
+        file.write(
+            f"0 "
+            f"{center_x:.6f} "
+            f"{center_y:.6f} "
+            f"{normalized_width:.6f} "
+            f"{normalized_height:.6f}\n"
+        )
+
+    print(f"Saved: {label_path}")
+
+
+print()
+print("Finished labeling!")
+        </code></pre>
+
+
+        <br><br>
+
+
+        <!-- Python File 3 -->
+        <p class="image-label2">
+            Convert Images
+        </p>
+
+        <pre style="
+            text-align: left;
+            overflow-x: auto;
+            max-height: 200px;
+            background-color: black;
+        "><code>
+from pathlib import Path
+
+from PIL import Image
+from pillow_heif import register_heif_opener
+import rawpy
+
+
+# allow Pillow to open HEIC / HEIF
+register_heif_opener()
+
+
+# folders to check
+IMAGE_FOLDERS = [
+    Path("dataset/images/train"),
+    Path("dataset/images/val")
+]
+
+
+# convert images
+for folder in IMAGE_FOLDERS:
+
+    print()
+    print(f"Checking folder: {folder}")
+
+    if not folder.exists():
+        print(f"Folder does not exist: {folder}")
+        continue
+
+    for image_path in folder.iterdir():
+
+        extension = image_path.suffix.lower()
+
+        # HEIC / HEIF -> JPG
+        if extension in [".heic", ".heif"]:
+
+            print(f"Found HEIC: {image_path.name}")
+
+            try:
+                image = Image.open(image_path)
+                image = image.convert("RGB")
+
+                output_path = image_path.with_suffix(".jpg")
+
+                image.save(
+                    output_path,
+                    "JPEG",
+                    quality=95
+                )
+
+                print(f"Converted -> {output_path.name}")
+
+            except Exception as error:
+                print(f"FAILED: {image_path.name}")
+                print(error)
+
+        # ARW -> JPG
+        elif extension == ".arw":
+
+            print(f"Found ARW: {image_path.name}")
+
+            try:
+                with rawpy.imread(str(image_path)) as raw:
+
+                    rgb = raw.postprocess()
+
+                    image = Image.fromarray(rgb)
+
+                    output_path = image_path.with_suffix(".jpg")
+
+                    image.save(
+                        output_path,
+                        "JPEG",
+                        quality=95
+                    )
+
+                print(f"Converted -> {output_path.name}")
+
+            except Exception as error:
+                print(f"FAILED: {image_path.name}")
+                print(error)
+
+
+print()
+print("Finished converting images!")
+        </code></pre>
+
+    </div>
+
+</div>
+
+        <div class="project-content">
+
+            <div class="description">
+
+                <h1>Machine Learning Pipeline</h1>
+
+                <hr>
+                <br>
+
+                <p>
+                    The current pipeline takes raw rocket imagery through
+                    dataset preparation, supervised training, validation,
+                    and inference.
+                </p>
+
+                <br>
+
+                <p style="
+                    text-align: center;
+                    font-weight: bold;
+                    line-height: 2;
+                ">
+                    Rocket Images
+                    &nbsp;→&nbsp;
+                    Bounding Box Labels
+                    &nbsp;→&nbsp;
+                    YOLO11 Fine-Tuning
+                    &nbsp;→&nbsp;
+                    Validation
+                    &nbsp;→&nbsp;
+                    Rocket Detection
+                </p>
+
+                <br>
+
+                <p>
+                    During supervised training, the bounding boxes act as
+                    the ground-truth examples that tell the model where
+                    the rocket is located. After training, the resulting
+                    model can predict a rocket's location in new images
+                    without being given a bounding box beforehand.
+                </p>
+
+                <br>
+                <hr>
+                <br>
+                
+                <div class="image-container"
+                 style="width: 350px; max-width: 100%; margin: 0 auto;">
+
+                <p class="image-label2">
+                    YOLO Dataset & Training Structure
+                </p>
+
+                <img
+                    src="Images/image-folders.png"
+                    alt="YOLO dataset and training folders"
+                    style="width: 300px; max-width: 100%; height: auto;">
+
+                <br>
+
+                <p style="
+                    width: 100%;
+                    white-space: normal;
+                    overflow-wrap: break-word;
+                ">
+                    Training and validation images are paired with
+                    YOLO bounding-box labels, while each training
+                    run generates model weights and evaluation results.
+                </p>
+
+            </div>
+
+            <br><br>
+
+            <div class="image-container"
+                 style="width: 500px; max-width: 100%; margin: 0 auto;">
+
+                <p class="image-label2">
+                    Model Training
+                </p>
+
+                <img
+                    src="Images/epochs.png"
+                    alt="YOLO model training across 50 epochs"
+                    style="width: 500px; max-width: 100%; height: auto;">
+
+                <br>
+
+                <p style="
+                    width: 100%;
+                    white-space: normal;
+                    overflow-wrap: break-word;
+                ">
+                    The model trains for 50 epochs while tracking
+                    loss, precision, recall, and mAP on the
+                    validation dataset.
+                </p>
+
+            </div>
+
+            </div>
+
+        </div>
+
+      <div class="project-content">
+
+            <div class="description">
+
+                <h1>Training & Evaluation</h1>
+
+                <hr>
+                <br>
+
+                <p>
+                    I separate the dataset into training and validation
+                    images so that model performance can be evaluated on
+                    examples that are not used to directly update the
+                    network during training.
+                </p>
+
+                <br>
+
+                <ul>
+
+                    <li>
+                        <strong>Training Epochs (x50):</strong>
+                        The model repeatedly processes the training
+                        dataset while updating its learned parameters.
+                    </li>
+
+                    <li>
+                        <strong>Validation:</strong>
+                        A separate set of labeled images is used to
+                        evaluate how well the model generalizes beyond
+                        its training examples.
+                    </li>
+
+                    <li>
+                        <strong>Confidence Scores:</strong>
+                        Each detection includes a confidence value
+                        representing the model's confidence that the
+                        predicted region contains a rocket.
+                    </li>
+
+                    <li>
+                        <strong>Performance Metrics:</strong>
+                        Training outputs include precision, recall, F1,
+                        and mean Average Precision metrics for evaluating
+                        detection performance.
+                    </li>
+
+                    <li>
+                        <strong>Iterative Development:</strong>
+                        I continue expanding and relabeling the dataset
+                        between model versions to improve performance
+                        under more difficult launch conditions.
+                    </li>
+
+                </ul>
+
+                <br>
+                <hr>
+                <br>
+
+                <p>Automatically generated YOLO training batch showing labeled and augmented rocket images used during model training.</p>
+                <br>
+
+                <div style="
+                    display: flex;
+                    gap: 20px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: flex-start;
+                ">
+
+                    <div class="image-container">
+                        <p class="image-label2">
+                            Train Batch 1
+                        </p>
+                        <img
+                            src="Images/train_batch0.jpg"
+                            alt="YOLO rocket detector training results"
+                            style="width: 300px; max-width: 100%; height: auto;">
+                    </div>
+
+
+                    <div class="image-container">
+                        <p class="image-label2">
+                            Train Batch 2
+                        </p>
+                        <img
+                            src="Images/train_batch1.jpg"
+                            alt="YOLO rocket detector training results"
+                            style="width: 300px; max-width: 100%; height: auto;">
+                    </div>
+
+                     <div class="image-container">
+                        <p class="image-label2">
+                            Train Batch 3
+                        </p>
+                        <img
+                            src="Images/train_batch2.jpg"
+                            alt="YOLO rocket detector training results"
+                            style="width: 300px; max-width: 100%; height: auto;">
+                    </div>
+
+
+                     <div class="image-container">
+                         <p class="image-label2">
+                            Train Batch 4
+                        </p>
+                        <img
+                            src="Images/train_batch280.jpg"
+                            alt="YOLO rocket detector training results"
+                            style="width: 300px; max-width: 100%; height: auto;">
+                    </div>
+
+                     <div class="image-container">
+                         <p class="image-label2">
+                            Train Batch 5
+                        </p>
+                        <img
+                            src="Images/train_batch281.jpg"
+                            alt="YOLO rocket detector training results"
+                            style="width: 300px; max-width: 100%; height: auto;">
+                    </div>
+
+                     <div class="image-container">
+                         <p class="image-label2">
+                            Train Batch 6
+                        </p>
+                        <img
+                            src="Images/train_batch282.jpg"
+                            alt="YOLO rocket detector training results"
+                            style="width: 300px; max-width: 100%; height: auto;">
+                    </div>
+
+                    <div class="image-container">
+                         <p class="image-label2">
+                            Train Batch 7
+                        </p>
+                        <img
+                            src="Images/val_batch0_labels.jpg"
+                            alt="YOLO rocket detector training results"
+                            style="width: 300px; max-width: 100%; height: auto;">
+                    </div>
+                </div>
+
+                  <br>
+                <hr>
+                <br>
+
+                    <p>Trained the YOLO rocket detector for the epochs and evaluated its performance using precision, recall, F1 score, and mAP.</p>
+                    <br>
+                    <div style="
+                        display: flex;
+                        gap: 20px;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        align-items: flex-start;
+                    ">
+
+                        <div class="image-container">
+
+                            <p class="image-label2">
+                                Training & Validation Performance
+                            </p>
+
+                            <img
+                                src="Images/results.png"
+                                alt="YOLO training and validation performance"
+                                style="width: 200px; max-width: 100%; height: auto;">
+                            <br>
+                            <p>
+                                Tracks loss, precision, recall, and mAP across the 50 training epochs.
+                            </p>
+
+                        </div>
+
+
+                        <div class="image-container">
+
+                            <p class="image-label2">
+                                Precision-Recall Curve
+                            </p>
+
+                            <img
+                                src="Images/BoxPR_curve.png"
+                                alt="YOLO precision-recall curve"
+                                style="width: 200px; max-width: 100%; height: auto;">
+                            <br>
+                            <p>
+                                Shows the tradeoff between detecting rockets and avoiding false detections.
+                            </p>
+
+                        </div>
+
+
+                        <div class="image-container">
+
+                            <p class="image-label2">
+                                F1-Confidence Curve
+                            </p>
+
+                            <img
+                                src="Images/BoxF1_curve.png"
+                                alt="YOLO F1-confidence curve"
+                                style="width: 200px; max-width: 100%; height: auto;">
+                            <br>
+                            <p>
+                                Shows the model's best balance of precision and recall across confidence thresholds.
+                            </p>
+
+                        </div>
+
+
+                        <div class="image-container">
+
+                            <p class="image-label2">
+                                Confusion Matrix
+                            </p>
+
+                            <img
+                                src="Images/confusion_matrix.png"
+                                alt="YOLO rocket detection confusion matrix"
+                                style="width: 250px; max-width: 100%; height: auto;">
+                            <br>
+                            <p>
+                                Shows correct detections, missed rockets, and false detections.
+                            </p>
+
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+
+        <div class="project-content">
+
+            <div class="description">
+
+                <h1>Altium & Avionics Hardware</h1>
+
+                <hr>
+                <br>
+
+                <p>
+                    My work with RPL Avionics also extends beyond the
+                    machine-learning project. I contribute to the team's
+                    electronics and PCB development using
+                    <strong>Altium Designer</strong>.
+                </p>
+
+                <br>
+
+                <ul>
+
+                    <li>
+                        <strong>Schematic Design:</strong>
+                        Working with electrical schematics and connections
+                        for avionics systems.
+                    </li>
+
+                    <li>
+                        <strong>PCB Design:</strong>
+                        Working with board layouts and the physical
+                        organization of avionics electronics.
+                    </li>
+
+                    <li>
+                        <strong>Hardware Integration:</strong>
+                        Considering how electronic components, sensors,
+                        processing hardware, and other avionics systems
+                        interface within the larger rocket system.
+                    </li>
+
+                    <li>
+                        <strong>Prototyping:</strong>
+                        Supporting the process of moving avionics designs
+                        from schematics and layouts toward physical
+                        hardware.
+                    </li>
+
+                </ul>
+
+                <br>
+                <hr>
+                <br>
+
+                <div class="image-row">
+
+                <div class="image-container">
+
+                    <p class="image-label2">
+                        PCB Schematic
+                    </p>
+
+                    <img
+                        src="Images/hardware1.png"
+                        alt="RPL avionics Altium PCB schematic"
+                        style="width: 350px; max-width: 100%; height: auto;">
+
+                </div>
+
+
+                <div class="image-container">
+
+                    <p class="image-label2">
+                        PCB rocket + rangefinder
+                    </p>
+
+                    <img
+                        src="Images/hardware2.png"
+                        alt="RPL avionics PCBs"
+                        style="width: 350px; max-width: 100%; height: auto;">
+
+                </div>
+
+
+                <div class="image-container">
+
+                    <p class="image-label2">
+                        PCB rocket cont.
+                    </p>
+
+                    <img
+                        src="Images/hardware3.png"
+                        alt="RPL avionics PCBs"
+                        style="width: 350px; max-width: 100%; height: auto;">
+
+                </div>
+
+                 <div class="image-container">
+
+                    <p class="image-label2">
+                        PCB rocket cont.
+                    </p>
+
+                    <img
+                        src="Images/hardware4.png"
+                        alt="RPL avionics PCBs"
+                        style="width: 350px; max-width: 100%; height: auto;">
+
+                </div>
+
+                 <div class="image-container">
+
+                    <p class="image-label2">
+                        PCB rocket cont.
+                    </p>
+
+                    <img
+                        src="Images/hardware5.png"
+                        alt="RPL avionics PCBs"
+                        style="width: 350px; max-width: 100%; height: auto;">
+
+                </div>
+
+            </div>
+
+            </div>
+
+        </div>
+
+        <div class="project-content">
+
+            <div class="description">
+
+                <h1>Next Steps</h1>
+
+                <hr>
+                <br>
+
+                <ul>
+
+                    <li>
+                        Improve detection of distant and partially
+                        occluded rockets.
+                    </li>
+
+                    <li>
+                        Add persistent tracking across consecutive
+                        video frames.
+                    </li>
+
+                    <li>
+                        Transition from prerecorded video to live
+                        close-range and long-range camera feeds.
+                    </li>
+
+                    <li>
+                        Continue avionics hardware and PCB development
+                        using Altium Designer.
+                    </li>
+
+                </ul>
+
+                <p style="
+                    color: yellow;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin-top: 20px;
+                ">
+                    Development currently in progress.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

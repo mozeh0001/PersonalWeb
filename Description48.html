@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>CSCI 580 - Computer Graphics</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <canvas id="canvas2"></canvas>
+
+        <div class="content-wrapper">
+
+            <a href="MyPersonalWebsite.html#coursework"
+               class="back-button">
+                Back to Coursework
+            </a>
+
+            <h2 id="color" class="top-padding">CSCI 580: Computer Graphics</h2>
+            <h3 id="colored-p">CSCI 580 explores the mathematical and computational
+            foundations of computer graphics, from representing 3D geometry and tracing 
+            rays to rasterization, shading, procedural generation, animation, and
+            real-time GPU rendering.</h3>
+
+            <div class="project-content">
+
+                <div class="image-container">
+
+                    <p class="image-label2">
+                        Graphics Foundations
+                    </p>
+
+                    <img
+                        src="Images/foundation-of-graphics.png"
+                        alt="Computer graphics foundations"
+                        style="width: 400px; max-width: 100%; height: auto;">
+
+                </div>
+
+
+                <div class="description">
+
+                    <h1>Graphics Foundations</h1>
+
+                    <hr>
+                    <br>
+
+                    <p>
+                        Studied the mathematical foundations used to represent
+                        and manipulate objects within a 3D scene.
+                    </p>
+
+                    <br>
+
+                    <ul>
+
+                        <li>
+                            <strong>Vectors & Algebra:</strong>
+                            Points, vectors, dot products, cross products,
+                            lines, planes, and geometric calculations.
+                        </li>
+
+                        <li>
+                            <strong>Coordinate Spaces:</strong>
+                            Object, world, camera, and screen coordinate systems.
+                        </li>
+
+                        <li>
+                            <strong>Scenes:</strong>
+                            Scene organization, object relationships,
+                            and hierarchical scene graphs.
+                        </li>
+
+                        <li>
+                            <strong>Cameras:</strong>
+                            Camera position, orientation, image planes,
+                            field of view, and projection.
+                        </li>
+
+                        <li>
+                            <strong>Transformations:</strong>
+                            Translation, rotation, scaling, and
+                            transformation order.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="description">
+
+                    <h1>Ray Tracing</h1>
+
+                    <hr>
+                    <br>
+
+                    <p>
+                        Explored how rays are generated from a virtual camera,
+                        intersect scene geometry, and recursively simulate
+                        different interactions with light.
+                    </p>
+
+                    <br>
+
+                    <ul>
+
+                        <li>
+                            <strong>Ray Generation:</strong>
+                            Generated camera rays corresponding to pixels
+                            on the image plane.
+                        </li>
+
+                        <li>
+                            <strong>Ray Intersections:</strong>
+                            Calculated intersections with spheres, planes,
+                            cylinders, discs, and other geometry.
+                        </li>
+
+                        <li>
+                            <strong>Closest Hit:</strong>
+                            Determined the closest valid intersection
+                            visible from the camera.
+                        </li>
+
+                        <li>
+                            <strong>Secondary Rays:</strong>
+                            Used additional rays for reflections,
+                            refractions, and shadows.
+                        </li>
+
+                        <li>
+                            <strong>Numerical Precision:</strong>
+                            Used epsilon values and intersection constraints
+                            to handle floating-point issues.
+                        </li>
+
+                    </ul>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                </div>
+
+
+                <div class="image-container"
+                     style="
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 30px;
+                     ">
+
+                    <div>
+
+                        <p class="image-label2">
+                            Ray Generation & Secondary Rays
+                        </p>
+
+                        <img
+                            src="Images/ray-1.png"
+                            alt="Ray tracing diagram"
+                            style="
+                                width: 500px;
+                                max-width: 100%;
+                                height: auto;
+                            ">
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="image-label2">
+                            Ray Tracing & Lighting
+                        </p>
+
+                        <img
+                            src="Images/ray-2.png"
+                            alt="Ray tracing lighting diagram"
+                            style="
+                                width: 500px;
+                                max-width: 100%;
+                                height: auto;
+                            ">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="image-container">
+
+                    <p class="image-label2">
+                        Shading, Shadows & Textures
+                    </p>
+
+                    <img
+                        src="Images/shading.png"
+                        alt="Phong shading shadows and textures"
+                        style="width: 400px; max-width: 100%; height: auto;">
+
+                </div>
+
+
+                <div class="description">
+
+                    <h1>Shading, Shadows & Textures</h1>
+
+                    <p>
+                        Studied how lighting, surface orientation, materials,
+                        and textures determine the appearance of rendered
+                        geometry.
+                    </p>
+
+                    <br>
+
+                    <ul>
+
+                        <li>
+                            <strong>Phong Shading:</strong>
+                            Ambient, diffuse, and specular lighting.
+                        </li>
+
+                        <li>
+                            <strong>Surface Normals:</strong>
+                            Used surface orientation to calculate
+                            lighting response.
+                        </li>
+
+                        <li>
+                            <strong>Light Sources:</strong>
+                            Ambient, point, directional, and spot lights
+                            with attenuation.
+                        </li>
+
+                        <li>
+                            <strong>Shadows:</strong>
+                            Shadow rays, multiple lights, hard shadows,
+                            and soft shadows.
+                        </li>
+
+                        <li>
+                            <strong>Texture Mapping:</strong>
+                            UV coordinates, texture sampling, and
+                            interpolation.
+                        </li>
+
+                        <li>
+                            <strong>Materials:</strong>
+                            Combined surface colors, textures, reflectance,
+                            and lighting properties.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="description">
+
+                    <h1>Triangles & Meshes</h1>
+
+                    <p>
+                        Studied how complex 3D surfaces are represented
+                        efficiently using collections of vertices and triangles.
+                    </p>
+
+                    <br>
+
+                    <ul>
+
+                        <li>
+                            <strong>Triangles:</strong>
+                            Triangle geometry, intersections, normals,
+                            and barycentric coordinates.
+                        </li>
+
+                        <li>
+                            <strong>Meshes:</strong>
+                            Represented complex objects using connected
+                            collections of triangles.
+                        </li>
+
+                        <li>
+                            <strong>Interpolation:</strong>
+                            Interpolated surface properties across
+                            triangle interiors.
+                        </li>
+
+                        <li>
+                            <strong>Bounding Volumes:</strong>
+                            Used spatial bounds to reduce unnecessary
+                            intersection calculations.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="image-container">
+
+                    <p class="image-label2">
+                        Triangles & Meshes
+                    </p>
+
+                    <img
+                        src="Images/meshes.png"
+                        alt="Triangles and meshes"
+                        style="width: 400px; max-width: 100%; height: auto;">
+
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="image-container">
+
+                    <p class="image-label2">
+                        Rasterization & Z-Buffering
+                    </p>
+
+                    <img
+                        src="Images/z-buffering.png"
+                        alt="Rasterization and Z-buffering"
+                        style="width: 400px; max-width: 100%; height: auto;">
+
+                </div>
+
+
+                <div class="description">
+
+                    <h1>Rasterization & Z-Buffering</h1>
+
+                    <p>
+                        Studied the traditional real-time graphics pipeline
+                        used to convert projected triangles into visible pixels.
+                    </p>
+
+                    <br>
+
+                    <ul>
+
+                        <li>
+                            <strong>Rasterization:</strong>
+                            Converted projected triangles into fragments
+                            and pixels.
+                        </li>
+
+                        <li>
+                            <strong>Z-Buffering:</strong>
+                            Used depth information to determine which
+                            surfaces are visible.
+                        </li>
+
+                        <li>
+                            <strong>Clipping:</strong>
+                            Removed geometry outside the camera's
+                            viewing region.
+                        </li>
+
+                        <li>
+                            <strong>Culling:</strong>
+                            Avoided rendering geometry that cannot
+                            contribute to the final image.
+                        </li>
+
+                        <li>
+                            <strong>Anti-Aliasing:</strong>
+                            Studied sampling techniques used to reduce
+                            jagged edges and visual artifacts.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="description">
+
+                    <h1>Image Processing & Color</h1>
+
+                    <p>
+                        Explored digital images as sampled signals and
+                        studied techniques for processing and representing
+                        visual information.
+                    </p>
+
+                    <br>
+
+                    <ul>
+
+                        <li>
+                            <strong>Color:</strong>
+                            RGB, RGBA, CMYK, HSV, alpha, and gamma correction.
+                        </li>
+
+                        <li>
+                            <strong>Sampling:</strong>
+                            Studied pixels as discrete samples of
+                            continuous image signals.
+                        </li>
+
+                        <li>
+                            <strong>Convolution:</strong>
+                            Applied image kernels for filtering,
+                            blurring, and edge detection.
+                        </li>
+
+                        <li>
+                            <strong>Frequency Analysis:</strong>
+                            Fourier transforms, DFT, FFT, and DCT.
+                        </li>
+
+                        <li>
+                            <strong>Image Compression:</strong>
+                            Studied frequency-based techniques used
+                            by formats such as JPEG.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="image-container">
+
+                    <p class="image-label2">
+                        Image Processing & Color
+                    </p>
+
+                    <img
+                        src="Images/image-processing.png"
+                        alt="Image processing and color"
+                        style="width: 400px; max-width: 100%; height: auto;">
+
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="image-container">
+
+                    <p class="image-label2">
+                        Raymarching & Volumetric Effects
+                    </p>
+
+                    <img
+                        src="Images/ray-marching.png"
+                        alt="Raymarching and volumetric effects"
+                        style="width: 400px; max-width: 100%; height: auto;">
+
+                </div>
+
+
+                <div class="description">
+
+                    <h1>Raymarching & Volumetric Effects</h1>
+
+                    <p>
+                        Explored rendering techniques that sample along
+                        rays rather than relying only on explicit
+                        surface intersections.
+                    </p>
+
+                    <br>
+
+                    <ul>
+
+                        <li>
+                            <strong>Raymarching:</strong>
+                            Progressively sampled points along a ray
+                            through a scene.
+                        </li>
+
+                        <li>
+                            <strong>Volumetric Rendering:</strong>
+                            Represented effects such as clouds,
+                            fog, and other participating media.
+                        </li>
+
+                        <li>
+                            <strong>Density:</strong>
+                            Used sampled density values to determine
+                            how light travels through a volume.
+                        </li>
+
+                        <li>
+                            <strong>Procedural Effects:</strong>
+                            Combined mathematical functions and noise
+                            with volumetric rendering.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="description">
+
+                    <h1>Procedural Generation</h1>
+
+                    <p>
+                        Studied how controlled randomness and mathematical
+                        algorithms can generate textures, environments,
+                        structures, and visual effects.
+                    </p>
+
+                    <br>
+
+                    <ul>
+
+                        <li>
+                            <strong>Pseudo-Randomness:</strong>
+                            Used deterministic seeds to create
+                            reproducible random results.
+                        </li>
+
+                        <li>
+                            <strong>Perlin Noise:</strong>
+                            Gradient-based noise for terrain,
+                            clouds, and natural textures.
+                        </li>
+
+                        <li>
+                            <strong>Worley Noise:</strong>
+                            Cell-based noise for organic and
+                            geometric patterns.
+                        </li>
+
+                        <li>
+                            <strong>Fractal Noise:</strong>
+                            Combined multiple noise layers to create
+                            detail across different scales.
+                        </li>
+
+                        <li>
+                            <strong>Random Walks:</strong>
+                            Generated paths, caves, rooms,
+                            and other structures.
+                        </li>
+
+                        <li>
+                            <strong>Wave Function Collapse:</strong>
+                            Generated layouts using constraints
+                            between neighboring elements.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="image-container">
+
+                    <p class="image-label2">
+                        Procedural Generation
+                    </p>
+
+                    <img
+                        src="Images/procedural-generation.png"
+                        alt="Procedural generation"
+                        style="width: 400px; max-width: 100%; height: auto;">
+
+                </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="image-container">
+
+                    <p class="image-label2">
+                        Curves & Animation
+                    </p>
+
+                    <img
+                        src="Images/curve-graphics.png"
+                        alt="Curves and animation"
+                        style="width: 400px; max-width: 100%; height: auto;">
+
+                </div>
+
+
+                <div class="description">
+
+                    <h1>Curves & Animation</h1>
+
+                    <p>
+                        Studied mathematical representations of smooth
+                        curves and techniques for creating motion over time.
+                    </p>
+
+                    <br>
+
+                    <ul>
+
+                        <li>
+                            <strong>Bézier Curves:</strong>
+                            Created smooth curves using control points
+                            and polynomial interpolation.
+                        </li>
+
+                        <li>
+                            <strong>Interpolation:</strong>
+                            Generated intermediate values between
+                            positions and transformations.
+                        </li>
+
+                        <li>
+                            <strong>Keyframe Animation:</strong>
+                            Defined important poses and interpolated
+                            motion between them.
+                        </li>
+
+                        <li>
+                            <strong>Transform Animation:</strong>
+                            Animated translation, rotation, and scale.
+                        </li>
+
+                        <li>
+                            <strong>Rotation:</strong>
+                            Studied rotational interpolation and
+                            quaternion-based representations.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="description">
+
+                    <h1>GPUs & Real-Time Rendering</h1>
+
+                    <p>
+                        Studied the evolution and architecture of GPUs
+                        and how their highly parallel design enables
+                        modern real-time graphics.
+                    </p>
+
+                    <br>
+
+                    <ul>
+
+                        <li>
+                            <strong>GPU Architecture:</strong>
+                            Parallel processing cores, VRAM,
+                            and memory hierarchy.
+                        </li>
+
+                        <li>
+                            <strong>Graphics Pipeline:</strong>
+                            Vertex processing, rasterization,
+                            fragment processing, and image output.
+                        </li>
+
+                        <li>
+                            <strong>Shaders:</strong>
+                            Programmable stages for processing
+                            vertices and fragments.
+                        </li>
+
+                        <li>
+                            <strong>CPU vs. GPU:</strong>
+                            Compared general-purpose sequential
+                            processing with massively parallel
+                            graphics workloads.
+                        </li>
+
+                        <li>
+                            <strong>Real-Time Graphics:</strong>
+                            Balanced rendering quality, performance,
+                            memory, and frame time.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="image-container">
+
+                    <p class="image-label2">
+                        GPUs & Real-Time Rendering
+                    </p>
+
+                    <img
+                        src="Images/gpu-rendering.png"
+                        alt="GPU and real-time rendering"
+                        style="width: 400px; max-width: 100%; height: auto;">
+
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="description">
+
+                    <h1>Course Takeaways</h1>
+
+                    <p>
+                        CSCI 580 connected the mathematics behind computer
+                        graphics with practical rendering techniques,
+                        covering the complete path from representing
+                        geometry and tracing rays to rasterization,
+                        shading, image processing, animation, and
+                        GPU-based real-time rendering.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        These concepts also supported my
+                        <strong>From Rays to Reality</strong> project,
+                        where I applied ray intersections, camera
+                        simulation, LiDAR sampling, point-cloud generation,
+                        and OpenGL visualization.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
