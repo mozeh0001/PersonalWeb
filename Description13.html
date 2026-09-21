@@ -55,6 +55,78 @@
                 </div>
             </div>
 
+            <!-- Playable Portal Recreation -->
+            <div class="project-content">
+                <div class="description" style="width: 100%;">
+                    <h1 style="text-align: center;">Play Portal Recreation</h1>
+                    <hr>
+
+                    <div class="game-launcher">
+                        <button
+                            class="play-game-button"
+                            id="portal-play"
+                            onclick="loadPortalGame()">
+                            ▶ Play Portal Recreation
+                        </button>
+
+                        <div id="portal-game"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            function closeAllGames() {
+                const games = [
+                    ["portal-game", "portal-play"],
+                    ["mario-kart-game", "mario-play"],
+                    ["starfox-game", "starfox-play"],
+                    ["zelda-game", "zelda-play"],
+                    ["platformer-game", "platformer-play"],
+                    ["frogger-game", "frogger-play"],
+                    ["pacman-game", "pacman-play"],
+                    ["asteroids-game", "asteroids-play"]
+                ];
+
+                games.forEach(([gameId, buttonId]) => {
+                    const game = document.getElementById(gameId);
+                    const button = document.getElementById(buttonId);
+
+                    if (game) {
+                        game.innerHTML = "";
+                    }
+
+                    if (button) {
+                        button.style.display = "inline-block";
+                    }
+                });
+            }
+
+            function loadPortalGame() {
+                closeAllGames();
+                const container = document.getElementById("portal-game");
+                const playButton = document.getElementById("portal-play");
+
+                container.innerHTML = `
+                    <button class="close-game-button" onclick="closePortalGame()">
+                        ✕ Close Game
+                    </button>
+
+                    <iframe
+                        src="Lab12Web/Lab12.html"
+                        title="Portal Recreation"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen>
+                    </iframe>
+                `;
+
+                playButton.style.display = "none";
+            }
+
+            function closePortalGame() {
+                document.getElementById("portal-game").innerHTML = "";
+                document.getElementById("portal-play").style.display = "inline-block";
+            }
+            </script>
 
             <div class="project-content">
 
@@ -129,6 +201,51 @@
                 </div>
             </div>
 
+            <!-- Playable Mario Kart Recreation -->
+            <div class="project-content">
+                <div class="description" style="width: 100%;">
+                    <h1 style="text-align: center;">Play Mario Kart Recreation</h1>
+                    <hr>
+
+                    <div class="game-launcher">
+                        <button class="play-game-button" id="mario-play" onclick="loadMarioKart()">
+                            ▶ Play Mario Kart Recreation
+                        </button>
+
+                        <div id="mario-kart-game"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            function loadMarioKart() {
+                closeAllGames();
+                const container = document.getElementById("mario-kart-game");
+                const playButton = document.getElementById("mario-play");
+
+                container.innerHTML = `
+                    <button class="close-game-button" onclick="closeMarioKart()">
+                        ✕ Close Game
+                    </button>
+
+                    <iframe
+                        src="Lab08Web/Lab08.html"
+                        title="Mario Kart Recreation"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen>
+                    </iframe>
+                `;
+
+                playButton.style.display = "none";
+            }
+
+            function closeMarioKart() {
+                document.getElementById("mario-kart-game").innerHTML = "";
+                document.getElementById("mario-play").style.display = "inline-block";
+            }
+            </script>
+
+
             <div class="project-content">
                 <!-- Video Section -->
                 <!-- <div class="video-container">
@@ -142,9 +259,9 @@
                     <p class="image-label2">Lasers</p>
                     <img src="Images/Lasers.png" alt="Star Fox Lasers" width="500" height="300">
                     <p id="padding2" class="image-label2">Peppy Reminds User to do the Barrel Roll</p>
-                    <img src="Images/Peppy.png" alt="Mario Kart Get Ready" width="500" height="300">
+                    <img src="Images/Peppy.png" alt="Peppy" width="500" height="300">
                     <p id="padding2" class="image-label2">Generative Tunnels</p>
-                    <img src="Images/Tunnel.png" alt="Mario Kart Lap Count" width="500" height="300">
+                    <img src="Images/Tunnel.png" alt="Tunnel" width="500" height="300">
                 </div>
 
                 <div class="description">
@@ -214,6 +331,53 @@
                 </div>
             </div>
 
+            <!-- Playable Star Fox Tunnel -->
+            <div class="project-content">
+                <div class="description" style="width: 100%;">
+                    <h1 style="text-align: center;">Play Star Fox Tunnel</h1>
+                    <hr>
+
+                    <div class="game-launcher">
+                        <button
+                            class="play-game-button"
+                            id="starfox-play"
+                            onclick="loadStarFox()">
+                            ▶ Play Star Fox Tunnel
+                        </button>
+
+                        <div id="starfox-game"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            function loadStarFox() {
+                closeAllGames();
+                const container = document.getElementById("starfox-game");
+                const playButton = document.getElementById("starfox-play");
+
+                container.innerHTML = `
+                    <button class="close-game-button" onclick="closeStarFox()">
+                        ✕ Close Game
+                    </button>
+
+                    <iframe
+                        src="Lab07Web/Lab07.html"
+                        title="Star Fox Tunnel"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen>
+                    </iframe>
+                `;
+
+                playButton.style.display = "none";
+            }
+
+            function closeStarFox() {
+                document.getElementById("starfox-game").innerHTML = "";
+                document.getElementById("starfox-play").style.display = "inline-block";
+            }
+            </script>
+
             <!-- Project Content -->
             <div class="project-content">
       
@@ -266,6 +430,53 @@
                     <img src="Images/Zelda.png" alt="Star Fox Lasers" width="500" height="450">
                 </div>
             </div>
+
+            <!-- Playable Zelda Recreation -->
+            <div class="project-content">
+                <div class="description" style="width: 100%;">
+                    <h1 style="text-align: center;">Play Zelda Recreation</h1>
+                    <hr>
+
+                    <div class="game-launcher">
+                        <button
+                            class="play-game-button"
+                            id="zelda-play"
+                            onclick="loadZelda()">
+                            ▶ Play Zelda Recreation
+                        </button>
+
+                        <div id="zelda-game"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            function loadZelda() {
+                closeAllGames();
+                const container = document.getElementById("zelda-game");
+                const playButton = document.getElementById("zelda-play");
+
+                container.innerHTML = `
+                    <button class="close-game-button" onclick="closeZelda()">
+                        ✕ Close Game
+                    </button>
+
+                    <iframe
+                        src="Lab06Web/Lab06.html"
+                        title="Zelda Recreation"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen>
+                    </iframe>
+                `;
+
+                playButton.style.display = "none";
+            }
+
+            function closeZelda() {
+                document.getElementById("zelda-game").innerHTML = "";
+                document.getElementById("zelda-play").style.display = "inline-block";
+            }
+            </script>
 
             <!-- Project Content -->
             <div class="project-content">
@@ -359,8 +570,55 @@
                 </div>
             </div>
 
+            <!-- Playable Mario Platformer -->
+            <div class="project-content">
+                <div class="description" style="width: 100%;">
+                    <h1 style="text-align: center;">Play Mario Platformer</h1>
+                    <hr>
 
-                        <!-- Project Content -->
+                    <div class="game-launcher">
+                        <button
+                            class="play-game-button"
+                            id="platformer-play"
+                            onclick="loadMarioPlatformer()">
+                            ▶ Play Mario Platformer
+                        </button>
+
+                        <div id="platformer-game"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            function loadMarioPlatformer() {
+                closeAllGames();
+                const container = document.getElementById("platformer-game");
+                const playButton = document.getElementById("platformer-play");
+
+                container.innerHTML = `
+                    <button class="close-game-button" onclick="closeMarioPlatformer()">
+                        ✕ Close Game
+                    </button>
+
+                    <iframe
+                        src="Lab04Web/Lab04.html"
+                        title="Mario Platformer"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen>
+                    </iframe>
+                `;
+
+                playButton.style.display = "none";
+            }
+
+            function closeMarioPlatformer() {
+                document.getElementById("platformer-game").innerHTML = "";
+                document.getElementById("platformer-play").style.display = "inline-block";
+            }
+            </script>
+
+
+            <!-- Project Content -->
             <div class="project-content">
                 <!-- Project Description -->
                 <div class="description">
@@ -389,6 +647,53 @@
                     <img src="Images/Frogger.png" alt="Frogger" width="400" height="450">
                 </div>
             </div>
+
+                        <!-- Playable Frogger Recreation -->
+            <div class="project-content">
+                <div class="description" style="width: 100%;">
+                    <h1 style="text-align: center;">Play Frogger Recreation</h1>
+                    <hr>
+
+                    <div class="game-launcher">
+                        <button
+                            class="play-game-button"
+                            id="frogger-play"
+                            onclick="loadFrogger()">
+                            ▶ Play Frogger Recreation
+                        </button>
+
+                        <div id="frogger-game"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            function loadFrogger() {
+                closeAllGames();
+                const container = document.getElementById("frogger-game");
+                const playButton = document.getElementById("frogger-play");
+
+                container.innerHTML = `
+                    <button class="close-game-button" onclick="closeFrogger()">
+                        ✕ Close Game
+                    </button>
+
+                    <iframe
+                        src="Lab03Web/Lab03.html"
+                        title="Frogger Recreation"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen>
+                    </iframe>
+                `;
+
+                playButton.style.display = "none";
+            }
+
+            function closeFrogger() {
+                document.getElementById("frogger-game").innerHTML = "";
+                document.getElementById("frogger-play").style.display = "inline-block";
+            }
+            </script>
 
             <div class="project-content">
     
@@ -426,6 +731,52 @@
                 </div>
             </div>
 
+            <!-- Playable Pacman Recreation -->
+            <div class="project-content">
+                <div class="description" style="width: 100%;">
+                    <h1 style="text-align: center;">Play Pacman Recreation</h1>
+                    <hr>
+
+                    <div class="game-launcher">
+                        <button
+                            class="play-game-button"
+                            id="pacman-play"
+                            onclick="loadPacman()">
+                            ▶ Play Pacman Recreation
+                        </button>
+
+                        <div id="pacman-game"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            function loadPacman() {
+                closeAllGames();
+                const container = document.getElementById("pacman-game");
+                const playButton = document.getElementById("pacman-play");
+
+                container.innerHTML = `
+                    <button class="close-game-button" onclick="closePacman()">
+                        ✕ Close Game
+                    </button>
+
+                    <iframe
+                        src="Lab05Web/Lab05.html"
+                        title="Pacman Recreation"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen>
+                    </iframe>
+                `;
+
+                playButton.style.display = "none";
+            }
+
+            function closePacman() {
+                document.getElementById("pacman-game").innerHTML = "";
+                document.getElementById("pacman-play").style.display = "inline-block";
+            }
+            </script>
 
             <div class="project-content">
                 <!-- Project Description -->
@@ -457,6 +808,54 @@
                     <img src="Images/Asteroids.png" alt="Asteroids" width="550" height="550">
                 </div>
             </div>
+
+                        <!-- Playable Asteroids Recreation -->
+            <div class="project-content">
+                <div class="description" style="width: 100%;">
+                    <h1 style="text-align: center;">Play Asteroids Recreation</h1>
+                    <hr>
+
+                    <div class="game-launcher">
+                        <button
+                            class="play-game-button"
+                            id="asteroids-play"
+                            onclick="loadAsteroids()">
+                            ▶ Play Asteroids Recreation
+                        </button>
+
+                        <div id="asteroids-game"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            function loadAsteroids() {
+                closeAllGames();
+                const container = document.getElementById("asteroids-game");
+                const playButton = document.getElementById("asteroids-play");
+
+                container.innerHTML = `
+                    <button class="close-game-button" onclick="closeAsteroids()">
+                        ✕ Close Game
+                    </button>
+
+                    <iframe
+                        src="Lab02Web/Lab02.html"
+                        title="Asteroids Recreation"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen>
+                    </iframe>
+                `;
+
+                playButton.style.display = "none";
+            }
+
+            function closeAsteroids() {
+                document.getElementById("asteroids-game").innerHTML = "";
+                document.getElementById("asteroids-play").style.display = "inline-block";
+            }
+            </script>
+            
         </div>
     </div>
 

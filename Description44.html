@@ -50,7 +50,7 @@
 
                     <h2>
                         Alt Controller | Physical Prototyping |
-                        Hardware | Fabrication | Unity
+                        Hardware | Fabrication | Arduino | Unity
                     </h2>
 
                     <hr>
@@ -112,6 +112,217 @@
 
             </div>
 
+            <div class="project-content">
+
+                <div class="description">
+
+                    <h1>Physical Controller Prototype</h1>
+                    <hr>
+                    <br>
+
+                    <p>
+                        The team is developing a custom weaving controller
+                        that combines mechanical fabrication, electronics,
+                        sensors, and game-engine integration.
+                    </p>
+
+                    <br>
+
+                    <ul>
+
+                        <li>
+                            <strong>Mechanical Prototyping:</strong>
+                            Developing physical mechanisms that recreate
+                            recognizable weaving actions while remaining
+                            practical for gameplay.
+                        </li>
+
+                        <li>
+                            <strong>Sensor Integration:</strong>
+                            Exploring sensors and encoders that can detect
+                            movement, position, rotation, and interaction
+                            with the weaving interface.
+                        </li>
+
+                        <li>
+                            <strong>Fabrication:</strong>
+                            Iterating on custom components through CAD,
+                            3D printing, assembly, and physical testing.
+                        </li>
+
+                        <li>
+                            <strong>Unity Integration:</strong>
+                            Translating physical controller data into
+                            responsive gameplay interactions.
+                        </li>
+
+                    </ul>
+
+                    <br>
+                    <hr>
+                    <h1>My Contributions</h1>
+
+                    <h2>E-Textile Pressure Matrix</h2>
+
+                    <hr>
+                    <br>
+
+                    <p>
+                        I designed and built a <strong>4×4 interactive e-textile sensor matrix</strong>
+                        that detects touch across 16 individual points on a fabric surface. The sensor
+                        uses intersecting rows and columns of conductive material separated by a custom
+                        spacer layer, allowing physical pressure to create electrical contact at
+                        specific locations.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        An <strong>Arduino Uno</strong> scans the matrix in real time and transmits
+                        sensor data over serial to an <strong>openFrameworks C++ application</strong>.
+                        The application processes the incoming data and provides a live visualization
+                        of interactions across the textile surface. I also adapted the original
+                        openFrameworks implementation for modern macOS/Xcode compatibility and
+                        developed the serial communication pipeline for the Arduino-based hardware.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        This prototype explores how <strong>soft materials, embedded electronics,
+                        and real-time software</strong> can be combined to create responsive
+                        tangible interfaces for the project's physical controller.
+                    </p>
+
+                    <br>
+
+                    <ul>
+                        <li>
+                            <strong>4×4 Pressure Matrix:</strong>
+                            Built a 16-point fabric-based touch sensing surface.
+                        </li>
+
+                        <li>
+                            <strong>Arduino Integration:</strong>
+                            Developed the C++ scanning system for reading row and column interactions.
+                        </li>
+
+                        <li>
+                            <strong>Serial Communication:</strong>
+                            Created a real-time data pipeline between the Arduino and desktop application.
+                        </li>
+
+                        <li>
+                            <strong>openFrameworks:</strong>
+                            Integrated and adapted the visualization software for modern macOS and Xcode.
+                        </li>
+
+                        <li>
+                            <strong>Physical Fabrication:</strong>
+                            Constructed and tested the conductive textile layers and spacer system.
+                        </li>
+                    </ul>
+
+                    <br><br>
+
+                    <!-- E-Textile Images -->
+                    <div class="image-row">
+
+                        <div class="image-container">
+                            <p class="image-label">E-Textile Pressure Matrix</p>
+                            <br>
+                            <img
+                                src="Images/etextile.png"
+                                alt="4x4 e-textile pressure matrix"
+                                style="width: 300px; max-width: 100%; height: 250px; object-fit: contain;">
+                        </div>
+
+                        <div class="image-container">
+                            <p class="image-label">Prototyping</p>
+                            <br>
+                            <img
+                                src="Images/eproto.png"
+                                alt="E-textile pressure matrix connected to Arduino"
+                                style="width: 300px; max-width: 100%; height: 250px; object-fit: contain;">
+                        </div>
+
+                        <div class="image-container">
+                            <p class="image-label">Matrix Construction</p>
+                            <br>
+                            <img
+                                src="Images/matrix.png"
+                                alt="E-textile pressure matrix construction"
+                                style="width: 300px; max-width: 100%; height: 250px; object-fit: contain;">
+                        </div>
+
+                    </div>
+
+                    <br><br>
+
+                    <!-- E-Textile Video -->
+                    <div class="image-container">
+
+                        <p class="image-label">
+                            Pressure Matrix + Real-Time Visualization
+                        </p>
+
+                        <br>
+
+                        <video
+                            controls
+                            playsinline
+                            style="width: 200px; max-width: 100%; height: auto;">
+
+                            <source
+                                src="Images/IMG_5003.mp4"
+                                type="video/mp4">
+
+                            Your browser does not support the video tag.
+
+                        </video>
+
+                    </div>
+
+                    <br><br>
+                    <hr>
+                    <br>
+
+                    <h2 style="text-align: center;">Team Prototyping & Development</h2>
+
+                    <div class="image-row">
+
+                        <div class="image-container">
+                            <p class="image-label">Mechanical Prototyping</p>
+                            <br>
+                            <img src="Images/resolution-1.png"
+                                 alt="Resolution mechanical prototype"
+                                 style="width: 280px; max-width: 100%; height: 180px; object-fit: contain;">
+                        </div>
+
+                        <div class="image-container">
+                            <p class="image-label">Hardware Testing (Press volume icon)</p>
+                            <br>
+                            <video controls autoplay muted loop playsinline
+                                   style="width: 280px; max-width: 100%; height: 180px; object-fit: contain;">
+                                <source src="Images/resolution-2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+
+                        <div class="image-container">
+                            <p class="image-label">Controller Development</p>
+                            <br>
+                            <img src="Images/resolution-3.png"
+                                 alt="Resolution controller development"
+                                 style="width: 280px; max-width: 100%; height: 180px; object-fit: contain;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
 
             <div class="project-content">
 
@@ -167,7 +378,7 @@
                     <div class="image-container">
 
                         <p class="image-label2">
-                            Project Documentation
+                            Project Overview
                         </p>
 
                         <div class="pdf-container">
@@ -182,253 +393,6 @@
                 </div>
 
             </div>
-
-            <div class="project-content">
-
-                <div class="description">
-
-                    <h1>Physical Controller Development</h1>
-                    <hr>
-                    <br>
-
-                    <p>
-                        The team is developing a custom weaving controller
-                        that combines mechanical fabrication, electronics,
-                        sensors, and game-engine integration.
-                    </p>
-
-                    <br>
-
-                    <ul>
-
-                        <li>
-                            <strong>Mechanical Prototyping:</strong>
-                            Developing physical mechanisms that recreate
-                            recognizable weaving actions while remaining
-                            practical for gameplay.
-                        </li>
-
-                        <li>
-                            <strong>Sensor Integration:</strong>
-                            Exploring sensors and encoders that can detect
-                            movement, position, rotation, and interaction
-                            with the weaving interface.
-                        </li>
-
-                        <li>
-                            <strong>Fabrication:</strong>
-                            Iterating on custom components through CAD,
-                            3D printing, assembly, and physical testing.
-                        </li>
-
-                        <li>
-                            <strong>Unity Integration:</strong>
-                            Translating physical controller data into
-                            responsive gameplay interactions.
-                        </li>
-
-                    </ul>
-
-                    <!-- ADD IMAGE ROW HERE -->
-                    <br>
-                    <hr>
-                    <br>
-
-                    <h2 style="text-align: center;">Team Prototyping & Development</h2>
-
-                    <div class="image-row">
-
-                        <div class="image-container">
-                            <p class="image-label">Mechanical Prototype</p>
-                            <br>
-                            <img src="Images/resolution-1.png"
-                                 alt="Resolution mechanical prototype"
-                                 style="width: 280px; max-width: 100%; height: 180px; object-fit: contain;">
-                        </div>
-
-                        <div class="image-container">
-                            <p class="image-label">Hardware Testing (Press volume icon)</p>
-                            <br>
-                            <video controls autoplay muted loop playsinline
-                                   style="width: 280px; max-width: 100%; height: 180px; object-fit: contain;">
-                                <source src="Images/resolution-2.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-
-                        <div class="image-container">
-                            <p class="image-label">Controller Development</p>
-                            <br>
-                            <img src="Images/resolution-3.png"
-                                 alt="Resolution controller development"
-                                 style="width: 280px; max-width: 100%; height: 180px; object-fit: contain;">
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <div class="description">
-
-                    <h1>My Role</h1>
-                    <hr>
-                    <br>
-
-                    <p>
-                        I recently joined the Resolution team as a
-                        <strong>Prototype Engineer focused on fabrication</strong>,
-                        contributing to the development and production of
-                        the project's custom physical controller.
-                    </p>
-
-                    <br>
-
-                    <ul>
-
-                        <li>
-                            <strong>Physical Prototyping:</strong>
-                            Supporting the development and iteration of
-                            mechanical controller concepts.
-                        </li>
-
-                        <li>
-                            <strong>Fabrication:</strong>
-                            Producing and refining physical components
-                            used in the controller prototype.
-                        </li>
-
-                        <li>
-                            <strong>Hardware Development:</strong>
-                            Assisting with the integration of sensors,
-                            electronics, and physical interaction systems.
-                        </li>
-
-                        <li>
-                            <strong>Prototype Testing:</strong>
-                            Evaluating physical mechanisms and helping
-                            identify improvements for reliability,
-                            usability, and responsiveness.
-                        </li>
-
-                        <li>
-                            <strong>Team Collaboration:</strong>
-                            Working alongside designers, engineers,
-                            artists, and other developers to connect
-                            physical interaction with the game's
-                            digital experience.
-                        </li>
-
-                    </ul>
-
-                    <p style="
-                        color: yellow;
-                        font-size: 16px;
-                        font-weight: bold;
-                        margin-top: 20px;
-                    ">
-                        Development currently in progress.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="description">
-
-                    <h1>Prototyping & Fabrication</h1>
-                    <hr>
-                    <br>
-
-                    <p>
-                        The physical controller is being developed through
-                        an iterative prototyping process combining mechanical
-                        design, electronics testing, fabrication, and
-                        gameplay experimentation.
-                    </p>
-
-                    <br>
-
-                    <ul>
-
-                        <li>
-                            Concept and mechanism exploration
-                        </li>
-
-                        <li>
-                            CAD and mechanical prototyping
-                        </li>
-
-                        <li>
-                            3D printing and component fabrication
-                        </li>
-
-                        <li>
-                            Sensor and electronics integration
-                        </li>
-
-                        <li>
-                            Physical assembly and testing
-                        </li>
-
-                        <li>
-                            Unity gameplay integration
-                        </li>
-
-                        <li>
-                            Iteration based on usability and gameplay testing
-                        </li>
-
-                    </ul>
-
-                    <p style="
-                        color: yellow;
-                        font-size: 16px;
-                        font-weight: bold;
-                        margin-top: 20px;
-                    ">
-                        Individual fabrication work will be added as
-                        development progresses.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="description">
-
-                    <h1>Current Development</h1>
-                    <hr>
-                    <br>
-
-                    <p>
-                        The controller is currently undergoing active
-                        prototyping as the team experiments with different
-                        approaches for detecting weaving motions and
-                        translating them into reliable gameplay input.
-                    </p>
-
-                    <br>
-
-                    <p>
-                        Mechanical components, sensors, and interaction
-                        techniques continue to be tested and refined as
-                        the physical and digital sides of the project
-                        are brought together.
-                    </p>
-
-                </div>
-
-            </div>
-
 
         </div>
 

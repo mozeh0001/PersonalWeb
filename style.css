@@ -453,6 +453,7 @@ span {
     gap: 25px;
     padding: 20px;
     justify-content: center;
+    align-items: stretch;
 }
 
 .project {
@@ -462,15 +463,19 @@ span {
     box-shadow: 0px 4px 10px rgba(128, 179, 35, 0.8);
     text-align: center;
     width: 100%;
-    max-width: 320px;   /* prevents stretching on big screens */
+    max-width: 320px;
+    height: 100%;
     transition: transform 0.3s;
 }
 
 .project img {
     width: 100%;
     height: auto;
+    max-height: 300px;
     object-fit: contain;
     border-radius: 6px;
+    display: block;
+    margin-bottom: 15px;
 }
 
 .project h3 {
@@ -485,19 +490,18 @@ span {
 }
 
 .project a {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Keeps text color unchanged */
-    display: block; /* Ensures the entire div is clickable */
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
 }
 
-/* ==== HOVER EFFECT ==== */
 .project:hover {
     transform: scale(1.05); /* Slightly enlarges the card on hover */
     box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.8);
 }
-
 
 .about-content {
     display: flex;
@@ -536,6 +540,13 @@ span {
         max-width: 90%;
     }
 
+}
+
+.project .colored-p {
+    color: yellowgreen;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 15px;
 }
 
 .colored-p {
@@ -1692,9 +1703,6 @@ iframe{
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
 
 @media (max-width: 768px) {
 
@@ -1758,6 +1766,190 @@ iframe{
     height: 100% !important;
 }
 
+.game-launcher {
+    width: 100%;
+    text-align: center;
+    margin-top: 25px;
+}
+.play-game-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
 
+    color: #A4CB50;
+    background: #111;
 
+    border: 2px solid #A4CB50;
+    border-radius: 8px;
+    cursor: pointer;
 
+    box-shadow: 4px 4px 0 #A4CB50;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.play-game-button:hover {
+    color: black;
+    background: #A4CB50;
+
+    transform: translate(-4px, -4px);
+
+    box-shadow:
+        8px 8px 0 yellow,
+        0 0 25px rgba(164, 203, 80, 0.8);
+}
+.game-launcher iframe {
+    display: block;
+    width: 100%;
+    height: 950px;
+    border: none;
+    margin-top: 20px;
+    aspect-ratio: auto;
+}
+
+/* CLOSE BUTTON */
+
+.close-game-button {
+    display: block;
+    margin: 20px auto 10px;
+    padding: 10px 20px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    color: white;
+    background: #222;
+
+    border: 2px solid #A4CB50;
+    border-radius: 8px;
+    cursor: pointer;
+
+    box-shadow: 3px 3px 0 #A4CB50;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.close-game-button:hover {
+    color: black;
+    background: #A4CB50;
+
+    transform: translate(-3px, -3px);
+
+    box-shadow:
+        6px 6px 0 yellow,
+        0 0 20px rgba(164, 203, 80, 0.8);
+}
+
+.linkedin-posts {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.linkedin-posts .linkedin-embed {
+    width: 48% !important;
+    max-width: 504px !important;
+    min-width: 0;
+    aspect-ratio: auto !important;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .linkedin-posts {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .linkedin-posts .linkedin-embed {
+        width: 100% !important;
+        max-width: 504px !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #about {
+        padding: 30px 20px 50px;
+        overflow-x: hidden;
+    }
+
+    .about-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        width: 100%;
+    }
+
+    .about-main {
+        width: 100%;
+    }
+
+    .about-text {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-text p {
+        font-size: 17px;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    .about-showcase {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .showcase-item {
+        width: 100%;
+        grid-template-columns: 80px minmax(0, 1fr);
+        gap: 15px;
+        padding: 20px 0;
+        min-height: auto;
+    }
+
+    .showcase-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .showcase-logo img {
+        max-width: 75px;
+        max-height: 75px;
+    }
+
+    .showcase-info {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .showcase-info h3 {
+        font-size: 18px;
+        overflow-wrap: anywhere;
+    }
+
+    .showcase-info p {
+        font-size: 13px;
+    }
+
+    .showcase-category {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .showcase-item:hover {
+        transform: none;
+        padding-left: 0;
+    }
+}

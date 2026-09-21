@@ -806,7 +806,160 @@ print("Finished converting images!")
 
     </div>
 
-</div>
+    </div>
+
+    <div class="project-content">
+
+        <div class="description">
+
+            <h1>Inference Latency & Real-Time Performance</h1>
+
+            <hr>
+            <br>
+
+            <p>
+                To evaluate the detector for real-time rocket tracking,
+                I built a Python benchmark that measures how long YOLO11
+                takes to process each video frame.
+            </p>
+
+            <br>
+
+            <p style="
+                text-align: center;
+                font-weight: bold;
+                line-height: 2;
+            ">
+                Camera
+                &nbsp;→&nbsp;
+                YOLO Detection
+                &nbsp;→&nbsp;
+                Rocket Position
+                &nbsp;→&nbsp;
+                Microcontroller
+                &nbsp;→&nbsp;
+                Motors
+            </p>
+
+            <br>
+
+            <p class="image-label2">
+                Latency Benchmark
+            </p>
+
+            <pre style="
+                text-align: left;
+                overflow-x: auto;
+                max-height: 250px;
+                background-color: black;
+            "><code>
+    from ultralytics import YOLO
+    import cv2
+    import time
+
+    model = YOLO(
+        "runs/detect/rocket_detector_v5/weights/best.pt"
+    )
+
+    cap = cv2.VideoCapture(video_path)
+
+    # warm up model before measuring
+    for i in range(10):
+        success, frame = cap.read()
+
+        if not success:
+            break
+
+        model.predict(
+            source=frame,
+            conf=0.20,
+            verbose=False
+        )
+
+
+    latencies = []
+
+    # benchmark 100 frames
+    for i in range(100):
+
+        success, frame = cap.read()
+
+        if not success:
+            break
+
+        start = time.perf_counter()
+
+        model.predict(
+            source=frame,
+            conf=0.20,
+            verbose=False
+        )
+
+        end = time.perf_counter()
+
+        latencies.append(
+            (end - start) * 1000
+        )
+
+
+    average_latency = sum(latencies) / len(latencies)
+
+    fps = 1000 / average_latency
+
+    print(f"Average latency: {average_latency:.2f} ms")
+    print(f"Processing FPS: {fps:.2f}")
+            </code></pre>
+
+            <br>
+
+            <p class="image-label2">
+                Initial Benchmark
+            </p>
+
+            <ul>
+
+                <li>
+                    <strong>Frames Tested:</strong>
+                    100
+                </li>
+
+                <li>
+                    <strong>Average Latency:</strong>
+                    46.48 ms
+                </li>
+
+                <li>
+                    <strong>Approximate Processing Rate:</strong>
+                    21.52 FPS
+                </li>
+
+                <li>
+                    <strong>Fastest Frame:</strong>
+                    14.34 ms
+                </li>
+
+            </ul>
+
+            <br>
+
+            <p>
+                The initial test also contained a 2.9-second startup
+                outlier, so I added 10 untimed warm-up frames to separate
+                initialization overhead from steady-state inference.
+                Performance depends on the CPU/GPU hardware running the model.
+            </p>
+
+            <br>
+
+            <p>
+                This benchmark currently measures YOLO processing time.
+                Future testing will measure the complete camera-to-motor
+                latency of the tracking system.
+            </p>
+
+        </div>
+
+    </div>
 
         <div class="project-content">
 

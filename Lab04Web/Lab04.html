@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Emscripten-Generated Code</title>
+
+    <style>
+        .emscripten {
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            background-color: #000;
+            color: #fff;
+        }
+
+        textarea.emscripten {
+            font-family: monospace;
+            width: 80%;
+            background-color: #000;
+        }
+
+        div.emscripten {
+            text-align: center;
+            background-color: #000;
+        }
+
+        div.emscripten_border {
+            border: 1px solid #000;
+        }
+
+        canvas.emscripten {
+            border: 0 none;
+            background-color: #000;
+        }
+
+        .spinner {
+            height: 50px;
+            width: 50px;
+            margin: 0 auto;
+            -webkit-animation: rotation .8s linear infinite;
+            -moz-animation: rotation .8s linear infinite;
+            -o-animation: rotation .8s linear infinite;
+            animation: rotation .8s linear infinite;
+            border-left: 10px solid #0096f0;
+            border-right: 10px solid #0096f0;
+            border-bottom: 10px solid #0096f0;
+            border-top: 10px solid #6400c8;
+            border-radius: 100%;
+            background-color: #c864fa;
+        }
+
+        @-webkit-keyframes rotation {
+            from {
+                -webkit-transform: rotate(0);
+            }
+
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @-moz-keyframes rotation {
+            from {
+                -moz-transform: rotate(0);
+            }
+
+            to {
+                -moz-transform: rotate(360deg);
+            }
+        }
+
+        @-o-keyframes rotation {
+            from {
+                -o-transform: rotate(0);
+            }
+
+            to {
+                -o-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #controls {
+            text-align: center;
+            padding: 12px 0;
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body style="background-color:#000">
+
+    <figure id="spinner" style="overflow:visible">
+        <div class="spinner"></div>
+
+        <center style="margin-top:.5em">
+            <strong>emscripten</strong>
+        </center>
+    </figure>
+
+    <div class="emscripten" id="status">
+        Downloading...
+    </div>
+
+    <div class="emscripten">
+        <progress
+            hidden
+            id="progress"
+            max="100"
+            value="0">
+        </progress>
+    </div>
+
+
+    <!-- CONTROLS AT TOP -->
+    <div id="controls">
+
+        <input type="checkbox" id="resize">
+        Resize canvas
+
+        <input type="checkbox" id="pointerLock" checked>
+        Lock/hide mouse pointer
+
+        <input
+            type="button"
+            onclick="goFullscreen()"
+            value="Fullscreen">
+
+    </div>
+
+
+    <!-- GAME CANVAS -->
+    <div class="emscripten_border">
+        <canvas
+            class="emscripten"
+            id="canvas"
+            oncontextmenu="event.preventDefault()"
+            tabindex="-1">
+        </canvas>
+    </div>
+
+
+    <textarea
+        class="emscripten"
+        id="output"
+        rows="8">
+    </textarea>
+
+
+    <script>
+        function goFullscreen() {
+            const canvas = document.getElementById("canvas");
+
+            if (canvas.requestFullscreen) {
+                canvas.requestFullscreen();
+            } else if (canvas.webkitRequestFullscreen) {
+                canvas.webkitRequestFullscreen();
+            }
+        }
+    </script>
+
+
+    <script>
+        var statusElement =
+            document.getElementById("status");
+
+        var progressElement =
+            document.getElementById("progress");
+
+        var spinnerElement =
+            document.getElementById("spinner");
+
+
+        var Module = {
+
+            preRun: [],
+
+            postRun: [],
+
+            print: function () {
+
+                var output =
+                    document.getElementById("output");
+
+                if (output) {
+                    output.value = "";
+                }
+
+                return function (text) {
+
+                    if (arguments.length > 1) {
+                        text =
+                            Array.prototype
+                                .slice
+                                .call(arguments)
+                                .join(" ");
+                    }
+
+                    console.log(text);
+
+                    if (output) {
+                        output.value += text + "\n";
+
+                        output.scrollTop =
+                            output.scrollHeight;
+                    }
+                };
+
+            }(),
+
+            canvas: function () {
+
+                var canvas =
+                    document.getElementById("canvas");
+
+                canvas.addEventListener(
+                    "webglcontextlost",
+
+                    function (event) {
+
+                        alert(
+                            "WebGL context lost. You will need to reload the page."
+                        );
+
+                        event.preventDefault();
+                    },
+
+                    false
+                );
+
+                return canvas;
+
+            }(),
+
+            setStatus: function (text) {
+
+                if (!Module.setStatus.last) {
+
+                    Module.setStatus.last = {
+                        time: Date.now(),
+                        text: ""
+                    };
+
+                }
+
+                if (text !== Module.setStatus.last.text) {
+
+                    var match =
+                        text.match(
+                            /([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/
+                        );
+
+                    var now = Date.now();
+
+                    if (
+                        match &&
+                        now - Module.setStatus.last.time < 30
+                    ) {
+                        return;
+                    }
+
+                    Module.setStatus.last.time = now;
+                    Module.setStatus.last.text = text;
+
+                    if (match) {
+
+                        text = match[1];
+
+                        progressElement.value =
+                            100 * parseInt(match[2]);
+
+                        progressElement.max =
+                            100 * parseInt(match[4]);
+
+                        progressElement.hidden = false;
+                        spinnerElement.hidden = false;
+
+                    } else {
+
+                        progressElement.value = null;
+                        progressElement.max = null;
+                        progressElement.hidden = true;
+
+                        if (!text) {
+                            spinnerElement.hidden = true;
+                        }
+                    }
+
+                    statusElement.innerHTML = text;
+                }
+            },
+
+            totalDependencies: 0,
+
+            monitorRunDependencies: function (left) {
+
+                this.totalDependencies =
+                    Math.max(
+                        this.totalDependencies,
+                        left
+                    );
+
+                Module.setStatus(
+
+                    left
+
+                        ? "Preparing... (" +
+                          (this.totalDependencies - left) +
+                          "/" +
+                          this.totalDependencies +
+                          ")"
+
+                        : "All downloads complete."
+
+                );
+            }
+        };
+
+
+        Module.setStatus("Downloading...");
+
+
+        window.onerror = function () {
+
+            Module.setStatus(
+                "Exception thrown, see JavaScript console"
+            );
+
+            spinnerElement.style.display = "none";
+
+            Module.setStatus = function (text) {
+
+                if (text) {
+                    console.error(
+                        "[post-exception status] " + text
+                    );
+                }
+
+            };
+        };
+    </script>
+
+
+    <script async src="Lab04.js"></script>
+
+</body>
+
+</html>
